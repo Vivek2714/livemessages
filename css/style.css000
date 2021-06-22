@@ -1,25 +1,3 @@
-@font-face {
-    font-family: roboto-black;
-    src: url(/wp-content/plugins/livemessages/font/Roboto-Black.ttf);
-}
-
-@font-face {
-    font-family: roboto-light;
-    src: url(/wp-content/plugins/livemessages/font/Roboto-Light.ttf);
-}
-
-.ad-preview-left span {
-    font-family: roboto-black;
-}
-
-.ad-preview-left {
-    font-family: roboto-light;
-}
-
-.gform_wrapper div.charleft.warningTextareaInfo {
-    display: none;
-}
-
 .gform_wrapper .ids-form li.gfield.gfield_error,
 .gform_wrapper .ids-form li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
     background-color: transparent;
@@ -39,19 +17,6 @@
     color: #B8AB9E;
     border-top: 2px solid #B8AB9E;
     border-bottom: 2px solid #B8AB9E;
-}
-
-body .icon {
-    width: auto;
-}
-
-body .easygf-tooltip {
-    text-decoration: none;
-}
-
-body .easygf-tooltip.icon:after {
-    background-image: url(/wp-content/uploads/2021/05/tooltip.png);
-    background-size: 20px;
 }
 
 .gform_wrapper .gfield_required {
@@ -95,21 +60,9 @@ body .ids-form .ginput_container_gfgeo_address.gfgeo-address-locator-wrapper inp
     padding-left: 8px!important;
 }
 
-input[type="text"]::placeholder{
+input[type="text"]::-webkit-input-placeholder {
     color: #E4E3D9;
 }
-input[type="text"]::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #E4E3D9;
-    opacity: 1; /* Firefox */
-  }
-  input[type="text"]:-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: #E4E3D9;
-  }
-  
-  ::-ms-input-placeholder { /* Microsoft Edge */
-    color: #E4E3D9;
-  }
-
 
 .gform_wrapper .ids-form input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
 .gform_wrapper .ids-form ul.gform_fields li.gfield div.ginput_complex span.ginput_left select,
@@ -344,7 +297,6 @@ body .gform_wrapper form div.gform_body ul.gform_fields li.gfield.gfield_html ul
 .page-id-27 .wrap {
     max-width: 1190px;
 }
-
 
 /*------------------progressbar***********/
 
@@ -695,13 +647,11 @@ body .gform_wrapper .ids-form ul li.search-location {
 .add-preview-html {
     background: #37424e;
     color: #fff;
-    font-size: 10px;
-    /* padding: 10px 7px 10px 10px; */
+    font-size: 14px;
+    padding: 20px;
     width: 100%;
     float: left;
     margin: 18px 0;
-    line-height: 0;
-    height: 160px;
 }
 
 .ginput_container_checkbox::-webkit-scrollbar-track,
@@ -734,15 +684,13 @@ ul.custom-list.all-locations {
 
 .ad-preview-left {
     float: left;
-    width: 84%;
-    margin-right: 10px;
-    overflow:hidden;
-    height: 112px;
+    width: 85%;
+    padding-right: 20px;
 }
 
 .ad-preview-right {
     float: left;
-    width: 14%;
+    width: 15%
 }
 
 .alert-msg {
@@ -765,7 +713,7 @@ ul.custom-list.all-locations {
 }
 
 .gform_wrapper .ids-form .gfield_html.gfield_no_follows_desc {
-    margin-top: 30px;
+    margin-top: 16px;
 }
 
 #field_2_64 .custom-html .amount-preview,
@@ -844,117 +792,6 @@ li.lm-packages ul li:nth-child(3) {
     display: block;
 }
 
-.ad-preview-left,
-.ad-preview-right {
-    float: left;
-}
-
-#address-line-1,
-#address-line-2 {
-    font-size: 33px;
-    padding-left: 20px;
-    float: left;
-    line-height: 38px;
-}
-
-#address-line-1 {
-    padding-top: 18px;
-    float: left;
-    width: 100%;
-}
-
-.ad-preview-right {
-    line-height: 0;
-}
-#qr-image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 140px;
-}
-
-#qr-image img {
-    width: 100%;
-}
-
-body .charleft.ginput_counter{
-    color:#ccc !important;
-}
-.ad-preview-left.middle-over-text {
-    width: 100%;
-}
-
-.ad-preview-left.middle-over-text #address-line-1,
-.ad-preview-left.middle-over-text #address-line-2 {
-    float: left;
-    width: 100%;
-    text-align: center;
-    padding-right: 45px;
-}
-
-.ad-preview-left.middle-line-text #address-line-1,
-.ad-preview-left.middle-line-text #address-line-2 {
-    padding-top: 35px;
-}
-
-li.qr-image .ginput_preview strong{
-    color: #aaa;
-    font-weight: normal;
-}
-#gform_multifile_messages_2_41{
-    display:none;
-}
-.pac-container,
-#field_2_78 input,
-#field_2_76 select,
-#field_2_27 input{
-    /* background-color: #9fa0a4 !important; */
-}
-.pac-container{
-    background-color: #37424e !important;  
-}
-.pac-container .pac-item{
-    border-color: #37424e !important;
-    background-color: #37424e !important;
-}
-.pac-container .pac-item:hover{
-    background-color: #4FADC6 !important;
-}
-.pac-container .pac-item span{
-    color: #E4E3D9 !important;
-}
-
-#field_2_76 select option{
-    background-color: #37424e;
-}
-
-.ui-datepicker-header,
-.ui-datepicker-calendar th,
-.ui-datepicker-calendar td,
-.ui-datepicker-calendar td span,
-.ui-datepicker-calendar td a,
-.ui-datepicker-title select {
-    background: #37424e !important;
-    color: #E4E3D9 !important;
-    text-shadow: none !important;
-}
-.ui-datepicker-calendar td a:hover{
-    background: #4FADC6 !important;
-}
-body .tooltipster-sidetip .tooltipster-content {
-    line-height: 20px;
-    padding: 10px 14px;
-}
-.custom-radio.inline-list ul {
-    display: list-item !important;
-}
-.custom-radio.inline-list ul li {
-    float: left;
-    width: 10%;
-}
-.custom-radio.inline-list ul li label{
-    height: 45px !important;
-}
 @media screen and (max-width:767px) {
     body .custom-radio .gfield_radio li {
         width: calc(100% - 0px);
@@ -980,30 +817,5 @@ body .tooltipster-sidetip .tooltipster-content {
     .single-column-form ul.gfield_checkbox li input[type=checkbox]:checked+label,
     .single-column-form ul.gfield_checkbox li input[type=checkbox]:not(:checked)+label {
         max-width: 98%;
-    }
-    #address-line-1, 
-    #address-line-2{
-        font-size: 269%;
-        padding-left: 5px;
-        float: left;
-        line-height: 11px;
-    }
-    .ad-preview-left {
-        width: 81%;
-        margin-right: 5px;
-        overflow: hidden;
-        height: 40px;
-    }
-    #qr-image {
-        height: 40px;
-    }
-    .add-preview-html{
-        font-size: 27%;
-    }
-    .ad-preview-right {
-        width: 17%;
-    }
-    #address-line-1 {
-        padding-top: 10px;
     }
 }

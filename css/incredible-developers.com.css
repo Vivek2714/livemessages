@@ -342,9 +342,14 @@ body .gform_wrapper form div.gform_body ul.gform_fields li.gfield.gfield_html ul
 }
 
 .page-id-27 .wrap {
-    max-width: 1190px;
+    max-width: 100%;
+    padding: 0px;
 }
+body .gform_wrapper {
+    margin-bottom: 0px;
+    margin-top: 0px;
 
+}
 
 /*------------------progressbar***********/
 
@@ -355,10 +360,6 @@ body .gform_wrapper form div.gform_body ul.gform_fields li.gfield.gfield_html ul
     font-weight: 700;
 }
 
-.ids-form .gf_page_steps>.gf_step.gf_step_active:after,
-.ids-form .gf_page_steps>.gf_step.gf_step_active~.gf_step:after {
-    background-color: #17afc8;
-}
 
 .ids-form .gf_page_steps {
     display: table;
@@ -954,6 +955,89 @@ body .tooltipster-sidetip .tooltipster-content {
 }
 .custom-radio.inline-list ul li label{
     height: 45px !important;
+}
+
+
+/* theme-color*/
+.ids-form.theme-color .gf_page_steps>.gf_step.gf_step_active:before, 
+.ids-form.theme-color .gf_page_steps>.gf_step.gf_step_completed:before,
+.ids-form.theme-color .gf_page_steps>.gf_step.gf_step_active:after, 
+.ids-form.theme-color .gf_page_steps>.gf_step.gf_step_completed:after,
+.ids-form.theme-color .gf_page_steps>.gf_step.gf_step_active~.gf_step:before{
+    border-color: #39d0c3;
+    color: #fff;
+    background-color: #494e52;
+}
+
+.ids-form.theme-color .gf_page_steps>.gf_step.gf_step_active:after,
+.ids-form.theme-color .gf_page_steps>.gf_step.gf_step_active~.gf_step:after {
+    background-color: #39d0c3;
+}
+.theme-color a {
+    color: #39d0c3 !important;
+}
+
+.gform_wrapper .ids-form.theme-color .custom-radio .gfield_radio li label:hover {
+    background: #39d0c3;
+    border: 1px solid #39d0c3;
+}
+
+body .theme-color input.search-filter-button:hover,
+body .theme-color input.gfgeo-reset-location-button:hover {
+    background-color: #39d0c3 !important;
+    color: #fff;
+}
+body .theme-color input.search-filter-button,
+.gform_wrapper .ids-form.theme-color .gform_page_footer .button.gform_next_button, 
+.gform_wrapper .ids-form.theme-color .gform_page_footer #gform_submit_button_2 {
+    border: 2px solid #39d0c3;
+    color: #39d0c3;
+}
+.gform_wrapper .ids-form.theme-color #gform_page_2_1 .gform_page_footer input.button:hover {
+    background-color: #39d0c3;
+}
+body .theme-color input.gfgeo-reset-location-button:hover{
+    border: 2px solid #39d0c3;
+}
+.gform_wrapper .ids-form.theme-color input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), 
+.gform_wrapper .ids-form.theme-color ul.gform_fields li.gfield div.ginput_complex span.ginput_left select, 
+.gform_wrapper .ids-form.theme-color ul.gform_fields li.gfield div.ginput_complex span.ginput_right select, 
+.gform_wrapper .ids-form.theme-color ul.gform_fields li.gfield input[type=radio], 
+.gform_wrapper .ids-form.theme-color ul.gform_fields li.gfield select{
+    background-color: #616161;;
+}
+.ids-form.theme-color {
+    background: #494e52;
+}
+.theme-color .ui-datepicker-header,
+.theme-color .ui-datepicker-calendar th,
+.theme-color .ui-datepicker-calendar td,
+.theme-color .ui-datepicker-calendar td span,
+.theme-color .ui-datepicker-calendar td a,
+.theme-color .ui-datepicker-title select,
+.theme-color center.custom-html {
+  background: #616161 !important;
+}
+.theme-color .ui-datepicker-calendar td a:hover {
+    background: #39d0c3 !important;
+}
+body .ids-form.theme-color input.gfgeo-reset-location-button {
+    background-color: #616161;
+    border: 2px solid #616161;
+}
+.theme-color .custom-radio .gfield_radio li input[type=radio]:checked+label{
+    background: #39d0c3;
+}
+.gform_wrapper .top_label .custom-label label.gfield_label{
+    background: #616161;
+    color: #39d0c3;
+}
+header#masthead,
+footer#colophon {
+    display: none;
+}
+.site-content {
+    padding: 0px !important;
 }
 @media screen and (max-width:767px) {
     body .custom-radio .gfield_radio li {
