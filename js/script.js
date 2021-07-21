@@ -1,8 +1,28 @@
 jQuery(document).ready(function(){
 
-  /* Hidden field that has been taken to show and hide filter results */ 
-  var showFilteredResults = jQuery('.is-filtered-enabled input'); 
+  setTimeout( function(){
+    jQuery('.ids-form #input_2_125').trigger('change');
+  },100);
 
+  // Show login form
+  jQuery("body").on("click", ".login-button",function(){
+    // jQuery(".custom-popup").addClass('active');
+    jQuery(".custom-popup").fadeIn("2000");
+  });
+
+  // forced login form submission
+  jQuery("body").on("click", "#field_16_3 .gform_next_button",function(){
+    // jQuery(".custom-popup").addClass('active');
+    jQuery(".gform_footer.top_label #gform_submit_button_16").trigger("click");
+  });
+
+  // Show login form
+  jQuery("body").on("click", ".custom-close",function(){
+    // jQuery(".custom-popup").addClass('active');
+    jQuery(".custom-popup").fadeOut("2000");
+  });
+
+  /* Hidden field that has been taken to show and hide filter results */ 
   var circleObj = null;
   var markerArray = [];
   var mapObject = null;
@@ -27,6 +47,10 @@ jQuery(document).ready(function(){
       "1500" : 3
   };
 
+  jQuery('body').on('click', '.ids-form #gform_next_button_custom', function(){
+    jQuery('#gform_next_button_2_20').trigger('click');
+  });
+
   /* show all packages */
   jQuery('body').on('click', '.ids-form #load-more-packages', function(){
     jQuery('li.lm-packages ul').addClass("show-all");
@@ -47,6 +71,8 @@ jQuery(document).ready(function(){
 
   /*On Clicking filter button*/
   jQuery('body').on('click', '.ids-form .search-location .search-filter-button', function(){
+
+    var showFilteredResults = jQuery('.is-filtered-enabled input'); 
 
     //  Seleect all checkboxes
     var selectedItems = jQuery('.ids-form li.selected-location-option input').val();
@@ -74,8 +100,12 @@ jQuery(document).ready(function(){
       // Remove Marker;
       markerArray[i].setMap(null);
     }
-   
-    var mapID = jQuery("li.gfield.live-map-view").attr("id").replace("field_","");
+    
+    var mapID = "0";
+    if ( typeof(jQuery("li.gfield.live-map-view:visible").attr("id")) != 'undefined'){
+      // return;
+      mapID = jQuery("li.gfield.live-map-view:visible").attr("id").replace("field_","");
+    }
 
     // console.log(mapID);
 
@@ -88,6 +118,9 @@ jQuery(document).ready(function(){
 
     circleObj = null;
     markerArray = [];
+
+    var iconImage   = livemessagesObj.iconImage;
+    var circleColor = livemessagesObj.circleColor; 
 
     // since 2.8 ajaxurl is always defined in the admin header and points to admin-ajax.php
     jQuery.post(livemessagesObj.adminAjax, data, function (response) {
@@ -105,7 +138,7 @@ jQuery(document).ready(function(){
             index = parseInt(i) + 1;
             var singleObject = tempResponse["body"][i];
             options += '<li class="gchoice_'+formID+'_'+fieldID+'_'+index+'">'
-                        +'<input name="input_'+fieldID+'.'+index+'" type="checkbox" date-value="'+tempResponse["body"][i].screen+'" value="'+tempResponse["body"][i].name+" - "+tempResponse["body"][i].location_id+'" id="choice_'+formID+'_'+fieldID+'_'+index+'" data-weekly-contacts="'+tempResponse["body"][i].weekly_contacts+'">'
+                        +'<input name="input_'+fieldID+'.'+index+'" type="checkbox" location-id="'+tempResponse["body"][i].location_id+'"  date-value="'+tempResponse["body"][i].screen+'" value="'+tempResponse["body"][i].name+" - "+tempResponse["body"][i].location_id+'" id="choice_'+formID+'_'+fieldID+'_'+index+'" data-weekly-contacts="'+tempResponse["body"][i].weekly_contacts+'">'
                         +'<label for="choice_'+formID+'_'+fieldID+'_'+index+'" id="label_'+formID+'_'+fieldID+'_'+index+'">'+tempResponse["body"][i].name+' <span>('+tempResponse["body"][i].distance+'km)</span></label>'
                       +'</li>';
 
@@ -131,7 +164,7 @@ jQuery(document).ready(function(){
                   lng: longitude
                 },
                 title: name,
-                icon: 'http://livemessages.1a-lokal-marketing.de/wp-content/uploads/2021/05/airtango-map-icon-50px-1.png'
+                icon: iconImage
               });       
               // To add the marker to the map, call setMap();
               marker.setMap(mapObject);
@@ -152,10 +185,10 @@ jQuery(document).ready(function(){
             
             if( !isNaN(latitude) && !isNaN(longitude) && !isNaN(radius)){
               circleObj =  new google.maps.Circle({
-                strokeColor: "#17afc9",
+                strokeColor: circleColor,
                 strokeOpacity: 0.8,
                 strokeWeight: 2,
-                fillColor: "#17afc9",
+                fillColor: circleColor,
                 fillOpacity: 0.35,
                 map: mapObject,
                 center:{ 
@@ -185,10 +218,10 @@ jQuery(document).ready(function(){
           jQuery('.ids-form .all-locations ul.gfield_checkbox  li > input').trigger("change");
         }else{
           jQuery('.ids-form .all-locations ul.gfield_checkbox  li > input').each( function(){
-            var optionID = jQuery(this).attr('id');
+            var optionID = jQuery(this).attr('location-id');
             if(jQuery.inArray( optionID, selectedItems.split(',') ) !== -1){
-              jQuery('.ids-form .all-locations ul.gfield_checkbox  li > input[id="'+optionID+'"]').attr("checked", true);
-              jQuery('.ids-form .all-locations ul.gfield_checkbox  li > input[id="'+optionID+'"]').trigger("change");
+              jQuery('.ids-form .all-locations ul.gfield_checkbox  li > input[location-id="'+optionID+'"]').attr("checked", true);
+              jQuery('.ids-form .all-locations ul.gfield_checkbox  li > input[location-id="'+optionID+'"]').trigger("change");
             }
           });
         }
@@ -205,16 +238,22 @@ jQuery(document).ready(function(){
   });
 
   // Selected locations
+  jQuery('body').on( 'change', '.ids-form li.area select', function(){
+    jQuery('.ids-form li.selected-location-option input').val("");
+  });
+
+  // Selected locations
   jQuery('body').on( 'change', '.ids-form .all-locations input', function(){
     var selectedItems = [];
     jQuery('.ids-form .all-locations ul.gfield_checkbox  li > input:checked').each( function(){
-      selectedItems.push(jQuery(this).attr('id'));
+      selectedItems.push(jQuery(this).attr('location-id'));
     });
     jQuery('.ids-form li.selected-location-option input').val( selectedItems.join(',') );
   });
   
   /* Reset fields */
   jQuery('body').on( 'click', '.ids-form .gfgeo-reset-location-button', function(){
+    var showFilteredResults = jQuery('.is-filtered-enabled input'); 
     showFilteredResults.val("");
     showFilteredResults.trigger("change");
     jQuery('.ids-form')[0].reset();
@@ -247,7 +286,7 @@ jQuery(document).ready(function(){
 
     /* Calculate Sichtkontakte */
     var packageValue = jQuery('.ids-form .add-views input').val();
-    if( isNaN(packageValue) != true && packageValue !=  "" && typeof(packageValue) != "undefined" ){
+    if( isNaN(packageValue) != true && packageValue != "" && typeof(packageValue) != "undefined" ){
       packageValue = packageValue.replace(".","");
       valueP = Math.floor( ( Sichtkontakte  * parseInt( packageValue.replace(".","") ) ) / parseInt( totalMoniter ) );
       jQuery('.ids-form .overlays input').val( new Number(valueP).toLocaleString("de-DE") );
@@ -289,12 +328,27 @@ jQuery(document).ready(function(){
 
   /* Trigger all the hidden fields, that are used for live summary */ 
   jQuery(document).on('gform_page_loaded', function(event, form_id, current_page){
+    if( form_id != 2){
+      return;
+    }
+
+    if( current_page == 1 ){
+      jQuery('input[name="gform_uploaded_files"]').val("");
+    }
+    
     jQuery('.ids-form .selected-locations input').trigger('change');
     jQuery('.ids-form .screens-available input').trigger('change');
     jQuery('.ids-form .duration input').trigger('change');
     jQuery('.ids-form .add-views input').trigger('change');
-    jQuery('.ids-form .add-preview button').trigger('click');
+    jQuery('.ids-form .overlays input').trigger('change');
 
+    var AddressLine1 = jQuery(".add-line-1 input").val();
+    var AddressLine2 = jQuery(".add-line-2 input").val();
+    if( !(AddressLine1 == "" && AddressLine2 == "" ) ){
+      jQuery('.ids-form .add-preview button').trigger('click');
+    }
+    
+    jQuery('.ids-form #input_2_125').trigger('change');
     if( jQuery('li.show-packages input:checked').val() == 'less' ){
       jQuery('#load-less-packages').trigger('click');
     }
@@ -304,7 +358,6 @@ jQuery(document).ready(function(){
     }
 
     jQuery('.ids-form .lm-packages input').each(function(){
-      jQuery(this).removeAttr( 'checked' );
       var value = jQuery(this).val();
       var packageAttr = value.split('|');
       /* Auto fill views */
@@ -314,11 +367,26 @@ jQuery(document).ready(function(){
       }
     });
 
+    if( jQuery("#input_2_50").val() != "" ){
+      jQuery("#input_2_50").attr("readonly", "readonly");  
+    }
+
+    if( jQuery("#input_2_98").val() != "" ){
+      jQuery("#input_2_98").attr("readonly", "readonly");  
+    }
+
     GF_Geo.geocoder_fields[ "2_79"].gfgeo_map_marker_url = "#";
     setTimeout(function(){ 
       jQuery('.ids-form .search-location .search-filter-button').trigger('click');
     }, 500);
   
+  });
+
+  jQuery('body').on( 'keyup', '#input_2_50', function(){
+    var val = jQuery(this).val();
+    var elem =  jQuery("#input_2_132");
+    elem.attr("readonly", "readonly");  
+    elem.val(val);
   });
 
   /*View Add*/
@@ -334,13 +402,27 @@ jQuery(document).ready(function(){
     if( typeof(uploadedFiles) != 'undefined' && uploadedFiles != "" ){
       var parseValue = JSON.parse(uploadedFiles);
       if( typeof(parseValue["input_41"] ) != 'undefined' ){
-        tempFile = livemessagesObj.homeURL+'/wp-content/uploads/gravity_forms/2-67a1c7bea46b0c596f2e3b01d6e007d0/tmp/'+parseValue["input_41"][0]["temp_filename"];   
+        if( parseValue["input_41"].length > 0 ){
+          tempFile = livemessagesObj.homeURL+'/wp-content/uploads/gravity_forms/2-67a1c7bea46b0c596f2e3b01d6e007d0/tmp/'+parseValue["input_41"][0]["temp_filename"];  
+        } 
       }
     }
 
-    if( jQuery('.qrcode input').val() != "" ){
+    if( jQuery('.qrcode input').val() != "" && jQuery('input[name="input_118"]:checked').val() == "qr_code" ){
       tempFile= "https://chart.googleapis.com/chart?chs=536x536&cht=qr&chl="+jQuery('.qrcode input').val()+"&choe=UTF-8&chld=1|1";
     }
+
+    if( uploadedFiles == "" && jQuery('.qrcode input').val() == "" ) {
+      // tempFile = jQuery("#input_2_130").val();
+      // jQuery('.ids-form .add-preview-html').css('height','auto');
+      // jQuery('.ids-form .add-preview-html').html('<img src="'+tempFile+'">');
+      // self.removeAttr('disabled');
+      // return;
+      tempFile = jQuery("#input_2_135").val();
+    }
+
+    // Show loader
+    jQuery('.ids-form .add-preview-html').html('<img src="/wp-content/uploads/2021/05/loading-buffering.gif" style="width: 50px !important; margin: 0 auto; padding: 60px 0;">');
 
     // Creating image
     var data = {
@@ -371,7 +453,21 @@ jQuery(document).ready(function(){
     // // jQuery('.ids-form .add-preview-html').html('<div class="ad-preview-left '+middleText+' '+verticalCenter+'">ANZEIGE<br><span id="address-line-1">'+AddressLine1+'</span> <br> <span id="address-line-2">'+AddressLine2+'</span></div><div class="ad-preview-right"><span id="qr-image">'+img+'</span></div>');
     // jQuery('.ids-form .add-preview-html').html('<div class="ad-preview-left '+middleText+' '+verticalCenter+'">ANZEIGE<br><span id="address-line-1">'+AddressLine1+' '+AddressLine2+'</span></div><div class="ad-preview-right"><span id="qr-image">'+img+'</span></div>');
   });
-  
+
+  // 
+  jQuery('body').on( 'change', '.ids-form #input_2_125', function(){
+    var orderID = jQuery( this ).val();
+    // Creating image
+    var data = {
+      'action'       : 'get_order_details',
+      'order_id'     : orderID
+      
+    };
+    jQuery.post(livemessagesObj.adminAjax, data, function (response) {
+      jQuery('#order-details-preview').html(response);
+    });
+  });
+
   /* On change packages */ 
   jQuery('body').on( 'change', '.ids-form .lm-packages input', function(){
     var packageValue = jQuery('.ids-form .lm-packages input:checked').next('label').text();
@@ -388,6 +484,18 @@ jQuery(document).ready(function(){
     //   jQuery('.ids-form .amount input').val(packageAttr['1'].replace("Euro",""));
     //   jQuery('.ids-form .amount input').trigger('change');
     // }
+  });
+
+  //
+  jQuery('body').on( 'change', '.ids-form .welcome-buttons input', function(){
+    jQuery('#gform_page_2_1 .gform_page_footer .gform_next_button').trigger("click");
+  });
+  
+  jQuery('body').on( 'change', '.ids-form .custom-radio.inline-list ul li input[type="radio"]', function(){
+    jQuery(this).parents('ul').find('li').removeClass('checked');
+    if ( jQuery(this).is(':checked') ){
+      jQuery(this).parent().addClass('checked');
+    }
   });
 
 });
@@ -427,4 +535,5 @@ jQuery(document).on('gform_page_loaded', function(event, form_id, current_page){
 
   // Change upload logo text
   jQuery('.qr-image .gform_drop_instructions').text('Logo oder Grafik hochladen');
+
 });

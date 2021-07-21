@@ -41,9 +41,33 @@ class customizedLiveMessages{
       'text-line-1'  => 33,
       'text-line-2'  => 36,
       'qr-code-link' => 35,
+      'location'     => 78,
+      'date'         => 27,
+      'package'      => 84,
+      'latitude'     => 81,
+      'longitude'    => 80,
+      'distance'     => 76,
+      // AdditionalFIelds
+      '_salutation'                => 91,
+      '_firstname'                 => '48_3',
+      '_lastname'                  => '48_6',
+      '_company'                   => 49,
+      '_email'                     => 50,
+      '_phone_number'              => 51,
+      '_street_address'            => '47_1',
+      '_address_line_2'            => '47_2',
+      '_city'                      => '47_3',
+      '_state'                     => '47_4',
+      '_zip'                       => '47_5',
+      '_country'                   => '47_6',
+      '_tax_id'                    => 93,
+      '_coupon_code'               => 94,
+      '_user_category'             => 126,
+      '_username'                  => 132
     ]
   ];
 
+  public $notFoundOrder = false;
   const ERROR_CODE   = 0;
   const SUCCESS_CODE = 1;
 
@@ -58,14 +82,21 @@ class customizedLiveMessages{
     ## Summary board shortcode
     add_shortcode( 'live-board-summary', array( $this, 'live_board_summary' ) );
 
-    ## Autopopulate locations
-    // add_filter( 'gform_pre_render', array( $this, 'auto_populate_locations' ) );
+    ## Login at top right
+    add_shortcode( 'custom-login-lm', array( $this, 'custom_login_lm' ) );
 
-    ## Custom redirect to payment page
-    // add_action( 'gform_after_submission', array( $this, 'after_submission_completed' ), 10, 2 );
+    ## Autopopulate locations
+    add_filter( 'gform_pre_render_'.$this->sourceForm['id'], array( $this, 'prepopulate_site_domain' ), 20, 2 );
+    // add_filter( 'gform_pre_render_'.$this->sourceForm['id'], array( $this, 'auto_populate_locations' ) );
+    
+    add_filter( 'gform_pre_render_16', array( $this, 'prepopulate_parent_domain' ), 20, 2 );
+    
+    add_filter( 'gform_pre_render_'.$this->sourceForm['id'], array( $this, 'prepopulate_user_orders' ), 10, 2 );
+    add_filter( 'gform_after_submission_'.$this->sourceForm['id'], [ $this, 'linkUserOrder' ], 10, 2 );
 
     ## Change submit button text
     add_filter( 'gform_submit_button', array( $this, 'change_submit_button_text' ), 10, 2 );
+    add_filter( 'gform_validation_'.$this->sourceForm['id'], [ $this, 'customDateValidation' ] );
 
     ## Ajax handling
     add_action( 'wp_ajax_search_locations', array( $this, 'search_locations' ) );
@@ -73,13 +104,100 @@ class customizedLiveMessages{
     add_action( 'wp_ajax_create_image_preview', array( $this, 'create_image_preview' ) );
     add_action( 'wp_ajax_nopriv_create_image_preview', array( $this, 'create_image_preview' ) );
 
+    add_action( 'wp_ajax_get_order_details', array( $this, 'get_order_details' ) );
+    add_action( 'wp_ajax_nopriv_get_order_details', array( $this, 'get_order_details' ) );
+
+    add_filter( 'gform_validation_'.$this->form['id'], [ $this, 'customValidation' ] );
+    add_filter( 'gform_entry_post_save', [ $this, 'changeUploadImages' ], 10, 2 );
+    
+    ## Adding iframe customize settings
+    add_action('init', [ $this, 'iframeCustomizerSettings' ] );
+    add_action( 'wp_head', [ $this, 'addCustomDesign' ] );
+
+    ## Custom validation for login
+    add_filter( 'gform_validation_16', [ $this, 'loginAuthentication' ] );
+
+    ## Remove login entry
+    // add_action( 'gform_after_submission_16', [ $this, 'removeLoginEntry' ], 10, 2 );
+
+    ## Custom redirect to payment page
+    // add_action( 'gform_after_submission', array( $this, 'after_submission_completed' ), 10, 2 );
     /* Insert Gravity form entries into custom table */
     // if( isset($_GET['insert-entries-into-custom-table']) ){
     //     add_action( 'init', [ $this, 'insert_entries' ] );
     // }
 
-    add_filter( 'gform_validation_'.$this->form['id'], [ $this, 'customValidation' ] );
-    add_filter( 'gform_entry_post_save', [ $this, 'changeUploadImages' ], 10, 2 );
+    // delete_user_meta( get_current_user_id(), '_lm_orders' );
+
+    add_action( 'init', [ $this, 'updateOrder' ] );
+    
+    ## Add order field
+    add_action( 'show_user_profile', [$this , 'orderSettings' ] );  
+    add_action( 'edit_user_profile', [$this , 'orderSettings' ] );
+
+    ## Disable admin bar
+    if( !current_user_can('administrator') ){
+      /* Disable WordPress Admin Bar for all users */
+      add_filter( 'show_admin_bar', '__return_false' );
+    }
+    
+
+    ## Allow access in iframe
+    remove_action( 'login_init', 'send_frame_options_header' );
+    remove_action( 'admin_init', 'send_frame_options_header' );
+    add_filter( 'mod_rewrite_rules', [$this ,'mod_rewrite_rules']);
+
+    ## Add digistore ID
+    add_filter( 'gform_pre_render_'.$this->sourceForm['id'], array( $this, 'prepopulate_digistore_ID' ), 10, 2 );
+
+    ## Add Iframe type
+    add_filter( 'gform_pre_render_'.$this->sourceForm['id'], array( $this, 'prepopulate_iframe_type' ), 10, 2 );
+
+    ## Add Iframe type
+    add_filter( 'gform_pre_render_'.$this->sourceForm['id'], array( $this, 'prepopulate_static_logo' ), 10, 2 );
+  }
+
+  ## Show orders in user profile
+  public function orderSettings( $user ) {
+    $tempOrders = $orders = [];
+    $oldOrders = explode( ",", get_user_meta( $_GET['user_id'], '_lm_orders', true ) );
+    $entry = GFAPI::get_entry( 4881 );
+    // echo "<pre>";
+    //   print_r($entry);
+    // echo "</pre>";  
+    if( !empty($oldOrders) ){
+      foreach( $oldOrders as $oldOrder ){		
+        if( !empty($oldOrder) ){	
+          $entry = GFAPI::get_entry( $oldOrder );
+          if( !is_wp_error($entry) && !empty( $entry['129'] ) && !in_array( $entry['129'], $tempOrders ) && $entry['status'] == 'active' ){
+            $orders[] = 'Buchung '.$entry['129'] ;
+            $tempOrders[] = $entry['129'];
+          }
+        }
+      }
+    }
+  ?>
+    <table class="form-table">
+    <tr>
+        <th><label for="Past orders"><strong><?php _e("Past orders"); ?></strong></label></th>
+        <td>
+            <select id="_past_orders" class="regular-text" />
+                <?php foreach($orders as $order ){ ?>
+                  <option><?php echo $order; ?></option>
+                <?php } ?>
+            </select>
+        </td>
+    </tr>
+    </table>
+  <?php }
+
+  public function mod_rewrite_rules($rules){
+    ob_start();
+    ?><IfModule mod_headers.c>
+  Header always edit Set-Cookie (.*) "$1; SameSite=None; Secure
+</IfModule><?php
+    $append = ob_get_clean();
+    return $rules. $append;
   }
 
   ## Get field label by class name
@@ -140,16 +258,32 @@ class customizedLiveMessages{
 
   ## Adding styles and scripts
   public function lm_scripts() {
+
+    global $wpdb;
     $parentURL = parse_url($_SERVER['HTTP_REFERER']);
-    if( file_exists( 'css/'.$parentURL['host'].'.css' ) ){
-      wp_enqueue_style( 'lm-style', plugin_dir_url( __FILE__ ). 'css/'.$parentURL['host'].'.css?'.time() );
-    }else{
-      wp_enqueue_style( 'lm-style', plugin_dir_url( __FILE__ ). 'css/style.css?'.time() );
+    if( !empty( $_GET['parent'] ) ){
+      $parentURL['host'] = $_GET['parent'];
     }
+    $postid = $wpdb->get_var( "SELECT ID FROM $wpdb->posts WHERE post_title = '" . $parentURL['host'] . "' AND post_type='iframe-settings' " );
+    
+    $circleColor = '#17afc9';
+    $iconImage   = 'http://livemessages.1a-lokal-marketing.de/wp-content/uploads/2021/05/airtango-map-icon-50px-1.png';
+
+    if( !empty($postid) ){
+      $circleColor = get_post_meta( $postid, 'circle_background', true );
+      $icon        = get_post( get_post_meta( $postid, 'map_icon', true ) );
+      $iconImage   = !empty( $icon->guid ) ? $icon->guid : $iconImage;
+    }
+
+    wp_enqueue_style( 'lm-style', plugin_dir_url( __FILE__ ). 'css/style.css?'.time() );
+    // wp_enqueue_style( 'lm-fontawesome', plugin_dir_url( __FILE__ ). 'font-icon/fontawesome.min.css?'.time() );
+    // wp_enqueue_style( 'lm-fontawesome', 'http://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css?'.time() );    
     wp_enqueue_script( 'lm-js', plugin_dir_url( __FILE__ ). 'js/script.js', array('jquery'), '', true );
     wp_localize_script( 'lm-js', 'livemessagesObj', array( 
         'adminAjax' => admin_url( 'admin-ajax.php' ),
-        'homeURL'   => home_url() 
+        'homeURL'   => home_url(),
+        'circleColor' => $circleColor,
+        'iconImage'   => $iconImage
     ) );
   }
 
@@ -186,7 +320,7 @@ class customizedLiveMessages{
                 </tbody>
                 </table>
               </center>";
-    $output .="<center style='background: #37424e;color:#4FADC6;font-size:20px;padding: 20px;margin-bottom: 10px; font-weight: bold'>€ <span class='amount-preview'>-</span></center>";
+    $output .="<center class='custom-html price-icon' style='font-size:20px;padding: 20px;margin-bottom: 10px; font-weight: bold'>€ <span class='amount-preview'>-</span></center>";
     return $output;
   }
 
@@ -269,7 +403,324 @@ class customizedLiveMessages{
     }
     return $tempEntries;
   }
-  
+
+  ## USer login
+  public function custom_login_lm(){
+    
+    if(is_user_logged_in()){
+      return '';
+    }
+    $output = '<a class="login-button">Login</a>
+                <div class="custom-popup">
+                <div class="ol"></div>
+                <a class="custom-close">×</a>
+                  [gravityform id="16" title="true" description="false" ajax="true"]
+                </div>';
+    return $output;
+  }
+
+  ## Get domain
+  public function getDomain(){
+    $parentURL = parse_url($_SERVER['HTTP_REFERER']);
+    if( !empty($_SERVER['QUERY_STRING']) ){
+      parse_str( $_SERVER['QUERY_STRING'], $QS);
+      if( !empty($QS['parent']) ){
+        $parentURL['host'] = $QS['parent'];
+      }
+    }
+    return $parentURL['host'];
+  }
+
+  ## Pre render site domain
+  public function prepopulate_parent_domain( $form ) {
+    foreach( $form['fields'] as &$field ) {
+      if( $field->id == 4 ){
+        $field->defaultValue = $this->getDomain();
+      }
+    }
+    return $form;
+  }
+
+  ## Pre render site domain
+  public function prepopulate_digistore_ID( $form ) {
+    global $wpdb;
+    foreach( $form['fields'] as &$field ) {
+      if( $field->id == 98 ){
+        $domain = $this->getDomain();
+        $postid = $wpdb->get_var( "SELECT ID FROM $wpdb->posts WHERE post_title = '" .$domain. "' AND post_type='iframe-settings' " );
+        if( !empty($postid) ){
+          $field->defaultValue = get_post_meta( $postid, 'digistore24_id', true );
+        }
+      }
+    }
+    return $form;
+  }
+
+  ## Pre render site domain
+  public function prepopulate_iframe_type( $form ) {
+    global $wpdb;
+    foreach( $form['fields'] as &$field ) {
+      if( $field->id == 138 ){
+        $domain = $this->getDomain();
+        $postid = $wpdb->get_var( "SELECT ID FROM $wpdb->posts WHERE post_title = '" .$domain. "' AND post_type='iframe-settings' " );
+        if( !empty($postid) ){
+          $field->defaultValue = get_post_meta( $postid, 'iframe_type', true );
+        }
+      }
+    }
+    return $form;
+  }
+
+  ## Pre render site domain
+  public function prepopulate_static_logo( $form ) {
+    global $wpdb;
+    foreach( $form['fields'] as &$field ) {
+      if( $field->id == 135 ){
+        $conditionalField = GFAPI::get_field( $form['id'], 118 );
+        $domain = $this->getDomain();
+        $allowedDomains = [];
+        if( !empty($conditionalField->conditionalLogic) ){
+          foreach( $conditionalField->conditionalLogic['rules']  as $rules){
+            $allowedDomains[] = $rules['value'];
+          }
+        }
+
+        if( in_array( $domain , $allowedDomains ) ){
+          $staticLogoImage = wp_get_attachment_image_src( 473, 'full' ); 
+          $field->defaultValue = $staticLogoImage[0];
+        }
+      }
+    }
+    return $form;
+  }
+
+  ## Pre render site domain
+  public function prepopulate_site_domain( $form ) {
+
+    // echo "<pre>";
+    //   print_r( $_POST );
+    // echo "</pre>";
+
+    $parentURL = parse_url($_SERVER['HTTP_REFERER']);
+    foreach( $form['fields'] as &$field ) {
+
+      ## Do not populate order ID
+      if( $field->id == 129 ){
+        continue;
+      }
+
+      if( $field->id == 106 ){
+        if( !empty( $_GET['parent'] ) ){
+          $parentURL['host'] = $_GET['parent'];
+        }
+        $field->defaultValue = $parentURL['host'];
+      }
+    }
+
+    ## Logged in user ID
+    $userID    = get_current_user_id();
+
+    if( 
+      ( !is_user_logged_in() && !isset( $_POST['gform_submit'] ) ) ||
+      ( $this->notFoundOrder === false && !isset( $_POST['gform_submit'] ) )
+    ){
+      $userCategories = [ 'powerseller', 'premiumpartner' ];
+      if( !in_array( strtolower( get_user_meta( $userID, '_user_category', true ) ), $userCategories ) ){
+        GFFormDisplay::$submission[$form['id']]["page_number"] = 2;
+        return $form;
+      }
+    }
+
+    ## Edit case
+    $entryID = isset( $_POST['input_125'] ) ? $_POST['input_125'] : '';
+    if( empty($entryID) || $_POST['gform_target_page_number_2'] < 2 ){
+      ## Details to be prefilled based on user meta
+      $user      = wp_get_current_user();
+      $formField = $this->sourceForm['fields'];
+      if( empty($_POST['input_'.$formField['_salutation']]) ){
+        $_POST['input_'.$formField['_salutation']] = get_user_meta( $userID, '_salutation', true );
+      }
+      if( empty($_POST['input_'.$formField['_firstname']]) ){
+        $_POST['input_'.$formField['_firstname']] = get_user_meta( $userID, 'first_name', true );
+      }
+      if( empty($_POST['input_'.$formField['_lastname']]) ){
+        $_POST['input_'.$formField['_lastname']] = get_user_meta( $userID, 'last_name', true );
+      }
+      if( empty($_POST['input_'.$formField['_company']]) ){ 
+        $_POST['input_'.$formField['_company']] = get_user_meta( $userID, '_company', true );
+      }
+      if( empty($_POST['input_'.$formField['_email']]) ){
+        $_POST['input_'.$formField['_email']] = $user->user_email;
+      }
+      if( empty($_POST['input_'.$formField['_username']]) ){
+        $_POST['input_'.$formField['_username']] = $user->user_email;
+      }
+      if( empty($_POST['input_'.$formField['_phone_number']]) ){
+        $_POST['input_'.$formField['_phone_number']] = get_user_meta( $userID, '_phone_number', true );
+      }
+      if( empty($_POST['input_'.$formField['_street_address']]) ){    
+        $_POST['input_'.$formField['_street_address']] = get_user_meta( $userID, '_street_address', true );
+      }
+      if( empty($_POST['input_'.$formField['_address_line_2']]) ){
+        $_POST['input_'.$formField['_address_line_2']] = get_user_meta( $userID, '_address_line_2', true );
+      }
+      if( empty($_POST['input_'.$formField['_city']]) ){
+        $_POST['input_'.$formField['_city']] = get_user_meta( $userID, '_city', true );
+      }
+      if( empty($_POST['input_'.$formField['_state']]) ){  
+        $_POST['input_'.$formField['_state']] = get_user_meta( $userID, '_state', true );
+      }
+      if( empty($_POST['input_'.$formField['_zip']]) ){
+        $_POST['input_'.$formField['_zip']] = get_user_meta( $userID, '_zip', true );
+      }
+      if( empty($_POST['input_'.$formField['_country']]) ){
+        $_POST['input_'.$formField['_country']] = get_user_meta( $userID, '_country', true );
+      }
+      if( empty($_POST['input_'.$formField['_tax_id']]) ){
+        $_POST['input_'.$formField['_tax_id']] = get_user_meta( $userID, '_tax_id', true );
+      }
+      if( empty($_POST['input_'.$formField['_coupon_code']]) ){
+        $_POST['input_'.$formField['_coupon_code']] = get_user_meta( $userID, '_coupon_code', true );
+      }
+      if( empty($_POST['input_'.$formField['_user_category']]) ){
+        $_POST['input_'.$formField['_user_category']][] = strtolower( get_user_meta( $userID, '_user_category', true ) );
+      }
+      return $form;
+    }
+
+    $entry = GFAPI::get_entry( $entryID );
+    ## Validate entry
+    if( is_wp_error($entry) ){
+      return $form;
+    }
+
+    foreach( $form['fields'] as &$field )  {
+			$items = array();
+
+      if( $field->id == 125 ){
+        continue;
+      }
+
+      if( $field->id == 130 ){
+        $_POST['input_'.$field->id] = rgar( $entry, '95' );
+        continue;
+      }
+
+			switch( $field->type ) {
+				case 'name':
+					$items = array();
+					foreach( $field->inputs as $input ){
+            if( empty($_POST['input_'.str_replace( ".", "_", $input['id'] ) ]) ){
+  						// $items[] = array_merge( $input, array( 'defaultValue' => rgar( $entry, $input['id'] ) ) );
+              $_POST['input_'.str_replace( ".", "_", $input['id'] ) ] = rgar( $entry, $input['id'] );
+            }
+          }
+					// $field->inputs = $items;
+				break;
+				case 'address':
+					$items = array();
+					foreach( $field->inputs as $input ){
+            if( empty($_POST['input_'.str_replace( ".", "_", $input['id'] ) ]) ){
+  						// $items[] = array_merge( $input, array( 'defaultValue' => rgar( $entry, $input['id'] ) ) );
+              $_POST['input_'.str_replace( ".", "_", $input['id'] ) ] = rgar( $entry, $input['id'] );
+            }
+         }
+					// $field->inputs = $items;
+				break;
+				case 'date':
+          // $field->defaultValue = rgar( $entry, $field->id );
+          if( empty($_POST['input_'.$field->id]) ){
+            $_POST['input_'.$field->id] = rgar( $entry, $field->id );
+          }
+        break;
+        case 'product':
+          // if( empty($_POST['input_'.$field->id]) ){
+          //   $_POST['input_'.$field->id] = rgar( $entry, $field->id );
+          // }
+          $items = array();
+          $price = explode( "|", rgar( $entry, $field->id ) );        
+          foreach( $field->choices as $choice ){
+            $selected = false;
+            if( $price[1] == str_replace( ".", "", floatVal( $choice['price'] ) ) ){
+              $selected = true;
+            } 
+            $items[] = array(  'text' => $choice['text'], 'value' => $choice['value'], 'isSelected' =>  $selected, 'price' => $choice['price'] );
+          }
+          $field->choices = $items;
+				break;
+				case 'checkbox':
+          $items = array();
+          $i = 1;
+					foreach( $field->choices as $choice ){			
+						// $selected = false;
+						if( !empty(rgar( $entry, $field->id.'.'.$i ) ) ){
+							// $selected = true;
+              if( empty($_POST['input_'.$field->id.'_'.$i]) ){
+                $_POST['input_'.$field->id.'_'.$i] = rgar( $entry, $field->id.'.'.$i );
+              }
+             }  
+						// $items[] = array( 'value' => $choice['value'], 'text' => $choice['text'], 'isSelected' =>  $selected );
+             $i++;
+          }
+					// $field->choices = $items;
+				break;    
+				default:
+					# code...
+					// $field->defaultValue = rgar( $entry, $field->id );
+          if( empty($_POST['input_'.$field->id]) ){
+            $_POST['input_'.$field->id] = rgar( $entry, $field->id );
+          }
+				break;
+
+        ## Use this code for GF multiselect field
+        // case 'multiselect':
+        //   // skip non selected values
+        //   if( empty(rgar( $entry, $field->id )) ){
+        //     break;
+        //   }
+        //   $_POST['input_'.$field->id] = json_decode( rgar( $entry, $field->id ) );
+        // break;
+			}
+	  }
+
+    return $form;
+  }
+
+  ## Pre render site domain
+  public function prepopulate_user_orders( $form ) {
+    
+    $orders = false;
+    $tempOrders = [];
+    foreach( $form['fields'] as &$field )  {
+      if( $field->id == 125 ){
+        $oldOrders = explode( ",", get_user_meta( get_current_user_id(), '_lm_orders', true ) );
+        $items = array();
+        if( !empty($oldOrders) ){
+          rsort($oldOrders);
+          $items[] = array( 'value' => '', 'text' => 'Neue Bestellung hinzufügen' );
+          foreach( $oldOrders as $oldOrder ){		
+            if( !empty($oldOrder) ){	
+              $entry = GFAPI::get_entry( $oldOrder );
+              // $items[] = array( 'value' => $oldOrder, 'text' => 'Buchung '.$oldOrder );
+              if( !is_wp_error($entry) && !empty( $entry['129'] ) && !in_array( $entry['129'], $tempOrders ) && $entry['status'] == 'active' ){
+                $items[] = array( 'value' => $oldOrder, 'text' => 'Buchung '.$entry['129'].' vom '.date( 'd.m.Y', strtotime($entry['date_created']) ) );
+                $orders = true;
+                $tempOrders [] = $entry['129'];
+                $this->notFoundOrder = true;
+              }
+            }
+          }
+        }
+        if( $orders === false ){
+          $items = array();
+          $items[] = array( 'value' => '', 'text' => 'Neue Bestellung hinzufügen' );
+        }
+        $field->choices = $items;
+      }
+    }
+    return $form;
+  }
+
   ## Pre render all locations
   public function auto_populate_locations( $form ) {
     
@@ -302,6 +753,26 @@ class customizedLiveMessages{
   ## Change button text
   public function change_submit_button_text( $button, $form ) {
       return "<button style='float: right;' class='button gform_button' id='gform_submit_button_{$form['id']}'><span>BUCHUNG ABSCHLIESSEN</span></button>";
+  }
+
+  #Custom date field validation
+  public function customDateValidation( $validationResult ){
+    $form = $validationResult['form'];
+    foreach( $form['fields'] as &$field ) {
+      if ( $field->id == $this->sourceForm['fields']['date'] && !empty($_POST[ 'input_'.$this->sourceForm['fields']['date'] ]) ) {
+          $selectedDate = strtotime( $_POST[ 'input_'.$this->sourceForm['fields']['date'] ] );
+          $addThreeDays = strtotime( Date('d-m-Y', strtotime('+3 days')) );
+          if( $selectedDate < $addThreeDays ){
+            $validationResult['is_valid'] = false;
+            $field->failed_validation = true;
+            $field->validation_message = 'Das Datum muss mindestens drei Tage in der Zukunft liegen.';
+            break;
+          }
+      }
+    }
+    //Assign modified $form object back to the validation result
+    $validationResult['form'] = $form;
+    return $validationResult;
   }
 
   ## Getting Gravity forms all entries
@@ -561,7 +1032,7 @@ class customizedLiveMessages{
         $string[] = $textLine2;
     }
 
-    $text = implode(" ", $string );
+    $text = implode("\n", $string );
 
     if( $size == 'small' ){
       $areaWidth = 850;
@@ -569,8 +1040,9 @@ class customizedLiveMessages{
         $drawText->setGravity(imagick::GRAVITY_CENTER);
         $xpos = 0;
       }else{
-        $drawText->setGravity(4);
-        $xpos = 25;
+        // $drawText->setGravity(4);
+        $drawText->setGravity(imagick::GRAVITY_CENTER);
+        $xpos = -72;
         $areaWidth = 800;
       }
     }else{
@@ -579,8 +1051,9 @@ class customizedLiveMessages{
         $drawText->setGravity(imagick::GRAVITY_CENTER);
         $xpos = 0;
       }else{
-        $drawText->setGravity(4);
-        $xpos = 75;
+        // $drawText->setGravity(4);
+        $drawText->setGravity(imagick::GRAVITY_CENTER);
+        $xpos = -226;
         $areaWidth = 2500;
       }
     }
@@ -663,9 +1136,17 @@ class customizedLiveMessages{
 
       file_put_contents( $QRCODE, file_get_contents($QRCODEGENRATELINK));
       $additionalImage = $QRCODE;
+      
+      ## Update logo image url to custom text feild
+      GFAPI::update_entry_field( $entry['id'], '135', $QRCODEGENRATELINK );
+
     }else{
       $logo = json_decode( rgar( $entry, $formField['logo-image'] ) );
-      $additionalImage = !empty( $logo ) ? $fielduploadDir['path'].end( explode( '/', $logo[0] ) ) : ''; 
+      $additionalImage = !empty( $logo ) ? $fielduploadDir['path'].end( explode( '/', $logo[0] ) ) : $entry['135']; 
+
+      ## Update logo image url to custom text feild
+      GFAPI::update_entry_field( $entry['id'], '135', $additionalImage );
+
     }
 
     $smallImageFile  = $time.'-small.png';
@@ -732,7 +1213,6 @@ class customizedLiveMessages{
 
     ## Content
     $smallImageFile  = get_current_user_id().'-temp-small.png';
-
     $tagline   = 'ANZEIGE';
     $textLine1 = !empty( $_POST['AddressLine1'] ) ? $_POST['AddressLine1'] : "";
     $textLine2 = !empty( $_POST['AddressLine2'] ) ?  $_POST['AddressLine2'] : "";
@@ -753,6 +1233,566 @@ class customizedLiveMessages{
     $this->writeImageLocally( 'small', $fielduploadDir['path'].$smallImageFile, $tagline, $textLine1, $textLine2, $additionalImage  );
     echo $fielduploadDir['url'].$smallImageFile.'?'.time();
     wp_die();
+  }
+
+  ## Get post custom fields
+  public function getCustomPost( $posttitle ){
+    
+    global $wpdb;
+    $postid = $wpdb->get_var( "SELECT ID FROM $wpdb->posts WHERE post_title = '" . $posttitle . "' AND post_type='iframe-settings' " );
+    if( empty($postid) ){
+      return;
+    }
+
+    ## Form background
+    $formBackground = get_post_meta( $postid, 'form_background_color', true );
+    $formLabelColor = get_post_meta( $postid, 'form_title', true );
+    $formfontFamily = get_post( get_post_meta( $postid, 'form_font_family', true ) );
+    $loginImageIcon = get_post( get_post_meta( $postid, 'login_icon', true ) );
+    $errorMessageColor = get_post_meta( $postid, 'error_message_color', true );
+
+    ## Menu color & background
+    $menuBackground = get_post_meta( $postid, 'menu_bar_background_color', true );
+    $menuColor      = get_post_meta( $postid, 'menu_bar_text_color', true );
+
+    ## HTML Content fontsize, line height, color
+    $HTMLFontSize   = get_post_meta( $postid, 'html_font_size', true );
+    $HTMLLineHeight = get_post_meta( $postid, 'html_line_height', true );
+    $HTMLColor      = get_post_meta( $postid, 'html_color', true );
+
+    ## Field label, color, background
+    $fieldLabelColor  = get_post_meta( $postid, 'fields_label_color', true );
+    $feildBackground  = get_post_meta( $postid, 'fields_background', true );
+    $feildplaceholder = get_post_meta( $postid, 'fields_placeholder_text_color', true );
+    $fieldHover       = get_post_meta( $postid, 'text_hover', true );
+    $fieldFocus       = get_post_meta( $postid, 'fields_focus_background', true );
+
+    ## Buttons
+    $buttonColor       = get_post_meta( $postid, 'button_color', true );
+    $buttonBackground  = get_post_meta( $postid, 'button_background', true );
+    $buttonBorder      = get_post_meta( $postid, 'button_border_color', true );
+    $buttonHover       = get_post_meta( $postid, 'button_hover', true );
+    $buttonHoverColor  = get_post_meta( $postid, 'button_hover_color', true );
+
+    ## Back button
+    $backbuttonColor       = get_post_meta( $postid, 'back_button_color', true );
+    $backbuttonBackground  = get_post_meta( $postid, 'back_button_background', true );
+    $backbuttonBorder      = get_post_meta( $postid, 'back_button_border_color', true );
+    $backbuttonHover       = get_post_meta( $postid, 'back_button_hover', true );
+    $backbuttonHoverColor  = get_post_meta( $postid, 'back_button_hover_color', true );
+
+    ## Links and icons
+    $linkColor       = get_post_meta( $postid, 'link_color', true );
+    $iconBackground  = get_post_meta( $postid, 'icon_background', true );
+    $iconColor       = get_post_meta( $postid, 'icon_color', true );
+    $datepickerIcon  = get_post( get_post_meta( $postid, 'datepicker_icon', true ) );
+    $humberIcon      = get_post( get_post_meta( $postid, 'humber_icon', true ) );
+    $locationIcon    = get_post( get_post_meta( $postid, 'location_icon', true ) );
+    $refreshIcon     = get_post( get_post_meta( $postid, 'refresh_icon', true ) );
+    $qrIcon          = get_post( get_post_meta( $postid, 'qr_code_icon', true ) );
+    $imageUploadIcon = get_post( get_post_meta( $postid, 'image_upload_icon', true ) );    
+     
+    ## Options
+    $optionColor       = get_post_meta( $postid, 'option_color', true );
+    $optionBackground  = get_post_meta( $postid, 'option_background', true );
+    $optionBorder      = get_post_meta( $postid, 'option_border_color', true );
+    $optionHover       = get_post_meta( $postid, 'option_hover_background', true );
+    $optionHoverColor  = get_post_meta( $postid, 'option_hover_color', true );
+
+    ## Summary
+    $summaryLabel       = get_post_meta( $postid, 'summary_label', true );
+    $summaryText        = get_post_meta( $postid, 'summary_text', true );
+    $summaryDescription = get_post_meta( $postid, 'summary_description', true );
+    $summaryBackground  = get_post_meta( $postid, 'summary_background', true );
+    $summaryBorder      = get_post_meta( $postid, 'summary_border', true );
+
+    ## Listing
+    $listingColor       = get_post_meta( $postid, 'listing_color', true );
+    $listingChecked     = get_post_meta( $postid, 'listing_checked_color', true );
+
+    ?>
+    <style>
+      <?php 
+      if( !empty($formfontFamily) ){
+      ?>
+      @font-face {
+        font-family: <?php echo $formfontFamily->post_title; ?>;
+        src: url(<?php echo $formfontFamily->guid; ?>);
+      }
+      html, body {
+        font-family: <?php echo $formfontFamily->post_title; ?> !important;
+      }
+      <?php
+      }
+      ?>
+      header#masthead,
+      footer#colophon {
+          display: none;
+      }
+      .site-content {
+          padding: 0px !important;
+      }
+      .page-id-27 .wrap {
+          max-width: 100%;
+          padding: 0px;
+      }
+      body .gform_wrapper {
+          margin-bottom: 0px;
+          margin-top: 0px;
+      }
+      body .gform_wrapper ul li.gfield.gfield_html .add-preview-html img{
+        width:100%;
+      }
+      .ids-form.theme-color,
+      body .elementor-27 .elementor-element.elementor-element-300dd28c > .elementor-background-overlay,
+      body #custom-login .custom-popup,
+      body .custom-popup-inner{
+          background: <?php echo $formBackground; ?>;
+      }
+      .ids-form.theme-color .gform_title,
+      body #custom-login a,
+      .custom-popup-inner h3,
+      #custom-login a.login-button,
+      .custom-popup-inner label{
+          color: <?php echo $formLabelColor; ?>;
+      }
+      body .custom-popup-inner{
+        border-color: <?php echo $menuBackground; ?>;;
+      }
+      .ids-form.theme-color .gf_page_steps>.gf_step.gf_step_active:before,
+      .ids-form.theme-color .gf_page_steps>.gf_step.gf_step_completed:before,
+      .ids-form.theme-color .gf_page_steps>.gf_step.gf_step_active:after,
+      .ids-form.theme-color .gf_page_steps>.gf_step.gf_step_completed:after,
+      .ids-form.theme-color .gf_page_steps>.gf_step.gf_step_active~.gf_step:before,
+      body .gform_wrapper .ids-form.login-form  {
+          border-color: <?php echo $menuBackground; ?>;
+          color: <?php echo $menuColor; ?>;
+      }
+      .ids-form.theme-color .gf_page_steps>.gf_step:after,
+      .ids-form.theme-color .gf_page_steps>.gf_step.gf_step_active:after,
+      .ids-form.theme-color .gf_page_steps>.gf_step.gf_step_active~.gf_step:after {
+          background-color: <?php echo $menuBackground; ?>;
+      }
+      .ids-form.theme-color .gf_page_steps>.gf_step.gf_step_active:before,
+      .ids-form.theme-color .gf_page_steps>.gf_step.gf_step_completed:before {
+          background-color: <?php echo $menuBackground; ?>;
+      }
+      .ids-form.theme-color .gf_page_steps>.gf_step.gf_step_active~.gf_step:before,
+      .ids-form.theme-color .gf_page_steps>.gf_step.gf_step_completed:before{
+          background: <?php echo $formBackground; ?>;
+      }
+      .ids-form.theme-color li.theme-text-color,
+      .ids-form.theme-color li .description-text{
+          line-height: <?php echo $HTMLLineHeight; ?>px !important;
+          font-size: <?php echo $HTMLFontSize; ?>px !important;
+          color: <?php echo $HTMLColor; ?> !important;
+      }
+      .gform_wrapper .ids-form.theme-color .top_label .gfield_label,
+      .gform_wrapper .ids-form .field_sublabel_below .ginput_complex.ginput_container label{
+          color: <?php echo $fieldLabelColor; ?>;
+      }
+      .gform_wrapper .ids-form input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), 
+      .gform_wrapper .ids-form ul.gform_fields li.gfield div.ginput_complex span.ginput_left select, 
+      .gform_wrapper .ids-form ul.gform_fields li.gfield div.ginput_complex span.ginput_right select, 
+      .gform_wrapper .ids-form ul.gform_fields li.gfield input[type=radio], 
+      .gform_wrapper .ids-form ul.gform_fields li.gfield select,
+      body input.gfgeo-reset-location-button,
+      body .custom-popup-inner .col-left span, 
+      body .custom-popup-inner .col-right span{
+          background-color: <?php echo $feildBackground; ?>;
+          color: <?php echo $feildplaceholder; ?>;
+          border-color: <?php echo $feildBackground; ?>;
+      }
+      .gform_wrapper .ids-form input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]):focus{
+        background-color: <?php echo $fieldFocus; ?>;
+      }
+      body .charleft.ginput_counter,
+      .gfield_description i{
+          color: <?php echo $feildplaceholder; ?> !important;
+      }
+      input[type="text"]::placeholder {
+          color: <?php echo $feildplaceholder; ?>;
+      }
+      input[type="text"]::placeholder {
+          /* Chrome, Firefox, Opera, Safari 10.1+ */
+          color: <?php echo $feildplaceholder; ?>;
+          opacity: 1;
+          /* Firefox */
+      }
+      input[type="text"]:-ms-input-placeholder {
+          /* Internet Explorer 10-11 */
+          color: <?php echo $feildplaceholder; ?>;
+      }
+      body .pac-container,
+      .add-preview-html{
+          background-color: <?php echo $feildBackground; ?> !important;
+      }
+      body .pac-container .pac-item {
+          border-color: <?php echo $feildBackground; ?> !important;
+          background-color: <?php echo $feildBackground; ?> !important;
+      }
+      body .pac-container .pac-item:hover{
+          background-color: <?php echo $fieldHover; ?> !important;
+      }
+      ::selection {
+          background: <?php echo $fieldHover; ?> !important;
+          / WebKit/Blink Browsers /
+      }
+      ::-moz-selection {
+          background: <?php echo $fieldHover; ?> !important;
+          / Gecko Browsers /
+      }
+      body .pac-container .pac-item span {
+          color: <?php echo $feildplaceholder; ?> !important;
+      }
+
+      #field_2_76 select option {
+          background-color: <?php echo $feildBackground; ?> !important;
+      }
+      .ui-datepicker-header,
+      .ui-datepicker-calendar th,
+      .ui-datepicker-calendar td,
+      .ui-datepicker-calendar td span,
+      .ui-datepicker-calendar td a,
+      .ui-datepicker-title select {
+          background: <?php echo $feildBackground; ?> !important;
+          color: <?php echo $feildplaceholder; ?> !important;
+          text-shadow: none !important;
+      }
+      .ui-datepicker-calendar td a:hover {
+          background: <?php echo $fieldHover; ?> !important;
+      }
+      .gform_wrapper .top_label .custom-label label.gfield_label{
+        background: <?php echo $feildBackground; ?> !important;
+      }
+      body input.search-filter-button,
+      .custom-radio.inline-list ul#input_2_118 li label {
+        border-color: <?php echo $buttonBorder; ?> !important;
+        background: <?php echo $buttonBackground; ?> !important;
+        color: <?php echo $buttonColor; ?> !important;
+    }
+    .custom-radio.inline-list ul#input_2_118 li label {
+      background: <?php echo $feildBackground; ?> !important;
+    }
+    .custom-button button {
+        background-color: <?php echo $buttonBackground; ?>;
+        color: <?php echo $buttonColor; ?>; 
+        border-color: <?php echo $buttonBorder; ?>;
+    }
+     body input.search-filter-button:hover, 
+     body input.gfgeo-reset-location-button:hover, 
+     .custom-button button:hover,
+     .gform_wrapper .ids-form input[type="button"]:focus,
+     .custom-radio.inline-list ul#input_2_118 li label:hover,
+     .custom-radio.inline-list ul#input_2_118 li label:focus,
+    .custom-radio.inline-list ul#input_2_118 li input[type=radio]:checked+label {
+        background-color: <?php echo $buttonHover; ?> !important;
+        color: <?php echo $buttonHoverColor; ?> !important;
+        border-color: <?php echo $buttonHover; ?> !important;
+    }
+    .gform_wrapper .ids-form .gform_page_footer .button.gform_next_button,
+    .gform_wrapper .ids-form .button.gform_next_button,
+    .gform_wrapper .ids-form .gform_page_footer #gform_submit_button_2 {
+        border-color: <?php echo $buttonBorder; ?>;
+        background-color: <?php echo $buttonBackground; ?>;
+        color: <?php echo $buttonColor; ?>;
+    }
+    .gform_wrapper .ids-form .gform_page_footer .gform_previous_button.button{
+        border-color: <?php echo $backbuttonBorder; ?>;
+        background-color: <?php echo $backbuttonBackground; ?>;
+        color: <?php echo $backbuttonColor; ?>;  
+    }
+    .custom-checkbox2 .gfield_checkbox li label:after {
+      background-color: <?php echo $feildBackground; ?> !important;
+    }
+    .gform_wrapper .custom-checkbox2 ul.gfield_checkbox li input[type=checkbox]+label{
+      color: <?php echo $feildplaceholder; ?> !important;
+    }
+    .gform_wrapper .custom-checkbox2 ul.gfield_checkbox li input[type=checkbox]:checked+label {
+      color: <?php echo $buttonColor; ?> !important;
+    }
+    .custom-checkbox2 .gfield_checkbox li label:before {
+      border-color: <?php echo $buttonColor; ?> !important;
+    }
+    .gform_wrapper .ids-form .gform_page_footer .gform_previous_button.button:hover{
+      background-color: <?php echo $backbuttonHover; ?> !important;
+      color: <?php echo $backbuttonHoverColor; ?> !important;
+      border-color: <?php echo $backbuttonHover; ?> !important; 
+    }
+    .gform_wrapper .ids-form .gform_page_footer #gform_submit_button_2:hover,
+    .gform_wrapper .ids-form .gform_page_footer .button.gform_next_button:hover,
+    .gform_wrapper .ids-form .button.gform_next_button:hover{
+        background-color: <?php echo $buttonHover; ?> !important;
+        color: <?php echo $buttonHoverColor; ?> !important;
+        border-color: <?php echo $buttonHover; ?> !important;
+    }
+    .gform_wrapper .ids-form ul.gform_fields li.gfield a,
+    .tooltip_content a{
+      color: <?php echo $linkColor; ?> !important;
+    }
+    .gform_wrapper .ids-form .custom-radio .gfield_radio li label {
+      background: <?php echo $optionBackground; ?>;
+      color: <?php echo $optionColor; ?>;
+      border-color: <?php echo $optionBorder; ?>;
+    }
+    .gform_wrapper .ids-form .custom-radio .gfield_radio li label:hover,
+    .custom-radio .gfield_radio li input[type=radio]:checked+label {
+      background: <?php echo $optionHover; ?>;
+      color: <?php echo $optionHoverColor; ?>;
+      border-color: <?php echo $optionHover; ?>;
+    }
+    body .easygf-tooltip.icon:after {
+      background: <?php echo $iconBackground; ?>;
+      color: <?php echo $iconColor; ?>;
+    }
+    .custom-html td {
+        color: <?php echo $summaryText; ?>;
+    }
+    center.custom-html.price-icon {
+        color: <?php echo $summaryLabel; ?>;;
+    }
+    center.custom-html span {
+      color: <?php echo $summaryLabel; ?>;
+    }
+    .custom-html p{
+      color: <?php echo $summaryDescription; ?>;
+    }
+    center.custom-html{
+      background: <?php echo $summaryBackground; ?> !important;
+      border:2px solid <?php echo $summaryBorder; ?>;
+    }
+    .single-column-form ul.gfield_checkbox li input[type=checkbox]:checked+label,
+    .single-column-form [type="checkbox"]:not(:checked)+label:after,
+    .single-column-form [type="checkbox"]:checked+label:after,
+    #field_2_37 .gfield_checkbox p{
+      color: <?php echo $listingChecked; ?> !important;
+      font-weight:bold !important;
+    }
+    .single-column-form ul.gfield_checkbox li input[type=checkbox]:not(:checked)+label{
+      color: <?php echo $listingColor; ?>;
+      font-weight:bold !important;
+    }
+    .single-column-form [type="checkbox"]:checked+label:before {
+       border: 2px solid <?php echo $listingChecked; ?>;
+    }
+    .gfgeo-reset-location-button-wrapper:before {
+      background-image: url(<?php echo $refreshIcon->guid ?>) !important;
+    }
+    .gform_wrapper .top_label .icon-humber label.gfield_label:before {
+      background-image: url(<?php echo $humberIcon->guid ?>) !important;
+    }
+    .gform_wrapper .top_label .icon-location label.gfield_label:before {
+      background-image: url(<?php echo $locationIcon->guid ?>) !important;
+    }
+    .custom-radio.inline-list ul li.gchoice_2_118_0:before{
+      background-image: url(<?php echo $qrIcon->guid ?>) !important;
+    }
+    .custom-radio.inline-list ul li.gchoice_2_118_1:before{
+      background-image: url(<?php echo $imageUploadIcon->guid ?>) !important;
+    }
+    #custom-login a.login-button:before,
+    .login-form .gform_heading .gform_title:before{
+      background-image: url(<?php echo $loginImageIcon->guid ?>) !important;
+    }
+    .ui-datepicker-trigger{
+      visibility:hidden;
+    }
+    .ginput_container.ginput_container_date:before {
+        content: "ddsds";
+        position: absolute;
+        background-image: url(<?php echo $datepickerIcon->guid ?>) !important;
+        color: transparent;
+        width: 22px;
+        background-repeat: no-repeat;
+        height: 22px;
+        background-size: 20px;
+        text-align: center;
+        left: 12px;
+        top: 10px;
+    }
+    .col-right span:before{
+      background-image: url(<?php echo $datepickerIcon->guid ?>) !important;
+    }
+    .ginput_container.ginput_container_date {
+        position: relative;
+    }
+    input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 50px <?php echo $fieldFocus; ?> inset;
+    }
+    input:-webkit-autofill:focus {
+        -webkit-box-shadow: 0 0 0 50px <?php echo $fieldFocus; ?> inset;
+    }
+    .gform_wrapper .ids-form div.validation_error {
+      color: <?php echo $errorMessageColor; ?> !important;
+      border-color: <?php echo $errorMessageColor; ?> !important;
+    }
+
+    .gform_wrapper .ids-form .validation_message {
+      color: <?php echo $errorMessageColor; ?> !important;
+    }
+
+    .gform_wrapper .ids-form li.gfield_error input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
+    .gform_wrapper .ids-form li.gfield_error textarea {
+      border-color: <?php echo $errorMessageColor; ?> !important;
+    }
+    #ds24_social_proof_21155{
+      display:none !important;
+    }
+    </style>
+    <?php
+  }
+
+  ## Change authentication failed message 
+  public function customLoginAuthFailedMessage( $message, $form ){
+    return "<div class='validation_error'>Ungültige Authentifizierung</div>";
+  }
+
+  ## Custom validation for login authentication
+  public function loginAuthentication( $validation_result ) {
+    $username = $_POST['input_1'];
+    $password = $_POST['input_2'];
+
+    $authentication = wp_authenticate( $username, $password );
+    if( is_wp_error($authentication) ){
+      ## Return error
+      add_filter( 'gform_validation_message', [ $this, 'customLoginAuthFailedMessage' ], 10, 2 );
+      $validation_result['is_valid'] = 0;
+      return $validation_result;
+    }
+
+    wp_set_current_user( $authentication->ID );
+    wp_set_auth_cookie( $authentication->ID );
+    return $validation_result;
+  }
+
+  ## Remove login wntry
+  public function removeLoginEntry( $entry, $form ) {
+    GFAPI::delete_entry($entry['id']);
+  }
+
+  ## Add user orders in usermeta
+  public function linkUserOrder( $entry, $form ) {
+    $userID = get_current_user_id();
+    $oldOrders = get_user_meta( $userID, '_lm_orders', true );
+    if( $oldOrders ){
+      $allOrders = explode( ",", $oldOrders );
+    }
+    $allOrders[] = $entry['id'];
+    update_user_meta( $userID, '_lm_orders', implode( ",", $allOrders ) );
+  }
+
+  ## GEt order details
+  public function get_order_details(){
+
+    $formField = $this->sourceForm['fields'];
+    $entry = GFAPI::get_entry( 	$_POST['order_id'] );
+    if( is_wp_error($entry) ){
+      echo 'Invalid ID';
+      wp_die();
+    }
+
+    $packageValue = '';
+    $field = GFAPI::get_field( 2, 84 );
+    $price = explode( "|", rgar( $entry, $formField['package'] ) );
+    foreach( $field->choices as $choice ){
+      if( $price[1] == str_replace( ".", "", floatVal( $choice['price'] ) ) ){
+        // $packageValue = explode( "–", str_replace( "//", " ", strip_tags( $choice['text'] ) ) );
+        $packageValue = explode( "–", strip_tags( $choice['text'] ) );
+      } 
+    }
+
+    $formField = $this->sourceForm['fields'];
+    $entry = GFAPI::get_entry( 	$_POST['order_id'] );
+    if( is_wp_error($entry) ){
+      echo 'Invalid ID';
+      wp_die();
+    }
+    ?>
+    <div class="row">
+    <div class="col-left">
+      <label>PLZ / ORT</label>
+      <span><?php echo rgar( $entry, $formField['location'] ); ?></span>
+    </div>
+    <!--div class="col-right">
+      <label>START DER KAMPAGNE</label>
+      <span><?php //echo implode( '.', array_reverse( explode( '-', rgar( $entry, $formField['date'] ) ) ) ); ?></span>
+    </div-->
+    <div class="col-right">
+      <label>Umkreis</label>
+      <span><?php echo rgar( $entry, $formField['distance'] ); ?> km</span>
+    </div>
+    </div>
+    <h3 style="margin-bottom:0;padding-bottom:10px;"><center><?php echo $packageValue[0]; ?></center></h3>
+    <img src="<?php echo rgar( $entry, $formField['small-image'] ); ?>">
+    <?php
+    wp_die();
+  }
+
+  ## Update entry order
+  public function updateOrder(){
+    
+    if( !empty( $_GET['eid'] ) ){
+      GFAPI::update_entry_field( $_GET['_lid'], '129', $_GET['eid'] ); 
+    }
+
+    if( !empty( $_GET['order'] ) && !empty( $_GET['custom'] ) ){
+      GFAPI::update_entry_field( $_GET['custom'], '129', $_GET['order_id'] ); 
+    }
+  }
+
+  ## Adding custom post type
+  public function iframeCustomizerSettings() {
+    /*
+    * The $labels describes how the post type appears.
+    */
+    $labels = array(
+        'name'          => 'Iframe settings', // Plural name
+        'singular_name' => 'Iframe settings'   // Singular name
+    );
+
+    /*
+    * The $supports parameter describes what the post type supports
+    */
+    $supports = array(
+        'title',        // Post title
+    );
+
+    /*
+    * The $args parameter holds important parameters for the custom post type
+    */
+    $args = array(
+        'labels'              => $labels,
+        'description'         => 'Post type iframe settings', // Description
+        'supports'            => $supports,
+        'taxonomies'          => array( 'category', 'post_tag' ), // Allowed taxonomies
+        'hierarchical'        => false, // Allows hierarchical categorization, if set to false, the Custom Post Type will behave like Post, else it will behave like Page
+        'public'              => true,  // Makes the post type public
+        'show_ui'             => true,  // Displays an interface for this post type
+        'show_in_menu'        => true,  // Displays in the Admin Menu (the left panel)
+        'show_in_nav_menus'   => true,  // Displays in Appearance -> Menus
+        'show_in_admin_bar'   => true,  // Displays in the black admin bar
+        'menu_position'       => 5,     // The position number in the left menu
+        'menu_icon'           => true,  // The URL for the icon used for this post type
+        'can_export'          => true,  // Allows content export using Tools -> Export
+        'has_archive'         => true,  // Enables post type archive (by month, date, or year)
+        'exclude_from_search' => false, // Excludes posts of this type in the front-end search result page if set to true, include them if set to false
+        'publicly_queryable'  => true,  // Allows queries to be performed on the front-end part if set to true
+        'capability_type'     => 'post' // Allows read, edit, delete like “Post”
+    );
+
+    register_post_type('iframe-settings', $args); //Create a post type with the slug is iframe-settings and arguments in $args.
+  }
+
+  ## Adding iframe settings
+  public function addCustomDesign(){
+    $parentURL = parse_url($_SERVER['HTTP_REFERER']);
+    if( !empty($_SERVER['QUERY_STRING']) ){
+      parse_str( $_SERVER['QUERY_STRING'], $QS);
+      if( !empty($QS['parent']) ){
+        $parentURL['host'] = $QS['parent'];
+      }
+    }
+    $this->getCustomPost( $parentURL['host'] );
   }
 
 }

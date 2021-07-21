@@ -13,25 +13,6 @@
     margin-top: 0px;
 }
 
-.gform_wrapper .ids-form div.validation_error {
-    color: #B8AB9E;
-    border-top: 2px solid #B8AB9E;
-    border-bottom: 2px solid #B8AB9E;
-}
-
-.gform_wrapper .gfield_required {
-    color: #B8AB9E !important;
-}
-
-.gform_wrapper .ids-form .validation_message {
-    color: #B8AB9E;
-}
-
-.gform_wrapper .ids-form li.gfield_error input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
-.gform_wrapper .ids-form li.gfield_error textarea {
-    border: 1px solid #B8AB9E;
-}
-
 .ids-form {
     background: #435562;
     box-shadow: 0 1px 6px 0px rgba(32, 33, 36, 0.28);
@@ -61,7 +42,7 @@ body .ids-form .ginput_container_gfgeo_address.gfgeo-address-locator-wrapper inp
 }
 
 input[type="text"]::-webkit-input-placeholder {
-    color: #E4E3D9;
+    color: #ccc;
 }
 
 .gform_wrapper .ids-form input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
@@ -69,7 +50,7 @@ input[type="text"]::-webkit-input-placeholder {
 .gform_wrapper .ids-form ul.gform_fields li.gfield div.ginput_complex span.ginput_right select,
 .gform_wrapper .ids-form ul.gform_fields li.gfield input[type=radio],
 .gform_wrapper .ids-form ul.gform_fields li.gfield select {
-    color: #E4E3D9;
+    color: #fff;
     box-sizing: border-box;
     padding: .5rem;
     font-size: 1rem;
@@ -138,13 +119,6 @@ input[type="text"]::-webkit-input-placeholder {
     width: 48%;
 }
 
-.gform_wrapper .ids-form .gform_page_footer input.button:hover,
-.gform_wrapper .ids-form .gform_page_footer .button:hover {
-    background-color: #17afc9;
-    border-color: #17afc9;
-    color: #fff;
-}
-
 .icon-d .ginput_container.ginput_container_text:before {
     position: absolute;
     content: "dsdsd";
@@ -161,14 +135,14 @@ input[type="text"]::-webkit-input-placeholder {
 .gfgeo-reset-location-button-wrapper:before {
     position: absolute;
     content: "dsdsd";
-    background-image: url(/wp-content/uploads/2021/05/icon-reset2.png);
+    background-image: url(/wp-content/uploads/2021/05/icon-reset.png);
     background-size: 20px;
     width: 100px;
-    /* height: 40px; */
+    height: 40px;
     background-repeat: no-repeat;
     color: transparent;
     left: 10px;
-    top: 13px;
+    top: 10px;
 }
 
 
@@ -195,14 +169,10 @@ input[type="text"]::-webkit-input-placeholder {
     padding-left: 40px;
 }
 
-li#field_2_90 {
-    color: #E4E3D9;
-}
-
 body input.gfgeo-reset-location-button {
     width: 100%;
     background-color: #37424e;
-    color: #E4E3D9;
+    color: #5a5d60;
     border: 2px solid #37424e;
 }
 
@@ -294,9 +264,6 @@ body .gform_wrapper form div.gform_body ul.gform_fields li.gfield.gfield_html ul
     color: transparent;
 }
 
-.page-id-27 .wrap {
-    max-width: 1190px;
-}
 
 /*------------------progressbar***********/
 
@@ -425,10 +392,10 @@ body .gform_wrapper .ids-form ul.gform_fields li.gfield.custom-radio input[type=
     display: flex;
     padding: 15px;
     margin: 0px;
-    border: 1px solid #E4E3D9;
+    border: 1px solid #ddd;
     transition: .3s ease-in-out;
     justify-content: center;
-    color: #E4E3D9;
+    color: #fff;
 }
 
 .custom-radio .gfield_radio li input[type=radio]:checked+label {
@@ -526,18 +493,18 @@ body .gform_wrapper .ids-form ul li.search-location {
 }
 
 .all-locations {
-    height: 480px;
+    height: 462px;
     overflow: hidden !important;
 }
 
 .all-locations .ginput_container {
     overflow: scroll;
-    height: 450px;
+    height: 438px;
 }
 
 .single-column-form ul.gfield_checkbox li input[type=checkbox]:checked+label,
 .single-column-form ul.gfield_checkbox li input[type=checkbox]:not(:checked)+label {
-    font-weight: 400 !important;
+    font-weight: 400;
     font-size: 15px;
     width: 100%;
     color: #ccc;
@@ -551,14 +518,9 @@ body .gform_wrapper .ids-form ul li.search-location {
 }
 
 .gform_wrapper .ids-form #gform_page_2_1 .gform_page_footer input.button {
-    margin-top: -574px;
+    margin-top: -72px;
     position: relative;
     margin-right: 16px;
-}
-
-.gform_wrapper .ids-form #gform_page_2_1 .gform_page_footer input.button:hover {
-    background-color: #17afc9;
-    color: #fff;
 }
 
 
@@ -746,52 +708,6 @@ h3.gform_title {
     float: left;
 }
 
-::selection {
-    background: #4FADC6;
-    / WebKit/Blink Browsers /
-}
-
-::-moz-selection {
-    background: #4FADC6;
-    / Gecko Browsers /
-}
-
-.gform_wrapper .ids-form li.gfield.gfield_error.gfield_contains_required div.ginput_container,
-.gform_wrapper .ids-form li.gfield.gfield_error.gfield_contains_required label.gfield_label {
-    margin-top: 8px;
-}
-
-#load-more-packages,
-#load-less-packages {
-    box-shadow: none !important;
-    outline: 0;
-}
-
-#load-more-packages:focus,
-#load-more-packages:active,
-#load-less-packages:focus,
-#load-less-packages:active {
-    color: var( --e-global-color-secondary);
-}
-
-li.load-more-packages {
-    float: left;
-    width: 100%;
-    text-align: right;
-}
-
-li.lm-packages ul li,
-#load-less-packages {
-    display: none;
-}
-
-li.lm-packages ul.show-all li,
-li.lm-packages ul li:nth-child(1),
-li.lm-packages ul li:nth-child(2),
-li.lm-packages ul li:nth-child(3) {
-    display: block;
-}
-
 @media screen and (max-width:767px) {
     body .custom-radio .gfield_radio li {
         width: calc(100% - 0px);
@@ -810,12 +726,5 @@ li.lm-packages ul li:nth-child(3) {
     .gform_wrapper .ids-form #gform_page_2_1 .gform_page_footer input.button {
         margin-top: 0px;
         margin-right: 0px;
-    }
-    .custom-checkbox {
-        display: block !important;
-    }
-    .single-column-form ul.gfield_checkbox li input[type=checkbox]:checked+label,
-    .single-column-form ul.gfield_checkbox li input[type=checkbox]:not(:checked)+label {
-        max-width: 98%;
     }
 }

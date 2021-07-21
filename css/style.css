@@ -16,6 +16,15 @@
     font-family: roboto-light;
 }
 
+#ids-form_wrapper.gform_wrapper {
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+#custom-login.elementor-widget:not(:last-child) {
+    margin-bottom: 0px;
+}
+
 .gform_wrapper div.charleft.warningTextareaInfo {
     display: none;
 }
@@ -30,15 +39,80 @@
     box-sizing: border-box;
 }
 
+.welcome-buttons .gfield_radio li label:before,
+.welcome-buttons .gfield_radio li:last-child label:before {
+    content: "dsdsd";
+    background-image: url(/wp-content/uploads/2021/07/user-2.png);
+    width: 110px;
+    background-size: 110px;
+    color: transparent;
+    background-repeat: no-repeat;
+    padding-bottom: 170px;
+    position: absolute;
+}
+
+.welcome-buttons .gfield_radio li:last-child label:before {
+    content: "dsdsd";
+    background-image: url(/wp-content/uploads/2021/07/GUEST.png);
+    width: 140px;
+    background-size: 140px;
+    color: transparent;
+    background-repeat: no-repeat;
+    padding-bottom: 170px;
+    position: absolute;
+}
+
+
+/* div#gf_step_2_2,
+div#gf_step_2_3 {
+    display: none;
+} */
+
+div#gf_step_2_1 {
+    display: none;
+}
+
+.welcome-buttons.custom-radio .gfield_radio li {
+    margin-right: 0px !important;
+}
+
+.welcome-buttons .gfield_radio li:nth-child(2) label:before {
+    content: "dsdsd";
+    background-image: url(/wp-content/uploads/2021/07/register.png);
+    width: 100px;
+    background-size: 100px;
+    color: transparent;
+    background-repeat: no-repeat;
+    padding-bottom: 170px;
+    position: absolute;
+}
+
+.gform_wrapper .ids-form .custom-radio.welcome-buttons .gfield_radio li label {
+    height: 180px;
+    padding-top: 100px;
+    position: relative;
+    font-size: 16px;
+}
+
+body .entry-content a,
+body .entry-summary a,
+body .comment-content a,
+body .widget a,
+body .site-footer body .widget-area a,
+body .posts-navigation a,
+body .widget_authors a strong {
+    box-shadow: none;
+}
+
 .gform_wrapper .ids-form li.gfield.gfield_error.gfield_contains_required div.ginput_container,
 .gform_wrapper .ids-form li.gfield.gfield_error.gfield_contains_required label.gfield_label {
     margin-top: 0px;
 }
 
 .gform_wrapper .ids-form div.validation_error {
-    color: #B8AB9E;
-    border-top: 2px solid #B8AB9E;
-    border-bottom: 2px solid #B8AB9E;
+    color: #da3489;
+    border-top: 2px solid #da3489;
+    border-bottom: 2px solid #da3489;
 }
 
 body .icon {
@@ -49,9 +123,20 @@ body .easygf-tooltip {
     text-decoration: none;
 }
 
+center.custom-html.price-icon {
+    color: #17afc9;
+}
+
 body .easygf-tooltip.icon:after {
-    background-image: url(/wp-content/uploads/2021/05/tooltip.png);
-    background-size: 20px;
+    content: "\3f";
+    background-image: none;
+    top: 0;
+    background: #17afc8;
+    text-align: center;
+    border-radius: 50px;
+    line-height: 21px;
+    cursor: pointer;
+    color: #fff;
 }
 
 .gform_wrapper .gfield_required {
@@ -59,22 +144,247 @@ body .easygf-tooltip.icon:after {
 }
 
 .gform_wrapper .ids-form .validation_message {
-    color: #B8AB9E;
+    color: #da3489;
 }
 
 .gform_wrapper .ids-form li.gfield_error input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
 .gform_wrapper .ids-form li.gfield_error textarea {
-    border: 1px solid #B8AB9E;
+    border: 1px solid #da3489;
 }
 
-.ids-form {
+.gform_wrapper .top_label .gfield_error input.large,
+.gform_wrapper .top_label .gfield_error select.large,
+.gform_wrapper .top_label .gfield_error textarea.textarea {
+    border: 1px solid #da3489 !important;
+}
+
+#custom-login a.login-button:before {
+    content: "sdsd";
+    background-image: url(/wp-content/uploads/2021/07/login-icon.png);
+    background-size: 22px;
+    background-repeat: no-repeat;
+    color: transparent;
+    background-position: center;
+    /* content: "\1f464";
+    font-size: 13px;
+    padding-right: 4px; */
+}
+
+#custom-login a.login-button {
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+#custom-login a:hover {
+    box-shadow: none !important;
+}
+
+.custom-popup #custom-login .custom-popup,
+.custom-popup {
+    max-width: 100%;
+    width: 400px;
+    float: right;
+    position: absolute;
+    right: 0px;
+    color: #fff !important;
+    text-align: center;
+    background: #475562;
+    z-index: 99;
+    animation: popout 0.6s linear 1;
+    display: none;
+}
+.gform_wrapper .ids-form.login-form {
+    float: initial;
+    padding-left: 16px;
+    border: 2px solid #17afc8;
+}
+
+.custom-popup #custom-login .custom-popup .ol,
+.custom-popup .ol{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #35424f;
+    opacity: 0.6;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+
+.custom-popup-inner {
+    border: 3px solid #17afc9;
+    background: #435562;
+    z-index: 99;
+    animation: popout 0.6s linear 1;
+    color: #fff;
+    padding-left: 12px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 12px;
+}
+
+.login-form .gform_heading .gform_title:before {
+    content: "sdsds";
+    background: url(/wp-content/uploads/2021/07/login-icon.png);
+    background-size: 27px;
+    background-repeat: no-repeat;
+    color: transparent;
+    width: 27px;
+    background-position: center;
+    height: 27px;
+    display: inline-grid;
+    margiin-right: 12px;
+    margin-right: 7px;
+}
+
+.gform_wrapper .login-form h3.gform_title {
+    text-transform: uppercase;
+}
+
+#custom-login .custom-popup.active {
+    z-index: 2;
+    animation: pop 0.6s linear 1;
+    display: block;
+}
+
+#custom-login a.custom-close:before {
+    display: none;
+}
+
+.custom-popup-inner .row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.custom-popup-inner .col-left,
+.custom-popup-inner .col-right {
+    width: 100%;
+}
+
+.custom-popup-inner .col-left {
+    margin-right: 12px;
+}
+
+#gform_page_2_1 ul {
+    display: flex;
+}
+
+#gform_page_2_1 ul li:nth-child(2) {
+    width: 438px;
+    max-width: 100%;
+}
+
+#field_2_127 {
+    padding-left: 24px !important;
+}
+
+#gform_page_2_1 ul li {
+    width: 100%;
+}
+
+.custom-popup-inner h3 {
+    padding-top: 10px;
+    font-weight: 700 !important;
+    color: #fff;
+}
+
+.custom-popup-inner label {
+    font-size: .8rem;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 100;
+}
+
+.custom-popup-inner .col-left span,
+.custom-popup-inner .col-right span {
+    background-color: #37424e;
+    width: 100%;
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 8px;
+}
+
+.custom-popup-inner .col-right span {
+    /* padding-left: 40px; */
+    position: relative;
+}
+
+a.custom-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 24px;
+    padding: 4px 16px;
+    color: #17afc8 !important;
+}
+
+@keyframes pop {
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes popout {
+    0% {
+        transform: scale(0)
+    }
+    50% {
+        transform: scale(0)
+    }
+}
+
+
+/*
+
+.popout { animation: popout .2s ease;}
+.popin  { animation: popin .2s ease;} */
+
+
+/* @keyframes popout {
+    from {
+        transform: scale(0)
+    }
+    90% {
+        transform: scale(1.1)
+    }
+    to {
+        transform: scale(1)
+    }
+}
+
+@keyframes popin {
+    from {
+        transform: scale(1)
+    }
+    10% {
+        transform: scale(1.1)
+    }
+    to {
+        transform: scale(0)
+    }
+} */
+
+#custom-login .custom-popup h4 {
+    color: #fff;
+    padding: 5em;
+}
+
+
+/* .ids-form {
     background: #435562;
     box-shadow: 0 1px 6px 0px rgba(32, 33, 36, 0.28);
     padding: 50px;
-}
+} */
 
 .gform_wrapper .ids-form .top_label .label-font .gfield_label {
     font-weight: 100;
+}
+
+.gform_wrapper .ids-form.login-form .top_label .label-font .gfield_label {
+    font-weight: bold;
 }
 
 .gform_wrapper .ids-form .label-hide label.gfield_label {
@@ -95,21 +405,26 @@ body .ids-form .ginput_container_gfgeo_address.gfgeo-address-locator-wrapper inp
     padding-left: 8px!important;
 }
 
-input[type="text"]::placeholder{
+input[type="text"]::placeholder {
     color: #E4E3D9;
 }
-input[type="text"]::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #E4E3D9;
-    opacity: 1; /* Firefox */
-  }
-  input[type="text"]:-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: #E4E3D9;
-  }
-  
-  ::-ms-input-placeholder { /* Microsoft Edge */
-    color: #E4E3D9;
-  }
 
+input[type="text"]::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #E4E3D9;
+    opacity: 1;
+    /* Firefox */
+}
+
+input[type="text"]:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #E4E3D9;
+}
+
+ ::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #E4E3D9;
+}
 
 .gform_wrapper .ids-form input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
 .gform_wrapper .ids-form ul.gform_fields li.gfield div.ginput_complex span.ginput_left select,
@@ -139,10 +454,12 @@ input[type="text"]::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 }
 
 .gform_wrapper .ids-form .gform_page_footer .button.gform_next_button,
+.gform_wrapper .ids-form .button.gform_next_button,
 .gform_wrapper .ids-form .gform_page_footer #gform_submit_button_2 {
     border: 2px solid #17afc9;
     color: #17afc9;
     border-radius: 0;
+    margin-right: 0px;
 }
 
 .gform_wrapper .ids-form .gform_page_footer #gform_submit_button_2:hover {
@@ -151,19 +468,46 @@ input[type="text"]::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 }
 
 .gform_wrapper .ids-form .gform_page_footer .button.gform_next_button,
+.gform_wrapper .ids-form .button.gform_next_button,
 .gform_wrapper .ids-form .gform_page_footer input[type=submit] {
     float: right;
+    margin-right: 0px;
+}
+
+body .gform_wrapper ul li.gfield.gfield_html.add-preview img {
+    width: 100%;
+}
+
+body .gform_wrapper.gform_validation_error .gform_body ul li.gfield.gfield_error:not(.gf_left_half):not(.gf_right_half) {
+    max-width: calc(100% - 0px)!important;
+}
+
+div.ginput_container_name span.name_last {
+    padding-right: 0px;
+}
+
+.gform_wrapper .ids-form .button.gform_next_button {
+    width: 100%;
+    background: transparent;
 }
 
 .ids-form .ginput_container_date {
     position: relative;
 }
 
-.ids-form .ginput_container_date img {
+.gform_wrapper .ids-form ul.gform_fields li.gf_right_half.gfield,
+.gform_wrapper .ids-form ul.gform_fields li.gf_right_third.gfield,
+.gform_wrapper .ids-form ul.gform_fields li.gfield.padding-r-0 {
+    padding-right: 0px;
+}
+
+body .gform_wrapper .ids-form .ginput_container_date img {
     position: absolute;
     top: 0;
     left: 0;
-    margin: 12px;
+    margin: 7px;
+    width: 25px!important;
+    height: 25px!important;
 }
 
 .ginput_container_date input {
@@ -182,14 +526,34 @@ input[type="text"]::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 
 .gform_wrapper .ids-form .gform_page_footer input.button,
 .gform_wrapper .ids-form .gform_page_footer .button {
-    width: 48%;
+    width: calc(50% - 8px);
+    max-width: 523px;
 }
 
 .gform_wrapper .ids-form .gform_page_footer input.button:hover,
-.gform_wrapper .ids-form .gform_page_footer .button:hover {
+.gform_wrapper .ids-form .gform_page_footer .button:hover,
+.gform_wrapper .ids-form .button.gform_next_button:hover {
     background-color: #17afc9;
     border-color: #17afc9;
     color: #fff;
+}
+
+.alert-msg {
+    text-align: center;
+    padding-left: 16px;
+    padding-right: 16px;
+    color: #fff;
+}
+
+.alert-inner img {
+    width: 80px;
+}
+
+.alert-msg h2 {
+    color: #4fadc6;
+    line-height: 1.5em;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 .icon-d .ginput_container.ginput_container_text:before {
@@ -208,9 +572,9 @@ input[type="text"]::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 .gfgeo-reset-location-button-wrapper:before {
     position: absolute;
     content: "dsdsd";
-    background-image: url(/wp-content/uploads/2021/05/icon-reset2.png);
+    background-image: url(/wp-content/uploads/2021/06/07.1_Icon_X_Filter_zuruecksetzen_grau.png);
     background-size: 20px;
-    width: 100px;
+    width: 20px;
     /* height: 40px; */
     background-repeat: no-repeat;
     color: transparent;
@@ -296,7 +660,7 @@ body input.gfgeo-reset-location-button:hover,
     content: "sdsd";
     position: absolute;
     left: 10px;
-    background-image: url(/wp-content/uploads/2021/05/icon-humber.png);
+    background-image: url(/wp-content/uploads/2021/06/08.2_Icon_Liste_anzeigen_tyrkis.png);
     color: transparent;
     background-repeat: no-repeat;
     background-size: 26px;
@@ -307,7 +671,7 @@ body input.gfgeo-reset-location-button:hover,
     content: "sdsd";
     position: absolute;
     left: 10px;
-    background-image: url(/wp-content/uploads/2021/05/icon-loaction.png);
+    background-image: url(/wp-content/uploads/2021/06/01.2_Icon_airtango_livepoint_tyrkis.png);
     color: transparent;
     background-repeat: no-repeat;
     background-size: 15px;
@@ -490,8 +854,7 @@ body .gform_wrapper .ids-form ul.gform_fields li.gfield.custom-radio input[type=
 }
 
 .custom-radio .gfield_radio li {
-    width: calc(33% - 15px);
-    margin-right: 15px !important;
+    flex: 0 32%;
 }
 
 .gform_wrapper .ids-form .custom-radio .gfield_radio {
@@ -599,9 +962,14 @@ body .gform_wrapper .ids-form ul li.search-location {
 }
 
 .gform_wrapper .ids-form #gform_page_2_1 .gform_page_footer input.button {
-    margin-top: -574px;
+    /* margin-top: -574px;
     position: relative;
-    margin-right: 16px;
+    margin-right: 16px; */
+    /* display:none; */
+}
+
+#gform_next_button_custom {
+    display: none;
 }
 
 .gform_wrapper .ids-form #gform_page_2_1 .gform_page_footer input.button:hover {
@@ -702,6 +1070,7 @@ body .gform_wrapper .ids-form ul li.search-location {
     margin: 18px 0;
     line-height: 0;
     height: 160px;
+    text-align: center;
 }
 
 .ginput_container_checkbox::-webkit-scrollbar-track,
@@ -736,7 +1105,7 @@ ul.custom-list.all-locations {
     float: left;
     width: 84%;
     margin-right: 10px;
-    overflow:hidden;
+    overflow: hidden;
     height: 112px;
 }
 
@@ -765,12 +1134,16 @@ ul.custom-list.all-locations {
 }
 
 .gform_wrapper .ids-form .gfield_html.gfield_no_follows_desc {
-    margin-top: 30px;
+    margin-top: 16px;
+}
+
+.tooltip_content a {
+    color: green !important;
 }
 
 #field_2_64 .custom-html .amount-preview,
 #field_2_64 .custom-html .currency {
-    display: none;
+    /* display: none; */
 }
 
 .gform_wrapper .ids-form input[type="button"]:focus {
@@ -866,6 +1239,7 @@ li.lm-packages ul li:nth-child(3) {
 .ad-preview-right {
     line-height: 0;
 }
+
 #qr-image {
     display: flex;
     align-items: center;
@@ -877,9 +1251,10 @@ li.lm-packages ul li:nth-child(3) {
     width: 100%;
 }
 
-body .charleft.ginput_counter{
-    color:#ccc !important;
+body .charleft.ginput_counter {
+    color: #ccc !important;
 }
+
 .ad-preview-left.middle-over-text {
     width: 100%;
 }
@@ -897,34 +1272,40 @@ body .charleft.ginput_counter{
     padding-top: 35px;
 }
 
-li.qr-image .ginput_preview strong{
+li.qr-image .ginput_preview strong {
     color: #aaa;
     font-weight: normal;
 }
-#gform_multifile_messages_2_41{
-    display:none;
+
+#gform_multifile_messages_2_41 {
+    /* display: none; */
 }
+
 .pac-container,
 #field_2_78 input,
 #field_2_76 select,
-#field_2_27 input{
+#field_2_27 input {
     /* background-color: #9fa0a4 !important; */
 }
-.pac-container{
-    background-color: #37424e !important;  
+
+.pac-container {
+    background-color: #37424e !important;
 }
-.pac-container .pac-item{
+
+.pac-container .pac-item {
     border-color: #37424e !important;
     background-color: #37424e !important;
 }
-.pac-container .pac-item:hover{
+
+.pac-container .pac-item:hover {
     background-color: #4FADC6 !important;
 }
-.pac-container .pac-item span{
+
+.pac-container .pac-item span {
     color: #E4E3D9 !important;
 }
 
-#field_2_76 select option{
+#field_2_76 select option {
     background-color: #37424e;
 }
 
@@ -938,26 +1319,242 @@ li.qr-image .ginput_preview strong{
     color: #E4E3D9 !important;
     text-shadow: none !important;
 }
-.ui-datepicker-calendar td a:hover{
+
+.ui-datepicker-calendar td a:hover {
     background: #4FADC6 !important;
 }
+
 body .tooltipster-sidetip .tooltipster-content {
     line-height: 20px;
     padding: 10px 14px;
 }
+
 .custom-radio.inline-list ul {
     display: list-item !important;
 }
+
 .custom-radio.inline-list ul li {
     float: left;
     width: 10%;
 }
-.custom-radio.inline-list ul li label{
+
+#field_2_131 ul li {
+    margin-right: 15px !important;
+}
+
+.custom-radio.inline-list ul li label {
     height: 45px !important;
 }
+
+.description-text {
+    color: #fff;
+}
+
+body .custom-radio .gfield_radio li.gchoice_2_117_0 {
+    width: 92% !important;
+}
+
+body .custom-radio .gfield_radio li.gchoice_2_117_0 label {
+    height: auto !important;
+}
+
+
+/* .col-right span:before {
+    content: "sdssds";
+    background: url(/wp-content/uploads/2021/06/06.3_Icon_Kalender_Zeitraum_tyrkis.png);
+    background-size: 18px;
+    background-repeat: no-repeat;
+    color: transparent;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    margin: 9px 0px;
+    left: 9px;
+    top: 1px;
+} */
+
+.custom-radio.inline-list ul#input_2_118 li label {
+    background-color: #37424e;
+    border: none;
+    color: #17afc9;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.custom-radio.inline-list ul#input_2_118 li label:hover,
+.custom-radio.inline-list ul#input_2_118 li label:focus,
+.custom-radio.inline-list ul#input_2_118 li input[type=radio]:checked+label {
+    background-color: #17afc9;
+    color: #fff;
+}
+
+.gform_wrapper .ids-form .custom-radio.custom-flex .gfield_radio {
+    display: flex !important;
+}
+
+.custom-radio.inline-list.custom-flex ul#input_2_118 li {
+    flex: 0 49%;
+}
+
+
+/* .custom-radio.inline-list ul#input_2_118 li {
+    width: 48.4%;
+    margin-bottom: 20px;
+} */
+
+.custom-radio.inline-list ul li.gchoice_2_118_0:before {
+    position: absolute;
+    content: "dsdsd";
+    background-image: url(/wp-content/uploads/2021/06/Icon_qr_Cod.png);
+    background-size: 22px;
+    width: 22px;
+    height: 22px;
+    background-repeat: no-repeat;
+    color: transparent;
+    left: 10px;
+    top: 12px;
+}
+
+.custom-radio.inline-list ul li.gchoice_2_118_1:before {
+    position: absolute;
+    content: "dsdsd";
+    background-image: url(/wp-content/uploads/2021/06/Icon_Logo_Bild_hochladen.png);
+    background-size: 25px;
+    width: 25px;
+    height: 21px;
+    background-repeat: no-repeat;
+    color: transparent;
+    left: 10px;
+    top: 12px;
+}
+
+.custom-radio.inline-list ul li:hover::before,
+.gfgeo-reset-location-button-wrapper:hover::before,
+.custom-radio.inline-list ul li.checked:before,
+.gfgeo-reset-location-button-wrapper.checked:before {
+    filter: brightness(0) invert(1);
+    z-index: 9999;
+}
+
+
+/*****checkbox css****/
+
+.custom-checkbox2 .gfield_checkbox li {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.custom-checkbox2 .gfield_checkbox li:first-child {
+    margin-top: 10px;
+}
+
+.custom-checkbox2 .gfield_checkbox li:last-child {
+    margin-bottom: 0;
+}
+
+.custom-checkbox2 .gfield_checkbox li label {
+    padding-left: 40px;
+    cursor: pointer;
+}
+
+.custom-checkbox2 .gfield_checkbox li label:before,
+.custom-checkbox2 .gfield_checkbox li label:after {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 0;
+}
+
+.gform_wrapper ul.gform_fields li.gfield.load-more-packages {
+    padding-right: 0px;
+}
+
+.custom-checkbox2 .gfield_checkbox li label:before {
+    opacity: 0;
+    z-index: 1;
+    transition: all 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.custom-checkbox2 .gfield_checkbox li label:after {
+    z-index: 0;
+    background: #37424e;
+}
+
+.custom-checkbox2 .gfield_checkbox li label:after {
+    width: 21px;
+    height: 21px;
+    border-radius: 3px;
+}
+
+.custom-checkbox2 .gfield_checkbox li label:before {
+    width: 6px;
+    height: 15px;
+    border: solid #17afc9;
+    border-width: 0 3px 3px 0;
+    left: 8px;
+    top: 2px;
+    transform: rotate(45deg) scale(0);
+}
+
+.custom-checkbox2 .gfield_checkbox input[type="checkbox"]:checked+label:before {
+    opacity: 1;
+    transform: rotate(45deg) scale(1);
+}
+
+.custom-checkbox2 input[type="checkbox"] {
+    margin-right: 20px;
+}
+
+.custom-checkbox2 input[type="checkbox"]+label {
+    font-size: 18px;
+}
+
+#gform_16 .gform_footer.top_label {
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.gform_wrapper .ids-form.login-form {
+    float: initial;
+    padding-left: 16px;
+}
+
+a.custom-close {
+    display: none;
+}
+
+div.gfield_description {
+    color: #fff;
+    font-style: italic;
+}
+
+.gform_wrapper .ids-form  h3.gform_title{
+    margin:0 !important;
+    padding: 10px 0 6px 0;
+}
+
+/* .gform_wrapper .custom-checkbox2 ul.gfield_checkbox li input[type=checkbox]:checked+label {
+    color: #17afc9;
+} */
+
+@media screen and (max-width:840px) {
+    .custom-popup-inner .row {
+        display: block;
+    }
+    .custom-popup-inner .col-left,
+    .custom-popup-inner .col-right {
+        margin-bottom: 10px !important;
+        display: flow-root;
+    }
+}
+
 @media screen and (max-width:767px) {
     body .custom-radio .gfield_radio li {
-        width: calc(100% - 0px);
+        width: calc(100% - 0px) !important;
         margin-right: 0px !important;
     }
     .gfgeo-reset-location-button-wrapper:before {
@@ -968,7 +1565,9 @@ body .tooltipster-sidetip .tooltipster-content {
     }
     .gform_wrapper .ids-form .gform_page_footer input.button,
     .gform_wrapper .ids-form .gform_page_footer .button {
-        width: auto;
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 10px;
     }
     .gform_wrapper .ids-form #gform_page_2_1 .gform_page_footer input.button {
         margin-top: 0px;
@@ -981,8 +1580,8 @@ body .tooltipster-sidetip .tooltipster-content {
     .single-column-form ul.gfield_checkbox li input[type=checkbox]:not(:checked)+label {
         max-width: 98%;
     }
-    #address-line-1, 
-    #address-line-2{
+    #address-line-1,
+    #address-line-2 {
         font-size: 269%;
         padding-left: 5px;
         float: left;
@@ -997,7 +1596,7 @@ body .tooltipster-sidetip .tooltipster-content {
     #qr-image {
         height: 40px;
     }
-    .add-preview-html{
+    .add-preview-html {
         font-size: 27%;
     }
     .ad-preview-right {
@@ -1005,5 +1604,27 @@ body .tooltipster-sidetip .tooltipster-content {
     }
     #address-line-1 {
         padding-top: 10px;
+    }
+    #gform_page_2_1 ul {
+        display: block;
+    }
+    /* #gform_page_2_1 ul li:nth-child(2) {
+        width: 100%;
+        padding-right: 0px;
+    } */
+    .custom-radio .gfield_radio li {
+        flex: 0 100%;
+    }
+}
+
+@media only screen and (max-width: 641px) {
+    .custom-radio.inline-list.custom-flex ul#input_2_118 li {
+        flex: 0 100%;
+    }
+}
+
+@media only screen and (min-width: 641px) {
+    .gform_wrapper .ids-form .top_label li ul.gfield_radio {
+        width: calc(100% + 0px);
     }
 }
