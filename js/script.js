@@ -341,6 +341,7 @@ jQuery(document).ready(function(){
     jQuery('.ids-form .duration input').trigger('change');
     jQuery('.ids-form .add-views input').trigger('change');
     jQuery('.ids-form .overlays input').trigger('change');
+    jQuery('.ids-form li.manual-days select').trigger('change');
 
     var AddressLine1 = jQuery(".add-line-1 input").val();
     var AddressLine2 = jQuery(".add-line-2 input").val();
@@ -367,12 +368,14 @@ jQuery(document).ready(function(){
       }
     });
 
-    if( jQuery("#input_2_50").val() != "" ){
-      jQuery("#input_2_50").attr("readonly", "readonly");  
+    if( jQuery("#input_2_156").val() != "" ){
+      if( !jQuery("li#field_2_156").hasClass("gfield_error") && !jQuery("li#field_2_157").hasClass("gfield_error") ){
+        jQuery("#input_2_156").attr("readonly", "readonly");  
+      }
     }
 
-    if( jQuery("#input_2_98").val() != "" ){
-      jQuery("#input_2_98").attr("readonly", "readonly");  
+    if( jQuery("#input_2_157").val() != "" ){
+      jQuery("#input_2_157").attr("readonly", "readonly");  
     }
 
     GF_Geo.geocoder_fields[ "2_79"].gfgeo_map_marker_url = "#";
@@ -382,9 +385,9 @@ jQuery(document).ready(function(){
   
   });
 
-  jQuery('body').on( 'keyup', '#input_2_50', function(){
+  jQuery('body').on( 'keyup', '#input_2_156', function(){
     var val = jQuery(this).val();
-    var elem =  jQuery("#input_2_132");
+    var elem =  jQuery("#input_2_157");
     elem.attr("readonly", "readonly");  
     elem.val(val);
   });
@@ -396,6 +399,8 @@ jQuery(document).ready(function(){
     self.attr( 'disabled', true );
     var AddressLine1 = jQuery(".add-line-1 input").val();
     var AddressLine2 = jQuery(".add-line-2 input").val();
+    var domain       = jQuery(".domain input").val();
+
     var img = '';
     var uploadedFiles = jQuery('input[name="gform_uploaded_files"]').val();
     var tempFile= "";
@@ -429,7 +434,8 @@ jQuery(document).ready(function(){
       'action'       : 'create_image_preview',
       'AddressLine1' : AddressLine1,
       'AddressLine2' : AddressLine2,
-      'logo'         : tempFile
+      'logo'         : tempFile,
+      'domain'       : domain
     };
     jQuery.post(livemessagesObj.adminAjax, data, function (response) {
       // console.log( response );
@@ -458,10 +464,11 @@ jQuery(document).ready(function(){
   jQuery('body').on( 'change', '.ids-form #input_2_125', function(){
     var orderID = jQuery( this ).val();
     // Creating image
+    var domain       = jQuery(".domain input").val();
     var data = {
       'action'       : 'get_order_details',
-      'order_id'     : orderID
-      
+      'order_id'     : orderID,
+      'domain'       : domain
     };
     jQuery.post(livemessagesObj.adminAjax, data, function (response) {
       jQuery('#order-details-preview').html(response);
@@ -496,6 +503,12 @@ jQuery(document).ready(function(){
     if ( jQuery(this).is(':checked') ){
       jQuery(this).parent().addClass('checked');
     }
+  });
+
+
+  jQuery('body').on( 'change', '.ids-form li.manual-days select', function(){
+    jQuery('.ids-form .duration-previe-r').text( jQuery(this).val() );
+    // jQuery('.ids-form .duration input').val( jQuery(this).val() );
   });
 
 });
@@ -534,6 +547,13 @@ jQuery(document).on('gform_page_loaded', function(event, form_id, current_page){
   });
 
   // Change upload logo text
-  jQuery('.qr-image .gform_drop_instructions').text('Logo oder Grafik hochladen');
+  jQuery('.qr-image .gform_drop_instructions').text('Logo oder Grafik hochladen');  
+
+  // setTimeout(function(){ 
+  //     if ( typeof(jQuery('li.lm-form-title:visible').html()) != 'undefined'){
+  //       jQuery('.gform_heading .gform_title').html( 'Form title' );
+  //     }
+  //   }, 3000
+  // );
 
 });
