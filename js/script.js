@@ -1,7 +1,16 @@
 jQuery(document).ready(function(){
 
+  jQuery(document).on( 'keypress', '.gform_wrapper', function (e) {
+      var code = e.keyCode || e.which;
+      if ( code == 13 && ! jQuery( e.target ).is( 'textarea,input[type="submit"],input[type="button"]' ) ) {
+          e.preventDefault();
+          return false;
+      }
+  } );
+
   setTimeout( function(){
     jQuery('.ids-form #input_2_125').trigger('change');
+    jQuery(document).trigger('gform_page_loaded', [ 2, 2]);
   },100);
 
   // Show login form
@@ -229,6 +238,9 @@ jQuery(document).ready(function(){
 
       /* Hide loading image */
       jQuery('.loading-results').hide();
+      var val = jQuery('.ids-form input[name="input_165"]:checked').val();
+      jQuery( ".ids-faq.monitre input[value='"+val+"']" ).prop( "checked", true );
+      jQuery( ".ids-faq.monitre input[value='"+val+"']" ).trigger( "click" );
     }).fail(function () {
       //alert('oops something went wrong while saving data');
       console.log('oops something went wrong while saving data');
@@ -286,6 +298,15 @@ jQuery(document).ready(function(){
 
     /* Calculate Sichtkontakte */
     var packageValue = jQuery('.ids-form .add-views input').val();
+    var array = packageValue.split(".");
+    if( array.length > 2 ){
+      var num = [];
+      for( i=0; i< parseInt(array.length)-1; i++ ){
+        num.push( array[i] ); 
+      }
+      packageValue = num.join("")+"."+array[parseInt(array.length)-1];
+    }
+
     if( isNaN(packageValue) != true && packageValue != "" && typeof(packageValue) != "undefined" ){
       packageValue = packageValue.replace(".","");
       valueP = Math.floor( ( Sichtkontakte  * parseInt( packageValue.replace(".","") ) ) / parseInt( totalMoniter ) );
@@ -309,6 +330,15 @@ jQuery(document).ready(function(){
       return;
     }
     tage = tage.replace( ",", "." );
+    var array = tage.split(".");
+    if( array.length > 2 ){
+      var num = [];
+      for( i=0; i< parseInt(array.length)-1; i++ ){
+        num.push( array[i] ); 
+      }
+      tage = num.join("")+"."+array[parseInt(array.length)-1];
+    }
+
     tage = Math.ceil(tage);
     jQuery(this).val( tage );
     jQuery('.duration-preview').text( jQuery(this).val() );
@@ -342,6 +372,7 @@ jQuery(document).ready(function(){
     jQuery('.ids-form .add-views input').trigger('change');
     jQuery('.ids-form .overlays input').trigger('change');
     jQuery('.ids-form li.manual-days select').trigger('change');
+    jQuery('.ids-form input[name="input_165"]:checked').trigger('change');
 
     var AddressLine1 = jQuery(".add-line-1 input").val();
     var AddressLine2 = jQuery(".add-line-2 input").val();
@@ -381,6 +412,11 @@ jQuery(document).ready(function(){
     GF_Geo.geocoder_fields[ "2_79"].gfgeo_map_marker_url = "#";
     setTimeout(function(){ 
       jQuery('.ids-form .search-location .search-filter-button').trigger('click');
+      // Auto select frequency
+      var frequency = jQuery('.ids-form input[name="input_165"]:checked').val();
+      var ID = jQuery( ".frequency-radios input[value='"+frequency+"']" ).attr("id");
+      jQuery("#"+ID).prop( "checked", true );
+      jQuery("#"+ID).trigger( "change" );
     }, 500);
   
   });
@@ -555,5 +591,16 @@ jQuery(document).on('gform_page_loaded', function(event, form_id, current_page){
   //     }
   //   }, 3000
   // );
+
+  jQuery('body').on( 'click', '.ids-form input[name="input_165"]', function(){
+    var val = jQuery( this ).val();
+    jQuery(".days-frequency-preview").html(val);
+  });
+
+  jQuery('body').on( 'change', '.ids-form input[name="input_radio"]', function(){
+    var val = jQuery( this ).val();
+    jQuery( "#field_2_165 input[value='"+val+"']" ).prop( "checked", true );
+    jQuery( "#field_2_165 input[value='"+val+"']" ).trigger( "click" );
+  });
 
 });

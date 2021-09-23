@@ -281,7 +281,7 @@ class customizedLiveMessages{
     wp_enqueue_style( 'lm-style', plugin_dir_url( __FILE__ ). 'css/style.css?'.time() );
     // wp_enqueue_style( 'lm-fontawesome', plugin_dir_url( __FILE__ ). 'font-icon/fontawesome.min.css?'.time() );
     // wp_enqueue_style( 'lm-fontawesome', 'http://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css?'.time() );    
-    wp_enqueue_script( 'lm-js', plugin_dir_url( __FILE__ ). 'js/script.js', array('jquery'), '', true );
+    wp_enqueue_script( 'lm-js', plugin_dir_url( __FILE__ ). 'js/script.js?v='.time(), array('jquery'), '', true );
     wp_localize_script( 'lm-js', 'livemessagesObj', array( 
         'adminAjax' => admin_url( 'admin-ajax.php' ),
         'homeURL'   => home_url(),
@@ -293,7 +293,7 @@ class customizedLiveMessages{
   ## Live board summary
   public function live_board_summary($args){
     $output = "";
-    if( !empty($args['label']) ){
+    if( !empty($args['label']) ){ 
       $output .="<label class='gfield_label'>".$args['label']."</label>";
     }
 
@@ -318,6 +318,10 @@ class customizedLiveMessages{
                   <tr title='". $this->get_description_by_class('screens-available')  ."'>
                     <td><span class='screens-available-preview'>-</span></td>
                     <td>". $this->get_title_by_class('screens-available')  ."</td>
+                  </tr>
+                  <tr title='". $this->get_description_by_class('days-frequency')  ."'>
+                    <td><span class='days-frequency-preview'>-</span></td>
+                    <td>". $this->get_title_by_class('days-frequency')  ."</td>
                   </tr>";
 
     if( $showCOmpleteBoard === true ){
@@ -342,7 +346,45 @@ class customizedLiveMessages{
     $output .="</tbody>
                 </table>
               </center>";
+
     if( $showCOmpleteBoard === true ){
+
+      if( $args['field'] != '64' &&  $args['field'] != '152' ){
+          $output .='<span class="ids-faq monitre">
+            <span class="gfield single-column-form">
+              <label class="gfield_label">Auswahl der Frequenz pro Monitor</label>
+              <div class="ginput_container ginput_container_radio frequency-radios" id="test-'.$args['field'].'">
+                <ul class="gfield_radio" id="input_2_165">
+                  <li class="choice_input_radio_0">
+                    <input name="input_radio" type="radio" value="1" id="choice_input_radio_0">
+                    <label for="choice_input_radio_0" id="label_input_radio_0">Längere Laufzeit </label>
+                    <span>1 x pro h</span>
+                  </li>
+                  <li class="choice_input_radio_1" style="padding: 0 10px !important;">
+                    <input name="input_radio" type="radio" value="2" id="choice_input_radio_1">
+                    <label class="custom-child"for="choice_input_radio_1" id="label_input_radio_1"> Basis Laufzeit </label>
+                    <span>2 x pro h</span>
+                  </li>
+                  <li class="choice_input_radio_2">
+                    <input name="input_radio" type="radio" value="4" id="choice_input_radio_2">
+                    <label for="choice_input_radio_2" id="label_input_radio_2">Steigerung Werbedruck </label>
+                    <span>4 x pro h</span>
+                  </li>
+                  <li class="choice_input_radio_3">
+                    <input name="input_radio" type="radio" value="6" id="choice_input_radio_3">
+                    <label for="choice_input_radio_3" id="label_input_radio_3">Maximaler Werbedruck </label>
+                    <span>6 x pro h</span>
+                  </li>
+                </ul>
+              </div>
+            </span>
+          </span>';
+        }
+        $output .= '<span class="ids-faq currency">
+                    <span class="gfield single-column-form">
+                      <label class="gfield_label">Ihre investition</label>
+                    </span>
+                  </span>';
         $output .="<center class='custom-html price-icon' style='font-size:20px;padding: 20px;margin-bottom: 10px; font-weight: bold'>€ <span class='amount-preview'>-</span></center>";
     }
     return $output;
@@ -432,7 +474,16 @@ class customizedLiveMessages{
   public function custom_login_lm(){
     
     if(is_user_logged_in()){
-      return '';
+      global $current_user;
+      wp_get_current_user() ;
+      $username = $current_user->first_name.' '.$current_user->last_name;
+      if(
+        empty($current_user->first_name) && 
+        empty($current_user->last_name) 
+      ){
+        $username = $current_user->user_email;
+      }
+      return '<a style="text-transform:initial" class="login-button">Angemeldet als '.$username.'</a>';
     }
     $output = '<a class="login-button">Login</a>
                 <div class="custom-popup">
@@ -1364,7 +1415,11 @@ class customizedLiveMessages{
 
   ## Get post custom fields
   public function getCustomPost( $posttitle ){
-    
+
+    if( $_SERVER['HTTP_SEC_FETCH_DEST'] != "iframe" ){
+      return;
+    }
+
     global $wpdb;
     $postid = $wpdb->get_var( "SELECT ID FROM $wpdb->posts WHERE post_title = '" . $posttitle . "' AND post_type='iframe-settings' " );
     if( empty($postid) ){
@@ -1417,6 +1472,8 @@ class customizedLiveMessages{
     $datepickerIcon  = get_post( get_post_meta( $postid, 'datepicker_icon', true ) );
     $humberIcon      = get_post( get_post_meta( $postid, 'humber_icon', true ) );
     $locationIcon    = get_post( get_post_meta( $postid, 'location_icon', true ) );
+    $monitreIcon    = get_post( get_post_meta( $postid, 'moniter_image_icon', true ) );
+    $currencyIcon    = get_post( get_post_meta( $postid, 'currency_image_icon', true ) );
     $refreshIcon     = get_post( get_post_meta( $postid, 'refresh_icon', true ) );
     $qrIcon          = get_post( get_post_meta( $postid, 'qr_code_icon', true ) );
     $imageUploadIcon = get_post( get_post_meta( $postid, 'image_upload_icon', true ) );    
@@ -1438,11 +1495,12 @@ class customizedLiveMessages{
     ## Listing
     $listingColor       = get_post_meta( $postid, 'listing_color', true );
     $listingChecked     = get_post_meta( $postid, 'listing_checked_color', true );
-
+    $listinghover       = get_post_meta( $postid, 'filter_location_hover', true );
+    $listinghoverText      = get_post_meta( $postid, 'filter_location_text_hover', true );
     ?>
     <style>
       <?php 
-      if( !empty($formfontFamily) ){
+      if( !empty($formfontFamily) && $formfontFamily->post_mime_type == 'application/x-font-truetype' ){
       ?>
       @font-face {
         font-family: <?php echo $formfontFamily->post_title; ?>;
@@ -1479,8 +1537,15 @@ class customizedLiveMessages{
       .ids-form.theme-color,
       body .elementor-27 .elementor-element.elementor-element-300dd28c > .elementor-background-overlay,
       body #custom-login .custom-popup,
-      body .custom-popup-inner{
-          background: <?php echo $formBackground; ?>;
+      body .custom-popup-inner,
+      body{
+        background: <?php echo $formBackground; ?> !important;
+      }
+      .elementor-27 .elementor-element.elementor-element-25ea33c5:not(.elementor-motion-effects-element-type-background) > .elementor-widget-wrap, .elementor-27 .elementor-element.elementor-element-25ea33c5 > .elementor-widget-wrap > .elementor-motion-effects-container > .elementor-motion-effects-layer{
+        background: <?php echo $formBackground; ?> !important;
+      }
+      .elementor-27 .elementor-element.elementor-element-300dd28c{
+        box-shadow:none !important;
       }
       .ids-form.theme-color .gform_title,
       body #custom-login a,
@@ -1520,8 +1585,11 @@ class customizedLiveMessages{
           font-size: <?php echo $HTMLFontSize; ?>px;
           color: <?php echo $HTMLColor; ?>;
       }
+
+      /* .gform_wrapper .top_label .ids-form .theme-color .custom-label label.gfield_label, */
       .gform_wrapper .ids-form.theme-color .top_label .gfield_label,
       .gform_wrapper .ids-form .field_sublabel_below .ginput_complex.ginput_container label,
+      .gform_wrapper .ids-form .field_sublabel_above .ginput_complex.ginput_container label,
       .col-3 span p{
           color: <?php echo $fieldLabelColor; ?>;
       }
@@ -1598,6 +1666,7 @@ class customizedLiveMessages{
       }
       .gform_wrapper .top_label .custom-label label.gfield_label{
         background: <?php echo $feildBackground; ?> !important;
+        color: <?php echo $buttonColor; ?> !important;
       }
       body input.search-filter-button,
       .custom-radio.inline-list ul#input_2_118 li label {
@@ -1691,26 +1760,35 @@ class customizedLiveMessages{
     center.custom-html.price-icon {
         color: <?php echo $summaryLabel; ?>;;
     }
-    center.custom-html span {
+    center.custom-html span,
+    .single-column-form .gfield_radio li span{
       color: <?php echo $summaryLabel; ?>;
     }
     .custom-html p{
       color: <?php echo $summaryDescription; ?>;
     }
-    center.custom-html{
+    center.custom-html,
+    .frequency-radios{
       background: <?php echo $summaryBackground; ?> !important;
       border:2px solid <?php echo $summaryBorder; ?>;
     }
     .single-column-form ul.gfield_checkbox li input[type=checkbox]:checked+label,
+    .single-column-form ul.gfield_radio li input[type=radio]:checked+label,
     .single-column-form [type="checkbox"]:not(:checked)+label:after,
     .single-column-form [type="checkbox"]:checked+label:after,
+    .single-column-form [type="radio"]:not(:checked)+label:after,
+    .single-column-form [type="radio"]:checked+label:after,
     #field_2_37 .gfield_checkbox p{
       color: <?php echo $listingChecked; ?> !important;
-      font-weight:bold !important;
+      /* font-weight:bold !important; */
     }
-    .single-column-form ul.gfield_checkbox li input[type=checkbox]:not(:checked)+label{
+    .single-column-form [type="radio"]:checked+label:before{
+      border-color: <?php echo $listingChecked; ?> !important;
+    }
+    .single-column-form ul.gfield_checkbox li input[type=checkbox]:not(:checked)+label,
+    .single-column-form ul.gfield_radio li input[type=radio]:not(:checked)+label{
       color: <?php echo $listingColor; ?>;
-      font-weight:bold !important;
+      /* font-weight:bold !important; */
     }
     .single-column-form [type="checkbox"]:checked+label:before {
        border: 2px solid <?php echo $listingChecked; ?>;
@@ -1724,10 +1802,17 @@ class customizedLiveMessages{
     .gform_wrapper .top_label .icon-location label.gfield_label:before {
       background-image: url(<?php echo $locationIcon->guid ?>) !important;
     }
+    .gform_wrapper .top_label .icon-location .monitre label.gfield_label:before {
+      background-image: url(<?php echo $monitreIcon->guid ?>) !important;
+      background-size: 25px;
+    } 
+    .gform_wrapper .top_label .icon-location .currency label.gfield_label:before {
+      background-image: url(<?php echo $currencyIcon->guid ?>) !important;
+    }    
     .custom-radio.inline-list ul li.gchoice_2_118_0:before{
       background-image: url(<?php echo $qrIcon->guid ?>) !important;
     }
-    .custom-radio.inline-list ul li.gchoice_2_118_1:before{
+    .custom-radio.inline-list ul li.gchoice_2_118_2:before{
       background-image: url(<?php echo $imageUploadIcon->guid ?>) !important;
     }
     #custom-login a.login-button:before,
@@ -1776,6 +1861,22 @@ class customizedLiveMessages{
     .gform_wrapper .ids-form li.gfield_error input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
     .gform_wrapper .ids-form li.gfield_error textarea {
       border-color: <?php echo $errorMessageColor; ?> !important;
+    }
+    .gform_wrapper .ids-form li.all-locations ul li label:hover,
+    .gform_wrapper .ids-form li.all-locations ul li label:hover:after{
+      background:<?php echo $listinghover; ?>;
+      color: <?php echo $listinghoverText;  ?> !important;
+    }
+    .gform_wrapper .ids-form li.all-locations ul li label:hover:before{
+      border-color: <?php echo $listinghoverText;  ?> !important;
+      top:10px !important;
+    }
+    .custom-radio.inline-list ul#input_2_118 li.gchoice_2_118_1 label{
+        background:none !important;
+        color:<?php echo $fieldLabelColor; ?> !important;
+    }
+    .gform_wrapper .ids-form .gform_page_footer{
+        margin-bottom: 150px;
     }
     <?php
     if( $removeSocialBubble == 'yes' ){
