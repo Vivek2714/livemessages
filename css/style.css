@@ -1282,7 +1282,25 @@ ul.custom-list.all-locations {
 .gform_wrapper .ids-form .field_sublabel_above .ginput_complex.ginput_container label {
     color: #fff;
 }
-
+.gform_wrapper .ids-form .field_sublabel_above .ginput_complex.ginput_container label{
+    text-transform: uppercase;
+}
+li#field_2_47 {
+    position: relative;
+}
+.field-width .ginput_complex span:first-child{
+    width: 84%;
+    display: block;
+}
+.field-width .ginput_complex span:nth-child(2) {
+    width: 15%;
+    position: absolute;
+    top: -9px;
+    right: 0;
+}
+select#input_2_47_6 {
+    margin-top: 13px;
+}
 .custom-html.list-summary span,
 .custom-html.list-summary i {
     float: left;
