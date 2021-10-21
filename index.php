@@ -1079,9 +1079,6 @@ class customizedLiveMessages{
             state,
             country,
             screen,
-            start_date,
-            digistore_affiliate_id,
-            digistore_package,
             weekly_contacts,
             ROUND(
               ( 
@@ -1231,20 +1228,34 @@ class customizedLiveMessages{
       }
     }
     
-    list($lines, $lineHeight) = $this->wordWrapAnnotation($image, $drawText, $text, $areaWidth);
-    $ypos = 0;
-    if( count($lines) > 1 ){
-      if( $size == 'small' ){
-        $ypos = -20;
-      }else{
-        $ypos = -50;
-      }
-    }
-    for($i = 0; $i < count($lines); $i++){
-      if( $i > 1 ){
+    $words = explode(" ", $text);
+    $containesExceedLength = false;
+    foreach( $words as $word ){
+      if( strlen($word) > 26 ){
+        $containesExceedLength = true;   
         break;
       }
-      $image->annotateImage($drawText, $xpos, $ypos + $i*$lineHeight, 0, $lines[$i]);
+    }
+
+    if( $containesExceedLength ){
+      $wordWrap = wordwrap($text, 26, "\n", true);
+      $image->annotateImage($drawText, $xpos, 0, 0, $wordWrap);
+    }else{
+      list($lines, $lineHeight) = $this->wordWrapAnnotation($image, $drawText, $text, $areaWidth);
+      $ypos = 0;
+      if( count($lines) > 1 ){
+        if( $size == 'small' ){
+          $ypos = -20;
+        }else{
+          $ypos = -50;
+        }
+      }
+      for($i = 0; $i < count($lines); $i++){
+        if( $i > 1 ){
+          break;
+        }
+        $image->annotateImage($drawText, $xpos, $ypos + $i*$lineHeight, 0, $lines[$i]);
+      }
     }
 
     ## Create instance of the Watermark image

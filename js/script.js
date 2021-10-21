@@ -200,6 +200,7 @@ jQuery(document).ready(function(){
                 fillColor: circleColor,
                 fillOpacity: 0.35,
                 map: mapObject,
+                // gestureHandling: "greedy",
                 center:{ 
                     lat: latitude, 
                     lng: longitude 
@@ -279,6 +280,7 @@ jQuery(document).ready(function(){
     jQuery('.ids-form .selected-locations input').val( selectedLocations );
     jQuery('.ids-form .selected-locations input').trigger( "change" );
     var Sichtkontakte = weeklyContact = moniters = 0;
+    var frequency = jQuery('.ids-form input[name="input_165"]:checked').val();
     selectedLocationsElement.each(function(){
       if( typeof(jQuery(this).attr('date-value')) != "undefined" && jQuery(this).attr('date-value') != "" ){
         totalMoniter = parseInt( totalMoniter ) + parseInt( jQuery(this).attr('date-value') );
@@ -287,7 +289,7 @@ jQuery(document).ready(function(){
           weeklyContact = 0;
         }
         moniters  = jQuery(this).attr('date-value');
-        Sichtkontakte = Sichtkontakte + ( parseInt( weeklyContact ) / 7 / 14 / ( 6 * parseInt( moniters ) ) );
+        Sichtkontakte = Sichtkontakte + ( parseInt( weeklyContact ) / 7 / 14 / ( parseInt(frequency) * parseInt( moniters ) ) );
         // console.log(Sichtkontakte);
         // console.log(weeklyContact);
         // console.log(moniters);
@@ -595,6 +597,7 @@ jQuery(document).on('gform_page_loaded', function(event, form_id, current_page){
   jQuery('body').on( 'click', '.ids-form input[name="input_165"]', function(){
     var val = jQuery( this ).val();
     jQuery(".days-frequency-preview").html(val);
+    jQuery('.ids-form .all-locations input').trigger('change');
   });
 
   jQuery('body').on( 'change', '.ids-form input[name="input_radio"]', function(){
