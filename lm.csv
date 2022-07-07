@@ -1,0 +1,561 @@
+location_id,name,screen,weekly_contacts,street,house_number,zip,city,state,country,latitude,longitude,workingHours/monday,workingHours/tuesday,workingHours/wednesday,workingHours/thursday,workingHours/friday,workingHours/saturday,workingHours/sunday,AVGOpeningHours
+12,Fitnessclub Körperbau Chemnitz,1,1232,Bruno Salzer Str.,20,9120,Chemnitz,Sachsen,Germany,50.82010262,12.92200347,19,19,19,19,19,19,19,19
+39,Smart Fit Landstuhl,4,9863,Bahnstraße,22,66849,Landstuhl,Rheinland-Pfalz,Germany,49.4158068,7.567613227,18,18,18,18,18,11,11,16
+76,Cleverfit Großostheim,3,15032,Aschaffenburger Str.,35,63762,Aschaffenburg,Bayern,Germany,49.92688043,9.079816283,18,18,18,18,18,14,14,16.85714286
+22,fit+ Adenau,1,1233,Im Broel,4,53518,Adenau,Rheinland-Pfalz,Germany,50.37789196,6.94706579,17,17,17,17,17,17,17,17
+32,fit+ Herbrechtingen,1,1233,Anhauser Str.,14,89542,Herbrechtingen,Baden-Württemberg,Germany,48.62579255,10.16701999,24,24,24,24,24,24,24,24
+40,Goldjunge Beilstein,1,7397,Bahnhofsstr.,4,71717,Beilstein,Baden-Württemberg,Germany,49.04174379,9.312589317,16,16,16,16,16,16,16,16
+17,Fit und Vital Giebelstadt,1,1233,Lange Gasse,16,97232,Giebelstadt,Bayern,Germany,49.65294039,9.948637946,11,9,10,9,9,6,5,8.428571429
+21,Inform Park Immenstadt,1,1233,Badeweg,5,87509,Immenstadt,Bayern,Germany,47.5608878,10.20974994,17,17,17,17,17,17,17,17
+38,IRON Palace Augsburg,3,7397,Derchinger Str.,153,86165,Augsburg,Bayern,Germany,48.39435357,10.94569096,18,18,18,18,18,13,13,16.57142857
+42,Finest Fitness Moosinning,3,3699,Am Bleichbach,3,85452,Moosinning,Bayern,Germany,48.28067032,11.8433525,17,17,17,17,17,13,13,15.85714286
+68,Fitness und Gesundheitszentrum Leutershausen,1,1233,Obere Vorstadt,3,91578,Leutershausen,Bayern,Germany,49.30045062,10.40661909,15,15,15,15,15,15,15,15
+67,Fitness und Gesundheitszentrum Herrieden,1,1233,Marktplatz,13,91567,Herrieden,Bayern,Germany,49.23353733,10.49755221,15,15,15,15,15,15,15,15
+373,Cleverfit Kulmbach,9,36688,Kronacher Str.,27,95326,Kulmbach,Bayern,Germany,50.11197583,11.44652581,18,18,18,18,18,14,14,16.85714286
+2,Fitness & Gesundheitsstudio Lauingen,3,7397,Kastellstraße,8,89415,Lauingen,Bayern,Germany,48.56387218,10.41816277,13,13,13,13,13,5,5,10.71428571
+19,FitXpert Straubing,4,14794,Albrechtsgasse,18,94315,Straubing,Bayern,Germany,48.88299065,12.57211071,18,18,18,18,18,12,12,16.28571429
+20,fit+ Kalletal,1,1233,Lemgoerstr.,24,32689,Kalletal,Nordrhein-Westfalen,Germany,52.10554927,8.945288777,17,17,17,17,17,17,17,17
+46,Columna Gesundheitsförderung Lage,3,3699,Im Seelenkamp,10,32791,Lage,Nordrhein-Westfalen,Germany,51.98097076,8.813431356,13,12,12,13,11,5,5,10.14285714
+49,Era Gym Stemwede Levern,2,2466,Leverner Str.,36,32351,Stemwede-Levern,Nordrhein-Westfalen,Germany,52.3770446,8.450173588,13,13,13,13,13,6,6,11
+63,Fit Inn Trier,2,4931,Auf Hirtenberg,8,54296,Trier,Rheinland-Pfalz,Germany,49.72449454,6.630134277,10,10,10,10,10,5,4,8.428571429
+57,fit+ Königslutter,1,1233,Westernstraße,34,38154,Königslutter,Niedersachsen,Germany,52.2280261,10.9058809,17,17,17,17,17,17,17,17
+71,Sportcenter Sonsbeck,4,4931,Eichenstrasse,27,47665,Sonsbeck,Nordrhein-Westfalen,Germany,51.60272616,6.375220412,11,11,11,6,8,6,4,8.142857143
+77,Cleverfit Hanau Mitte,4,16306,Kurt-Baum-Platz,8,63450,Hanau,Hessen,Germany,50.13040554,8.923028718,18,18,18,18,18,14,14,16.85714286
+442,Cleverfit Osnabrück,4,20382,Am Schürholz,5,49078,Osnabrück,Niedersachsen,Germany,52.26533258,7.97472172,17,17,17,17,17,12,12,15.57142857
+350,Cleverfit Hersbruck,4,16306,Nürnberger Straße,14,91217,Hersbruck,Bayern,Germany,49.50971792,11.42673483,15,15,15,15,15,12,12,14.14285714
+85,Sportstudio Johannisthal,3,3699,Sterndamm,127,12487,Berlin,Berlin,Germany,52.44078029,13.50022978,11,11,11,11,11,4,4,9
+78,fit+ Stavenhagen,1,1233,Neubrandenburger Str.,17,17153,Stavenhagen,Mecklenburg-Vorpommern,Germany,53.69407586,12.91001886,17,17,17,17,17,17,17,17
+79,fit+ Tönning,1,1233,Johann Adolf Str.,18,25832,Tönningen,Schleswig-Holstein,Germany,54.31775462,8.939432534,17,17,17,17,17,17,17,17
+75,fit+ Kellinghusen,1,1233,Am Markt,1,25548,Kellinghusen,Schleswig-Holstein,Germany,53.94879049,9.717609686,17,17,17,17,17,17,17,17
+62,mikro eins Fitness Flein,3,3699,Heilbronnerstr.,4,74223,Flein,Baden-Württemberg,Germany,49.10126993,9.213702248,19,19,19,19,19,19,19,19
+65,INFORM Crailsheim,4,7397,Wittauer Str.,1,74564,Crailsheim,Baden-Württemberg,Germany,49.12203139,10.09313874,16,16,16,16,14,7,7,13.14285714
+33,fit+ Hilzingen,1,1233,Trottengasse,2,78247,Hilzingen,Baden-Württemberg,Germany,47.76590521,8.787987583,16,16,16,16,16,16,16,16
+34,bodyfit Rheinau Fitness und Rehasport,2,1233,Hauptstr.,6,77866,Rheinau,Baden-Württemberg,Germany,48.66369593,7.939253697,13,13,13,13,13,5,4,10.57142857
+381,Cleverfit Laupheim,3,12229,Biberacher Straße,9,88471,Laupheim,Baden-Württemberg,Germany,48.22685644,9.877535329,18,18,18,18,18,12,12,16.28571429
+18,FitXpert Neumarkt,2,7397,Mühlstraße,17,92318,Neumarkt,Bayern,Germany,49.28335426,11.46197995,18,18,18,18,18,12,12,16.28571429
+30,Tomax Fitnessstudio Sontheim,1,2466,Hauptstr.,21,89567,Sontheim,Baden-Württemberg,Germany,48.55517433,10.28820345,16,16,16,16,16,16,16,16
+47,ATP Allgäuer Trainings und Präventionscenter Bad Grönenbach,2,2466,Ludwig Eberle Str.,10,87730,Bad Grönenbach,Bayern,Germany,47.87697574,10.2136304,14,14,14,14,14,14,14,14
+101,Cleverfit Elsenfeld,2,8153,Am Stachus,2,63820,Elsenfeld,Bayern,Germany,49.83563348,9.159395158,18,18,18,18,18,14,14,16.85714286
+102,Cleverfit Wörth,2,12230,Dr.-Konrad-Wiegand-Str.,5,63939,Wörth,Bayern,Germany,49.78537852,9.172731812,18,18,18,18,18,14,14,16.85714286
+356,Cleverfit Husum,3,16306,Dieselstraße,1 -D,25813,Husum,Schleswig-Holstein,Germany,54.48940824,9.075014797,16,16,16,16,16,13,13,15.14285714
+100,Cleverfit Bad König,4,16306,Bahnhofstr.,13,64732,Bad König,Hessen,Germany,49.74127714,9.004113875,18,18,18,18,18,12,12,16.28571429
+110,FitWell Gerabronn,3,3699,Blaufeldener Str.,14,74582,Gerabronn,Baden-Württemberg,Germany,49.25037608,9.92268828,18,18,18,18,18,18,18,18
+107,Cleverfit Nördlingen,3,15033,Bachäcker,3,86720,Nördlingen,Bayern,Germany,48.86027364,10.47055862,18,18,18,18,18,12,12,16.28571429
+25,fit+ Lonsee,1,1233,Holderring,3,89173,Lonsee,Baden-Württemberg,Germany,48.51888638,9.909828758,17,17,17,17,17,17,17,17
+109,AktivFitSein Zirndorf,1,1233,Siedlerstraße,44,90513,Zirndorf,Bayern,Germany,49.44643854,10.94831327,13,13,13,13,13,6,0,10.14285714
+55,Cleverfit Crailsheim,3,15033,Haller Str.,197,74564,Crailsheim,Baden-Württemberg,Germany,49.14024642,10.03142809,18,18,18,18,18,12,12,16.28571429
+94,Easyfitness Braunschweig,3,14794,Münchenstr.,12,38120,Braunschweig,Niedersachsen,Germany,52.25601227,10.49516028,15,15,15,15,15,10,10,13.57142857
+751,Sportshouse Sonneberg,3,9863,Gustav König Straße,43,96515,Sonneberg,Thüringen,Germany,50.35724572,11.16847581,18,16,18,16,18,13,11,15.71428571
+95,Easyfitness Goslar,2,14794,Klubgartenstr.,10,38640,Goslar,Niedersachsen,Germany,51.91071035,10.41991494,14,14,14,14,14,8,8,12.28571429
+96,Easyfitness Halberstadt,2,14794,Große Ringstraße,50/51,38820,Halberstadt,Sachsen-Anhalt,Germany,51.89621529,11.07662406,13,13,13,13,13,7,7,11.28571429
+84,Easyfitness Gifhorn,5,14794,Am Allerkanal,4,38518,Gifhorn,Niedersachsen,Germany,52.46095153,10.53966282,14,14,14,14,14,8,8,12.28571429
+86,Easyfitness Lübeck,8,14794,Königstraße,84-96,23552,Lübeck,Schleswig-Holstein,Germany,53.86545808,10.68551181,15,15,15,15,15,10,10,13.57142857
+87,Easyfitness Hamburg Altona,3,14794,Stresemannstr.,23,22769,Hamburg-Altona,Hamburg,Germany,53.55980374,9.962181752,15,15,15,15,15,10,10,13.57142857
+89,Easyfitness Bünde,3,14794,Ziegeleistraße,38-42,32257,Bünde,Nordrhein-Westfalen,Germany,52.18082981,8.609500615,15,15,15,15,15,8,8,13
+103,fIt+ Bad Doberan,1,1233,Am Walkmüller Holz,1,18209,Bad Doberan,Mecklenburg-Vorpommern,Germany,54.10722749,11.9272442,19,19,19,19,19,19,19,19
+44,Vital Balance Fitness Lounge Cottbus,1,1233,Heinrich-Zille-Straße,120,3042,Cottbus,Brandenburg,Germany,51.7560076,14.3669716,7,7,7,7,7,0,0,5
+703,FIB Sportstudio Bischofswerda (Fitness & Beauty),1,1630,Belmsdorfer Straße,26,1877,Bischofswerda,Sachsen,Germany,51.1242553,14.18972376,12,7,12,7,12,5,0,7.857142857
+52,Freestyle Fitness Unna,3,7397,Hertinger Str.,17,59423,Unna,Nordrhein-Westfalen,Germany,51.53368125,7.687823841,14,14,14,14,14,10,8,12.57142857
+225,Cleverfit Aschaffenburg,2,12230,Dämmer Tor,6,63741,Aschaffenburg,Bayern,Germany,49.98141176,9.14354752,18,18,18,18,18,14,14,16.85714286
+135,Cleverfit Tauberbischofsheim,2,8153,Ringstr.,22,97941,Taubersbischofsheim,Baden-Württemberg,Germany,49.62367518,9.662801915,18,18,18,18,18,12,12,16.28571429
+98,Cleverfit Mainz Mitte,5,20383,Große Bleiche,23,55116,Mainz,Rheinland-Pfalz,Germany,50.00147409,8.265045628,18,18,18,18,18,14,14,16.85714286
+23,Fit Premium Düren,2,1233,Arnoldssweiler Str.,27,52351,Düren,Nordrhein-Westfalen,Germany,50.80947604,6.485754997,16,16,16,16,16,12,12,14.85714286
+120,Industrial Sports Lohne,3,14794,Brägeler Forst,2,49393,Lohne,Niedersachsen,Germany,52.68221104,8.271556808,13,13,13,13,13,5,5,10.71428571
+134,Frankys Gym Molbergen,1,4931,Am Waldeck,2,49696,Molbergen,Niedersachsen,Germany,52.85801344,7.929368264,13,10,13,10,13,13,13,12.14285714
+133,Easyfitness Wesel,4,19725,Esplanade,22,46483,Wesel,Nordrhein-Westfalen,Germany,51.65551753,6.617298408,14,14,14,14,14,8,8,12.28571429
+80,Gesundheitsstudio Zeitz,2,7397,Gleinaer Str.,42,6712,Zeitz,Sachsen-Anhalt,Germany,51.04401526,12.15806119,14,14,14,14,13,5,5,11.28571429
+99,fit+ Wiefelstede,1,1233,Hauptstr,35,26215,Wiefelstede,Niedersachsen,Germany,53.25472243,8.116875035,17,17,17,17,17,17,17,17
+190,fit+ Hagenow,1,1233,Lange Straße,73,19230,Hagenow,Mecklenburg-Vorpommern,Germany,53.43376735,11.18936984,17,17,17,17,17,17,17,17
+187,fit+ Moringen,1,1233,Industriestraße,1,37186,Moringen,Niedersachsen,Germany,51.68913564,9.870385947,17,17,17,17,17,17,17,17
+132,Cleverfit Kleinheubach,2,10022,In der Seehecke,1,63924,Kleinheubach,Bayern,Germany,49.71296763,9.217244225,18,18,18,18,18,14,14,16.85714286
+119,Easyfitness Wismar,3,14794,Lübsche Straße,21,23966,Wismar,Mecklenburg-Vorpommern,Germany,53.89221627,11.46285003,16,16,16,16,16,9,9,14
+186,Easyfitness Syke,3,14794,Suurend,3 - 5,28857,Syke,Niedersachsen,Germany,52.91561356,8.816314356,14,14,14,14,14,7,7,12
+122,Easyfitness Bensheim,3,14794,Neuhofstraße,13A,64625,Bensheim,Hessen,Germany,49.68238211,8.588573404,16,16,16,16,16,11,11,14.57142857
+189,Easyfitness  Dodenhof,3,14794,Posthausen,1,28869,Ottersberg,Niedersachsen,Germany,53.0603299,9.1683535,14,14,14,14,14,7,7,12
+136,Freestyle Fitness Herne,3,14764,Hauptstrasse,241,44649,Herne,Nordrhein-Westfalen,Germany,51.53080563,7.158501223,14,14,14,14,14,8,8,12.28571429
+147,Easyfitness Norderstedt,3,9863,Ulzburger Straße,398,22846,Norderstedt,Schleswig-Holstein,Germany,53.72272213,9.998322557,14,14,14,14,14,8,8,12.28571429
+129,Easyfitness Gronau,2,7397,Bahnhofstraße,26-32,48599,Gronau (Westfalen),Nordrhein-Westfalen,Germany,52.21363579,7.024094165,14,14,14,14,14,6,6,11.71428571
+143,Easyfitness Verden,4,19725,Brunnenweg,1,27283,Verden,Niedersachsen,Germany,52.92473769,9.236838889,14,14,14,14,14,7,7,12
+188,We get Fit Schongau,1,1233,Christophstraße,49,86956,Schongau,Bayern,Germany,47.81241776,10.89537978,17,17,17,17,17,17,17,17
+124,Easyfitness Neuburg,5,9863,Nördliche Grünauer Str.,21,86633,Neuburg an der Donau,Bayern,Germany,48.73915506,11.21353826,16,16,16,16,16,12,12,14.85714286
+145,Easyfitness Brinkum,3,14794,Feldstraße,2,28816,Stuhr,Niedersachsen,Germany,53.01166694,8.788614451,14,14,14,14,14,7,7,12
+139,Easyfitness Güstrow,3,9863,Langendammscher Weg,22,18273,Güstrow,Mecklenburg-Vorpommern,Germany,53.79222079,12.16154276,14,14,14,14,14,6,6,11.71428571
+121,Easyfitness Leer,4,7397,Sägemühlenstraße,7,26789,Leer,Niedersachsen,Germany,53.22498557,7.464245898,18,18,18,18,18,9,9,15.42857143
+758,fit+ Essingen,1,1233,Rathausgasse,2,73457,Essingen,Baden-Württemberg,Germany,48.80738862,10.02533882,16,16,16,16,16,16,16,16
+142,Fit Up Sport Center Montabaur,2,14794,Hospitalstraße,1,56410,Montabaur,Rheinland-Pfalz,Germany,50.4351225,7.829827066,14,14,12,14,14,5,5,11.14285714
+141,Easyfitness Bremen Osterholz,3,14794,Elisabeth-Selbert-Str.,5,28307,Bremen,Bremen,Germany,53.05903575,8.921832492,15,15,15,15,15,8,8,13
+31,fit+ Gerstetten,1,1233,Wasserstr.,2,89547,Gerstetten,Baden-Württemberg,Germany,48.62327831,10.01739668,17,17,17,17,17,17,17,17
+140,Easyfitness Achim,3,14794,Borsteler Landstraße,4,28832,Achim,Niedersachsen,Germany,53.01424332,9.034221276,14,14,14,14,14,7,7,12
+130,Physiodrom Aalen,2,4931,Hans-Sigmund-Straße,62,73434,Aalen - Fachsenfeld,Baden-Württemberg,Germany,48.87779145,10.05290841,13,13,13,13,13,5,4,10.57142857
+138,Fit & Fun 2.0 Heiden,1,1233,Lembecker Str.,5,46359,Heiden,Nordrhein-Westfalen,Germany,51.82452127,6.936578193,9,9,9,9,9,4,3,7.428571429
+148,Goldjunge Fitness Club Schwieberdingen,3,7397,Vaihinger Strasse,6,71701,Schwieberdingen,Baden-Württemberg,Germany,48.87664728,9.073608571,18,18,18,18,18,18,18,18
+149,fit+ Wiesentheid,2,2466,Korbacher Str.,4a,97353,Wiesentheid,Bayern,Germany,49.78676922,10.34314702,17,17,17,17,17,17,17,17
+155,H2 Fitness Nattheim,1,1233,Porschestr.,1,89564,Nattheim,Baden-Württemberg,Germany,48.70450137,10.23793628,11,11,11,11,11,0,0,7.857142857
+154,Xpress Fit Nattheim,1,1233,Fleinheimer Str.,50,89564,Nattheim,Baden-Württemberg,Germany,48.6974325,10.24833746,10,3,3,10,2,0,0,4
+157,Easyfitness Hannover Badenstedt,4,14794,Badenstedterstr.,130,30455,Hannover,Niedersachsen,Germany,52.35956873,9.678569,15,15,15,15,15,9,9,13.28571429
+159,mooFit Karlshuld,2,4931,Kleinhohenried,30a,86668,Karlshuld,Bayern,Germany,48.66580328,11.31480009,13,14,13,14,13,9,6,11.71428571
+659,fit+ Syrgenstein,1,1233,Taläcker,2,89428,Syrgenstein,Bayern,Germany,48.64869654,10.29698259,24,24,24,24,24,24,24,24
+69,Fitness und Gesundheitszentrum Bechhofen,1,1233,Dinkelsbühlerstr.,13-15,91572,Bechhofen,Bayern,Germany,49.1580316,10.54871006,15,15,15,15,15,15,15,15
+156,Gesund & Vital Bellheim,1,1233,Hauptstraße,97,76756,Bellheim,Rheinland-Pfalz,Germany,49.19106225,8.279869706,12,12,12,12,12,5,5,10
+161,hello fit Aichach,1,2466,Rudolf-Diesel-Str.,7a,86551,Aichach,Bayern,Germany,48.44508684,11.13994714,17,17,17,17,17,13,13,15.85714286
+162,Fitness Level Rüsselsheim,3,14794,Wormser Str.,12,65428,Rüsselsheim,Hessen,Germany,49.98373353,8.394391097,18,18,18,18,18,12,12,16.28571429
+477,Cleverfit Selm,4,20382,Münsterlandstraße,23,59379,Selm,Nordrhein-Westfalen,Germany,51.70813576,7.456699143,17,17,17,17,17,12,12,15.57142857
+163,Active One Ehekirchen,2,2466,Neuburger Str.,16,86676,Ehekirchen,Bayern,Germany,48.63743835,11.10513983,17,17,17,17,17,17,17,17
+166,adam&eve Fitness Rastatt,3,14794,Bahnhofstr.,20-22,76437,Rastatt,Baden-Württemberg,Germany,48.85867463,8.209998182,24,24,24,24,24,24,24,24
+169,Bewegungs Lounge Biebergemünd,1,1233,Neu Wirtheimer Str.,4,63599,Biebergemünd,Hessen,Germany,50.22259174,9.261046174,12,12,12,12,12,12,0,10.28571429
+170,Sport Treff 2.0 Bonn,3,9863,Hausdorffstr.,201,53129,Bonn,Nordrhein-Westfalen,Germany,50.71057085,7.10934471,15,16,15,16,15,11,11,14.14285714
+171,fit+ Grimmen,1,1233,Mittelweg,1,24647,Wasberg,Schleswig-Holstein,Germany,54.113075,13.04278808,17,17,17,17,17,17,17,17
+165,Fitness Lounge Oberberg,2,4931,Kölner Str.,2,51645,Gummersbach,Nordrhein-Westfalen,Germany,51.00903291,7.624598326,17,17,17,17,17,17,17,17
+172,Fitness Inside Bedburg,2,4931,Bedburger Weide,4,47551,Bedburg-Hau,Nordrhein-Westfalen,Germany,51.76809056,6.191956501,14,14,14,14,14,7,7,12
+266,Cleverfit Bietigheim Bissingen,3,12229,Otto Konz Straße,11,74321,Bietigheim-Bissingen,Baden-Württemberg,Germany,48.94217045,9.13818832,18,18,18,18,18,12,12,16.28571429
+223,Cleverfit Amberg Kümmersbruck,2,12229,Porschestraße,2,92245,Kümmersbruck,Bayern,Germany,49.42702123,11.87392098,18,18,18,18,18,18,18,18
+174,Studio21 Nürnberg,1,2466,Galgenhofstr.,21,90459,Nürnberg,Bayern,Germany,49.44347288,11.08413104,16,16,16,16,16,11,11,14.57142857
+182,Goldjunge Fitness Club Großbottwar,3,7397,Kleinbottwarer Str.,45,71723,Großbottwar,Baden-Württemberg,Germany,48.99745726,9.2901768,24,24,24,24,24,24,24,24
+176,Sportpark Heppenheim,2,1233,In der Lahrbach,44,64646,Heppenheim,Hessen,Germany,49.63790226,8.62060613,14,15,14,15,14,10,10,13.14285714
+177,Finest Fitness Express Hemsbach,1,1233,Gleiwitzerstraße,40b,69502,Hemsbach,Baden-Württemberg,Germany,49.58954646,8.637974615,10,10,10,10,10,6,0,8
+178,Finest Fitness Club Weinheim,4,3699,Händelstraße,38,69469,Weinheim,Baden-Württemberg,Germany,49.5532077,8.65516577,14,15,14,15,14,10,10,13.14285714
+181,INJOY Recklinghausen,3,7397,Bert-Brecht-Str.,2,45657,Recklinghausen,Nordrhein-Westfalen,Germany,51.61116673,7.179458682,13,15,13,15,13,8,9,12.28571429
+183,Easyfitness Hannover Wülfel,5,14794,Hildesheimer Str.,420,30519,Hannover Wülfel,Niedersachsen,Germany,52.32465777,9.781825961,16,16,16,16,16,10,10,14.28571429
+185,Fit by Sabi Magdeburg,5,18493,Ziolkowskistr.,21,39126,Magdeburg,Sachsen-Anhalt,Germany,52.17462056,11.63012598,13,13,13,13,13,7,7,11.28571429
+193,FitnessKing Koblenz 2,10,82190,Moselring,23,56073,Koblenz,Rheinland-Pfalz,Germany,50.35911753,7.58782125,24,24,24,24,24,24,24,24
+661,Pure Fitness Schwäbisch Hall,1,2466,Daimlerstraße,24,74523,Schwäbisch Hall,Baden-Württemberg,Germany,49.10346393,9.705616833,13,13,13,13,13,5,5,10.71428571
+666,B&B Fitness Obersontheim,2,5918,Schloßstrasse,6,74423,Obersontheim,Baden-Württemberg,Germany,49.05643085,9.8913611,12,12,12,12,12,5,5,10
+194,Friesenfit Krummhörn,1,1233,Handelsstraße,6,26736,Pewsum,Niedersachsen,Germany,53.42694933,7.107889314,17,17,17,17,17,12,12,15.57142857
+195,Body Talk Fitness + Wellness Ludwigsburg,3,7397,Uhlandstraße,21,71638,Ludwigsburg,Baden-Württemberg,Germany,48.89587884,9.183651646,15,15,14,11,14,9,9,12.42857143
+196,Finest Fitness Lindenberg,3,7397,Goßholzerstr.,2,88161,Lindenberg,Bayern,Germany,47.60743929,9.894606855,12,11,12,11,12,6,6,10
+197,fit+ Heimbach,1,1233,Hengebachstraße,30,52396,Heimbach,Nordrhein-Westfalen,Germany,50.63377803,6.479140727,17,17,17,17,17,17,17,17
+199,Easyfitness Oyten,1,9863,Wehlacker,2,28876,Oyten,Niedersachsen,Germany,48.80580121,9.479543423,18,18,18,18,18,18,18,18
+200,Fitter Club Bad Harzburg,2,4931,Ilsenburgerstr.,16,38667,Bad Harzburg,Niedersachsen,Germany,51.88469518,10.56555786,18,18,18,18,18,18,18,18
+201,Cleverfit Bad Oeynhausen,3,6013,Ringstraße,36,32584,Löhne,Nordrhein-Westfalen,Germany,52.20552937,8.783010832,17,17,17,17,17,12,12,15.57142857
+202,fit+ Wittenburg,1,1233,Bleichstraße,2a,19243,Wittenburg,Mecklenburg-Vorpommern,Germany,53.51102809,11.07289341,17,17,17,17,17,17,17,17
+203,fit+ Hesel,1,1233,Im Brink,1,26835,Hesel,Niedersachsen,Germany,53.30186674,7.595057421,17,17,17,17,17,17,17,17
+204,fit+ Unterlüß,1,1233,Hubachstr.,1,29345,Unterlüß,Niedersachsen,Germany,52.8390896,10.29698099,16,16,16,16,16,16,16,16
+206,Easyfitness Bremen Oberneuland,2,14794,Rockwinkeler Heerstraße,14,28355,Bremen,Bremen,Germany,53.09003599,8.935490196,18,18,18,18,18,18,18,18
+208,Cleverfit Mannheim Sandhofen,3,6013,Viernheimer Weg.,56-60,68307,Mannheim,Baden-Württemberg,Germany,49.54969256,8.452992973,18,18,18,18,18,12,12,16.28571429
+210,Easyfitness Schramberg,4,11835,Heiligenbronnerstr.,26,78713,Schramberg,Baden-Württemberg,Germany,48.23093596,8.423041181,18,18,18,18,18,14,14,16.85714286
+8,Goldjunge Fitness Club Oberstenfeld,3,7397,Lichtenbergerstr.,26,71720,Oberstenfeld,Baden-Württemberg,Germany,49.02348236,9.32365731,24,24,24,24,24,24,24,24
+43,Medi Fit Vital Fitness & Gesundheitszentrum Cottbus,3,2466,Stromstraße,13a,3046,Cottbus,Brandenburg,Germany,51.75026405,14.34252855,13,13,13,13,13,7,0,10.28571429
+742,Cleverfit Innsbruck Rum,1,1233,Steinbockallee,29,6063,Rum,--,Austria,47.2715787,11.45286491,18,18,18,18,18,18,18,18
+476,Cleverfit Seelze,4,18790,Immengarten,10a,30926,Seelze,Niedersachsen,Germany,52.38877443,9.577440053,18,18,18,18,18,12,12,16.28571429
+498,Cleverfit Trier,5,20382,Im Speyer,9,54294,Trier,Rheinland-Pfalz,Germany,49.74365621,6.617822395,18,18,18,18,18,12,12,16.28571429
+211,Cleverfit Aalen,3,8153,Stuttgarter Straße,100,73430,Aalen,Baden-Württemberg,Germany,48.83247726,10.08794855,18,18,18,18,18,12,12,16.28571429
+212,Cleverfit Aarau,9,33838,Neumattstraße,13-17,5000,Aarau,--,Switzerland,47.3999833,8.065384333,18,18,18,18,18,14,14,16.85714286
+213,Cleverfit Achern VK Bodyfit,2,16306,Karl-Bold_Straße,8,77855,Achern,Baden-Württemberg,Germany,48.63685386,8.052312959,18,18,18,18,18,12,12,16.28571429
+215,Cleverfit Ahaus,6,24459,Von-Braun-Straße,54,48683,Ahaus,Nordrhein-Westfalen,Germany,52.0741588,7.024328281,15,15,15,15,15,11,11,13.85714286
+219,Cleverfit Alsfeld,4,16306,Alicestrasse,11,36304,Alsfeld,Hessen,Germany,50.75123464,9.266608476,18,18,18,18,18,12,12,16.28571429
+220,Cleverfit Altenburg,3,12229,Fabrikstraße,1,4600,Altenburg,Thüringen,Germany,50.99597664,12.44210386,17,17,17,17,17,11,11,15.28571429
+221,Cleverfit Altenkunstadt,7,28535,Langheimer Straße,93,96260,Altenkunstadt,Bayern,Germany,50.11993179,11.23289479,18,18,18,18,18,14,14,16.85714286
+222,Cleverfit Amberg + 2,3,12229,Bayreuther Straße,78a,92224,Amberg,Bayern,Germany,49.46159298,11.85118701,18,18,18,18,18,18,18,18
+226,Cleverfit Augsburg Lechhausen,3,20382,Linke Brandstraße,5,86167,Augsburg,Bayern,Germany,48.38737521,10.91528386,16,16,16,16,16,14,14,15.42857143
+227,Cleverfit Augsburg Oberhausen,7,44842,Holzweg,25,86156,Augsburg,Bayern,Germany,48.38988741,10.86592539,18,18,18,18,18,14,14,16.85714286
+229,Cleverfit Bad Camberg,4,16306,Frankfurter Straße,60-62,65520,Bad Camberg,Hessen,Germany,50.29510247,8.2694408,17,17,17,17,17,11,11,15.28571429
+231,Cleverfit Bad Dürrheim,3,12229,Hofstraße,5,78073,Bad Dürrheim,Baden-Württemberg,Germany,48.01941369,8.533018424,18,18,18,18,18,12,12,16.28571429
+650,Cleverfit Gotha,4,7520,Stielerstraße,4,99867,Gotha,Thüringen,Germany,50.94149718,10.71634851,18,18,18,18,18,13,13,16.57142857
+238,Cleverfit Bad Reichenhall,2,12229,Berchtesgadener Straße,5 - 7,83435,Bad Reichenhall,Bayern,Germany,47.71744783,12.87683432,17,17,17,17,17,12,12,15.57142857
+241,Cleverfit Bad Tölz,1,4076,Albert-Schäffenacker-Straße,7,83646,Bad Tölz,Bayern,Germany,47.75745098,11.58545187,17,17,17,17,17,12,12,15.57142857
+243,Cleverfit Bad Wörishofen,3,8153,Zeppelinstraße,11A,86825,Bad Wörishofen,Bayern,Germany,48.0234536,10.59709194,17,17,17,17,17,11,11,15.28571429
+244,Cleverfit Balingen,11,40765,Binsdorfer Straße,23,72336,Balingen,Baden-Württemberg,Germany,48.28371081,8.837338548,18,18,18,18,18,14,14,16.85714286
+625,Cleverfit Schwäbisch Gmünd,3,16386,Ledergasse,44,73525,Schwäbisch Gmünd,Baden-Württemberg,Germany,48.80185817,9.79385768,18,18,18,18,18,12,12,16.28571429
+246,Cleverfit Barsinghausen,2,8153,Marktstraße,49,30890,Barsinghausen,Niedersachsen,Germany,52.30354009,9.459265466,17,17,17,17,17,11,11,15.28571429
+250,Cleverfit Bendorf,4,16306,Adolph-Kolping-Straße,11,56170,Bendorf,Rheinland-Pfalz,Germany,50.4267907,7.569544725,18,18,18,18,18,12,12,16.28571429
+252,Cleverfit Bergen auf Rügen,3,7516,Gingster Chaussee,6,18528,Bergen auf Rügen,Mecklenburg-Vorpommern,Germany,54.42339791,13.41650934,18,18,18,18,18,12,12,16.28571429
+253,Cleverfit Bergisch Gladbach,4,16306,Schloßstraße,7,51429,Bergisch-Gladbach,Nordrhein-Westfalen,Germany,50.96677495,7.157235827,18,18,18,18,18,11,11,16
+254,Cleverfit Berlin Adlershof,4,16306,Dörpfeldstraße,27 - 29,12489,Berlin-Aldershof,Berlin,Germany,52.43728329,13.54678537,17,17,17,17,17,11,11,15.28571429
+255,Cleverfit Berlin Altglienicke,3,16306,Venusstraße,38,12524,Berlin-Altglienicke,Berlin,Germany,52.40531604,13.52801569,17,17,17,17,17,11,11,15.28571429
+256,Cleverfit Berlin Charlottenburg,7,16306,Joachimstaler Straße,19,10787,Berlin-Charlottenburg,Berlin,Germany,52.50144046,13.33076322,18,18,18,18,18,12,12,16.28571429
+257,Cleverfit Berlin Mahlsdorf,4,16306,Hultschiner Damm,90,12623,Berlin,Berlin,Germany,52.48294028,13.6021197,17,17,17,17,17,11,11,15.28571429
+258,Cleverfit Berlin Marzahn,4,16306,Helene-Weigel-Platz,5,12681,Berlin-Marzahn,Berlin,Germany,52.5283218,13.53903316,17,17,17,17,17,11,11,15.28571429
+260,Cleverfit Berlin Prenzlauer Berg,5,16306,Greifswalder Straße,90,10409,Berlin-Prenzlauer Berg,Berlin,Germany,52.54363578,13.44243186,17,17,17,17,17,11,11,15.28571429
+262,Cleverfit Berlin Tempelhof,5,20382,Mariendorfer Damm,5,12109,Berlin-Tempelhof,Berlin,Germany,52.45236458,13.38515761,17,17,17,17,17,11,11,15.28571429
+263,Cleverfit Berlin Zehlendorf,5,20382,Martin-Buber-Straße,12,14163,Berlin-Zehlendorf,Berlin,Germany,52.43510327,13.25822026,17,17,17,17,17,11,11,15.28571429
+249,Cleverfit Bebra,4,11274,Hersfelder Straße,15,36179,Bebra,Hessen,Germany,50.96508142,9.795120646,18,18,18,18,18,12,12,16.28571429
+265,Cleverfit Bern Muri,5,18799,Feldstraße,32,3073,Muri bei Bern,,Switzerland,46.92724069,7.502908405,18,18,18,18,18,14,14,16.85714286
+267,Cleverfit Birkenwerder,3,12229,Hauptstraße,38 - 40,16547,Birkenweiler,Brandenburg,Germany,52.68905087,13.2819941,17,17,17,17,17,11,11,15.28571429
+268,Cleverfit Bitburg,4,16306,Dieselstraße,20,54634,Bitburg,Rheinland-Pfalz,Germany,49.9506592,6.534079048,17,17,17,17,17,12,12,15.57142857
+270,Cleverfit Bohmte,2,8153,Hauptstraße,26,49163,Bohmte-Hunteburg,Niedersachsen,Germany,52.43660786,8.270901036,18,18,18,18,18,12,12,16.28571429
+271,Cleverfit Borken,3,12229,Nina-Winkel-Straße,2,46325,Borken,Nordrhein-Westfalen,Germany,51.83558139,6.831378794,18,18,18,18,18,12,12,16.28571429
+272,Cleverfit Bramsche,2,8153,Industriestraße,56,49565,Bramsche,Niedersachsen,Germany,52.45359848,7.966468457,17,17,17,17,17,12,12,15.57142857
+273,Cleverfit Brandenburg an der Havel,4,16306,Willi-Sänger-Straße,15B,14770,Brandenburg an der Havel,Brandenburg,Germany,52.4176176,12.55217548,17,17,17,17,17,12,12,15.57142857
+275,Cleverfit Bremen Blumenthal,4,24459,Lüssumer Straße,105,28779,Bremen,Bremen,Germany,53.1912522,8.575156903,18,18,18,18,18,14,14,16.85714286
+277,Cleverfit Bremervörde,5,24459,Ludwigstraße,14,27432,Bremervörde,Niedersachsen,Germany,53.48720753,9.140599049,17,17,17,17,17,12,12,15.57142857
+280,Cleverfit Burghausen,4,16306,Gewerbepark Lindach,A10,84489,Burghausen,Bayern,Germany,48.16280311,12.80431201,17,17,17,17,17,13,13,15.85714286
+281,Cleverfit Burglengenfeld,4,16306,Naabtalpark,50,93133,Burglengenfeld,Bayern,Germany,49.19085942,12.04447253,18,18,18,18,18,12,12,16.28571429
+282,Cleverfit Burladingen,3,20043,Jahnstraße,1,72393,Burladingen,Baden-Württemberg,Germany,48.29173983,9.097884003,18,18,18,18,18,14,14,16.85714286
+283,Cleverfit Buxtehude,4,20382,Alter Postweg,6,21614,Buxdehude,Niedersachsen,Germany,53.46499483,9.708283431,18,18,18,18,18,14,14,16.85714286
+284,Cleverfit Cham,4,16306,Gewerbepark Chammünster Nord,3,93413,Cham,Bayern,Germany,49.2064228,12.68147272,18,18,18,18,18,14,14,16.85714286
+286,Cleverfit Clausthal Zellerfeld,5,20382,Osteröderstraße,3 - 5,38678,Clausthal-Zellerfeld,Niedersachsen,Germany,51.80264497,10.32667461,18,18,18,18,18,12,12,16.28571429
+287,Cleverfit Coswig,5,20382,Dresdner Straße,71,1460,Coswig,Sachsen,Germany,51.12505036,13.57668855,17,17,17,17,17,11,11,15.28571429
+288,Cleverfit Cottbus,5,20382,Schlosskirchstraße,1,3046,Cottbus,Brandenburg,Germany,51.75923153,14.33464684,17,17,17,17,17,11,11,15.28571429
+290,Cleverfit Cuxhaven,4,20382,Abschnede,198 - 200,27472,Cuxhaven,Niedersachsen,Germany,53.84487763,8.697349366,17,17,17,17,17,12,12,15.57142857
+291,Cleverfit Dachau,6,24459,Wettersteinring,12,85221,Dachau,Bayern,Germany,48.24158742,11.44944374,17,17,17,17,17,13,13,15.85714286
+295,Cleverfit Donauwörth,2,16306,Dr. Friedrich-Drechsler-Str.,23,86609,Donauwörth,Bayern,Germany,48.70905648,10.759757,18,18,18,18,18,12,12,16.28571429
+296,Cleverfit Dresden,4,20382,Kesselsdorfer Straße,8 - 10,1159,Dresden,Sachsen,Germany,51.04392761,13.70328266,18,18,18,18,18,13,13,16.57142857
+297,Cleverfit Dresden Kaditz,5,20382,Rankestraße,35,1139,Dresden,Sachsen,Germany,51.08814478,13.69779014,17,17,17,17,17,11,11,15.28571429
+298,Cleverfit Duderstadt,4,16306,Industriestraße,26d,37115,Duderstadt,Niedersachsen,Germany,51.51170613,10.24468336,17,17,17,17,17,12,12,15.57142857
+299,Cleverfit Duisburg,3,12229,Düsseldorfer Straße,2 - 10a,47239,Duisburg,Nordrhein-Westfalen,Germany,51.40099896,6.658288815,16,16,16,16,16,11,11,14.57142857
+301,Cleverfit Eckernförde,3,12229,Rendsburger Straße,115,24340,Eckernförde,Schleswig-Holstein,Germany,54.4543701,9.835264234,17,17,17,17,17,13,13,15.85714286
+302,Cleverfit Ellwangen,3,12229,Rindelbacher Straße,8,73479,Ellwangen,Baden-Württemberg,Germany,48.9692322,10.12501,18,18,18,18,18,12,12,16.28571429
+303,Cleverfit Elmshorn,4,20382,Flamweg,42,25335,Elmshorn,Schleswig-Holstein,Germany,53.75480494,9.648997798,17,17,17,17,17,12,12,15.57142857
+305,Cleverfit Emsdetten,4,11274,Grevener Damm,210,48282,Emsdetten,Nordrhein-Westfalen,Germany,52.15674241,7.552630356,17,17,17,17,17,12,12,15.57142857
+307,Cleverfit Erding,4,16306,Franz-Brombach-Straße,11 - 13,85435,Erding,Bayern,Germany,48.31252227,11.89025313,17,17,17,17,17,13,13,15.85714286
+308,Cleverfit Eschwege,6,24459,Im Stad,46  -  54,37269,Eschwege,Hessen,Germany,51.18888047,10.05586458,18,18,18,18,18,12,12,16.28571429
+309,Cleverfit Eutin,4,16306,Markt,7 - 8,23701,Eutin,Schleswig-Holstein,Germany,54.136544,10.6155833,17,17,17,17,17,13,13,15.85714286
+310,Cleverfit Falkensee,5,20382,Poststraße,48 - 50,14612,Falkensee,Brandenburg,Germany,52.5613857,13.08611057,17,17,17,17,17,12,12,15.57142857
+312,Cleverfit Filderstadt,5,28535,Fabrikstraße,5,70794,Filderstadt,Baden-Württemberg,Germany,48.66000999,9.222621863,18,18,18,18,18,12,12,16.28571429
+313,Cleverfit Finsterwalde,4,10021,Langer Damm,9,3238,Finsterwalde,Brandenburg,Germany,51.6296728,13.71276658,17,17,17,17,17,13,13,15.85714286
+314,Cleverfit Flensburg,4,20382,Schleswiger Straße,80,24941,Flensburg,Schleswig-Holstein,Germany,54.7679101,9.43456444,18,18,18,18,18,12,12,16.28571429
+315,Cleverfit Forchheim,4,16306,Daimlerstraße,12,91301,Forchheim,Bayern,Germany,49.70194616,11.0625582,18,18,18,18,18,14,14,16.85714286
+316,Cleverfit Frankfurt/Oder,5,20382,Heilbronner Straße,30,15230,Frankfurt/Oder,Brandenburg,Germany,52.34214747,14.54713877,17,17,17,17,17,11,11,15.28571429
+319,Cleverfit Freudenstadt,3,12229,Rudolf-Diesel-Straße,19,72250,Freudenstadt,Baden-Württemberg,Germany,48.46437222,8.445618697,14,14,14,14,14,9,6,12.14285714
+322,Cleverfit Fürth,2,16306,Bahnhofplatz,1,90762,Fürth,Bayern,Germany,49.47052042,10.98895736,18,18,18,18,18,13,13,16.57142857
+323,Cleverfit Ganderkesee,3,12229,Zur Straßenmeisterei,11,27777,Ganderkesee,Niedersachsen,Germany,53.04642825,8.558609467,18,18,18,18,18,14,14,16.85714286
+324,Cleverfit Garching,5,20382,Walther-von-Dyck-Str.,10,85748,Garching,Bayern,Germany,48.26500785,11.67256157,17,17,17,17,17,12,12,15.57142857
+610,Cleverfit Neuötting,3,15033,Braumeisterstraße,4,84524,Neuötting,Bayern,Germany,48.2414837,12.71073141,17,17,17,17,17,13,13,15.85714286
+326,Cleverfit Geislingen,5,24459,Siechenöschle,5,73312,Geilsingen,Baden-Württemberg,Germany,48.62957815,9.809264931,18,18,18,18,18,12,12,16.28571429
+327,Cleverfit Geldern,5,24459,Weseler Straße,162,47608,Geldern,Nordrhein-Westfalen,Germany,51.52270441,6.349802257,18,18,18,18,18,12,12,16.28571429
+328,Cleverfit Gießen,7,24459,Bahnhofstraße,82,35390,Gießen,Hessen,Germany,50.58127913,8.664833945,18,18,18,18,18,12,12,16.28571429
+329,Cleverfit Graz Wetzeldorf,5,24459,Peter-Rosegger-Straße,25,6053,Graz,,Austria,47.05380738,15.40961227,18,18,18,18,18,14,14,16.85714286
+332,Cleverfit Greifswald,5,24459,Ernst-Thälmann-Ring,56,17491,Greifswald,Mecklenburg-Vorpommern,Germany,54.07860869,13.41362343,18,18,18,18,18,14,14,16.85714286
+333,Cleverfit Gummersbach,5,20382,Hindenburgstraße,14 - 16,51643,Gummersbach,Nordrhein-Westfalen,Germany,51.02541899,7.567021141,17,17,17,17,17,12,12,15.57142857
+334,Cleverfit Hadamar,4,20382,Hospitalstraße,2,65589,Hadamar,Hessen,Germany,50.44656717,8.045905001,18,18,18,18,18,12,12,16.28571429
+335,Cleverfit Hagen,5,25054,Enneperstraße,140 a,58135,Hagen,Nordrhein-Westfalen,Germany,51.33940281,7.394257262,18,18,18,18,18,13,13,16.57142857
+336,Cleverfit Hagen am Teutoburger Wald,2,7516,Hüttenstraße,22,49170,Hagen a. T. W.,Niedersachsen,Germany,52.19894568,7.987704056,14,14,14,14,14,12,12,13.42857143
+337,Cleverfit Halle 2 Neustadt,5,25054,Rennbahnring,9,6124,Halle / Saale,Sachsen-Anhalt,Germany,51.48048064,11.94200536,17,17,17,17,17,12,12,15.57142857
+338,Cleverfit Hamburg Neugraben,4,24459,Cuxhavener Straße,344,21149,Hamburg,Hamburg,Germany,53.47289817,9.852708698,17,17,17,17,17,12,12,15.57142857
+339,Cleverfit Hamburg Niendorf,7,28535,Erst-Mittelbach-Ring,49 - 55,22455,Hamburg,Hamburg,Germany,53.64110392,9.94946957,17,17,17,17,17,12,12,15.57142857
+341,Cleverfit Heide,3,12229,Meldorfer Straße,191,25746,Heide,Schleswig-Holstein,Germany,54.18122682,9.090676767,18,18,18,18,18,12,12,16.28571429
+342,Cleverfit Heiligenhaus,4,8153,Rheinlandstraße,59,42579,Heiligenhaus,Nordrhein-Westfalen,Germany,51.32604789,6.95739757,16,16,16,16,16,12,12,14.85714286
+343,Cleverfit Heinsberg,4,18790,Grebbener Straße,20,52525,Heinsberg,Nordrhein-Westfalen,Germany,51.05352736,6.135788663,18,18,18,18,18,14,14,16.85714286
+344,Cleverfit Hemer,4,16306,Bahnhofstraße,6,58675,Hemer,Nordrhein-Westfalen,Germany,51.38456457,7.76885236,16,16,16,16,16,12,12,14.85714286
+345,Cleverfit Hemmoor,3,12229,Am Zentrum,4,21745,Hemmoor,Niedersachsen,Germany,53.68656078,9.158900775,17,17,17,17,17,14,14,16.14285714
+346,Cleverfit Hennigsdorf,5,20382,Postplatz,4a - 4c,16761,Hennigsdorf,Brandenburg,Germany,52.637131,13.20523337,17,17,17,17,17,11,11,15.28571429
+347,Cleverfit Heppenheim,4,16306,Hunsrückstraße,1,64646,Heppenheim,Hessen,Germany,49.63922153,8.616554066,16,16,16,16,16,11,11,14.57142857
+348,Cleverfit Herborn,4,16306,Gewerbepark Untere Au,3,35745,Herborn,Hessen,Germany,50.66917801,8.309431137,16,16,16,16,16,10,10,14.28571429
+349,Cleverfit Herdecke,3,16306,Hauptstraße,63,58313,Herdecke,Nordrhein-Westfalen,Germany,51.40146154,7.433279282,16,16,16,16,16,12,12,14.85714286
+351,Cleverfit Hilden,3,32612,Auf dem Sand,6,40724,Hilden,Nordrhein-Westfalen,Germany,51.17612474,6.925044319,16,16,16,16,16,14,14,15.42857143
+353,Cleverfit Hof,8,36688,Kulmbacher Str.,21,95030,Hof,Bayern,Germany,50.31813194,11.90284795,18,18,18,18,18,16,16,17.42857143
+354,Cleverfit Holzgerlingen,4,16306,Römerstraße,14,71088,Holzgerlingen,Baden-Württemberg,Germany,48.63499648,9.007307268,18,18,18,18,18,13,13,16.57142857
+355,Cleverfit Höxter,4,20382,Am Markt,1,37671,Höxter,Nordrhein-Westfalen,Germany,51.77476847,9.381809157,18,18,18,18,18,12,12,16.28571429
+357,Cleverfit Jülich,3,16306,Margaretenstraße,12,52428,Jülich,Nordrhein-Westfalen,Germany,50.90767938,6.360814123,16,16,16,16,16,10,10,14.28571429
+358,Cleverfit Kaltenkirchen,4,15032,Porschering,12,24568,Kaltenkirchen,Schleswig-Holstein,Germany,53.82867865,9.971401574,17,17,17,17,17,12,12,15.57142857
+359,Cleverfit Kamp Lintfort,3,12229,Am Rathaus,2 - 4,47475,Kamp-Lintfort,Nordrhein-Westfalen,Germany,51.50400421,6.546818174,17,17,17,17,17,12,12,15.57142857
+624,Cleverfit Rosental,5,8119,Knappenplatz,3/23,8582,Rosental,,Austria,47.0557465,15.11638721,16,16,16,16,16,13,13,15.14285714
+361,Cleverfit Karlsruhe,5,20382,Zeppelinstraße,14,76185,Karlsruhe,Baden-Württemberg,Germany,49.00272206,8.360886392,18,18,18,18,18,12,12,16.28571429
+362,Cleverfit Kaufbeuren,6,20382,Am Graben,10,87600,Kaufbeuren,Bayern,Germany,47.87965139,10.6248891,17,17,17,17,17,13,13,15.85714286
+363,Cleverfit Kempten,6,20382,Bahnhofstraße,1,87425,Kempten,Bayern,Germany,47.72383236,10.3152545,17,17,17,17,17,13,13,15.85714286
+364,Cleverfit Kiel Schwentinental,5,20382,Mergenthaler Straße,3,24223,Schwentinental,Schleswig-Holstein,Germany,54.28692745,10.22593007,16,16,16,16,16,13,13,15.14285714
+269,Cleverfit Bochum,4,16306,Kemnader Straße,319,44797,Bochum,Nordrhein-Westfalen,Germany,51.4285485,7.243160295,18,18,18,18,18,12,12,16.28571429
+365,Cleverfit Kirchheim,9,22548,Kelterstraße,69,73265,Dettingen,Baden-Württemberg,Germany,48.6239364,9.450539908,18,18,18,18,18,12,12,16.28571429
+366,Cleverfit Kirchlengern,3,20382,Im Obrock,29,32278,Kirchlengern,Nordrhein-Westfalen,Germany,52.19808623,8.638212528,14,14,14,14,14,12,12,13.42857143
+367,Cleverfit Kitzingen,3,20382,Flugplatzstraße,25,97318,Kitzingen,Bayern,Germany,49.74161747,10.18407951,17,17,17,17,17,12,12,15.57142857
+369,Cleverfit Kolbermoor,2,12230,Rosenheimer Straße,58,83059,Kolbermoor,Bayern,Germany,47.84840731,12.07738954,18,18,18,18,18,13,13,16.57142857
+371,Cleverfit Kreuzau,4,16306,Flemingstraße,7 - 11,52372,Kreuzau,Nordrhein-Westfalen,Germany,50.75005888,6.488357964,16,16,16,16,16,9,9,14
+374,Cleverfit Kusel,4,12026,Banhofstraße,36,66869,Kusel,Rheinland-Pfalz,Germany,49.5379131,7.40466262,17,17,17,17,17,12,12,15.57142857
+375,Cleverfit Lahr,7,16306,Europastraße,5,77933,Lahr,Baden-Württemberg,Germany,48.34863901,7.825320163,18,18,18,18,18,12,12,16.28571429
+376,Cleverfit Landau,4,16306,Ostring,19,76829,Landau,Rheinland-Pfalz,Germany,49.19781647,8.120011907,17,17,17,17,17,12,12,15.57142857
+377,Cleverfit Landsberg,14,57071,Augsburger Straße,52,86899,Landsberg,Bayern,Germany,48.06117597,10.86739627,17,17,17,17,17,14,14,16.14285714
+378,Cleverfit Landshut,4,16306,Oberndorferstraße,2,84032,Landshut,Bayern,Germany,48.55021181,12.13819847,17,17,17,17,17,12,12,15.57142857
+379,Cleverfit Langen,2,16306,Bahnstraße,2,63225,Langen,Hessen,Germany,49.989312,8.674727449,15,15,15,15,15,12,12,14.14285714
+382,Cleverfit Leibnitz,2,24459,Rudolf-Hans-Bartsch-Gasse,6,8430,Leibnitz,,Austria,46.78077812,15.53567619,16,16,16,16,16,13,13,15.14285714
+383,Cleverfit Leipzig,6,24459,Holzhäuser Straße,124,4299,Leipzig,Sachsen,Germany,51.31888252,12.42943897,18,18,18,18,18,12,12,16.28571429
+385,Cleverfit Lich,5,20382,Zum Fuchsstrauch,2,35423,Lich,Hessen,Germany,50.51629264,8.805644512,16,16,16,16,16,10,10,14.28571429
+386,Cleverfit Lindenberg,4,16306,Hauptstraße,52 - 54,88161,Lindenberg,Bayern,Germany,47.60289262,9.888470991,15,15,15,15,15,13,13,14.42857143
+388,Cleverfit Lohr am Main,2,8153,Weinbergweg,6,97816,Lohr am Main,Bayern,Germany,50.00124558,9.573462778,18,18,18,18,18,13,13,16.57142857
+390,Cleverfit Lübeck Süd,9,45097,Kronsforder Allee,126A,23560,Lübeck,Schleswig-Holstein,Germany,53.84210319,10.67697614,18,18,18,18,18,13,13,16.57142857
+391,Cleverfit Lübeck Ost,3,22548,Im Gleisdreieck,4,23566,Lübeck-Ost,Schleswig-Holstein,Germany,53.87035732,10.74197398,18,18,18,18,18,13,13,16.57142857
+392,Cleverfit Lüdenscheid,4,16306,Noltestraße,13,58511,Lüdenscheid,Nordrhein-Westfalen,Germany,51.23005972,7.653671587,18,18,18,18,18,12,12,16.28571429
+394,Cleverfit Ludwigsfelde,4,16306,Potsdamer Straße,54 b,14974,Ludwigsfelde,Brandenburg,Germany,52.30261489,13.26028529,17,17,17,17,17,11,11,15.28571429
+398,Cleverfit Marktheidenfeld,3,11274,Georg-Mayr-Straße,6,97828,Marktheidenfeld,Bayern,Germany,49.84922373,9.600742681,17,17,17,17,17,12,12,15.57142857
+400,Cleverfit Mayen,3,12229,Polcher-Straße,56,56727,Mayen,Rheinland-Pfalz,Germany,50.32459906,7.224645531,18,18,18,18,18,12,12,16.28571429
+401,Cleverfit Meckelfeld,5,11274,Melkerstieg,20,21217,Seevetal,Niedersachsen,Germany,53.42512038,10.02725708,17,17,17,17,17,14,14,16.14285714
+403,Cleverfit Mettingen,2,8153,Westerkappelner Straße,62c,49497,Mettingen,Nordrhein-Westfalen,Germany,52.31173195,7.792450629,16,16,16,16,16,12,12,14.85714286
+404,Cleverfit Mettmann,4,28535,Elberfelder Straße,81,40822,Mettmann,Nordrhein-Westfalen,Germany,51.24898394,6.98796745,18,18,18,18,18,12,12,16.28571429
+405,Cleverfit Metzingen,3,28535,Stettertstr.,6,72555,Metzingen,Baden-Württemberg,Germany,48.53211095,9.276123608,18,18,18,18,18,12,12,16.28571429
+406,Cleverfit Mölln,5,16306,Delvenauweg,4,23879,Mölln,Schleswig-Holstein,Germany,53.61322811,10.67468002,17,17,17,17,17,12,12,15.57142857
+407,Cleverfit Mönchengladbach,4,16306,Rheindahlener Straße,6,41189,Mönchengladbach,Nordrhein-Westfalen,Germany,51.13197395,6.409770166,18,18,18,18,18,12,12,16.28571429
+408,Cleverfit Montabaur,5,16306,Rudolf-Diesel-Straße,1,56410,Montabaur,Rheinland-Pfalz,Germany,50.44949137,7.831133255,18,18,18,18,18,12,12,16.28571429
+409,Cleverfit Mössingen,11,16306,Maybachstraße,3,72116,Mössingen,Baden-Württemberg,Germany,48.40799649,9.040280442,18,18,18,18,18,12,12,16.28571429
+411,Cleverfit Mühldorf am Inn,6,24459,Bürgermeister-Hauch-Straße,1,84453,Mühldorf am Inn,Bayern,Germany,48.2611705,12.54412957,17,17,17,17,17,13,13,15.85714286
+412,Cleverfit Mühlhausen,4,20382,Kiliansgraben,26,99974,Mühlhausen,Thüringen,Germany,51.21180265,10.46673695,18,18,18,18,18,13,13,16.57142857
+413,Cleverfit München Berg am Laim,6,16306,Berg-am-Laim-Straße,99,81673,München,Bayern,Germany,48.13011262,11.62246327,18,18,18,18,18,14,14,16.85714286
+414,Cleverfit München Giesing,5,20382,Chiemgaustraße,148,81549,München,Bayern,Germany,48.10845809,11.6048113,18,18,18,18,18,14,14,16.85714286
+417,Cleverfit München Ost / Aschheim,4,16306,Karl-Hammerschmidt-Str.,32,85609,Aschheim,Bayern,Germany,48.1493147,11.6830623,18,18,18,18,18,14,14,16.85714286
+422,Cleverfit Nauen,4,16306,Dammstraße,27,14641,Nauen,Brandenburg,Germany,52.61166395,12.88198652,17,17,17,17,17,11,11,15.28571429
+423,Cleverfit Nettetal,5,20382,Rosental,29,41334,Nettetal,Nordrhein-Westfalen,Germany,51.31562081,6.273567134,17,17,17,17,17,12,12,15.57142857
+424,Cleverfit Neubrandenburg,3,24459,Juri-Gagarin-Ring,40,17036,Neubrandenburg,Mecklenburg-Vorpommern,Germany,53.55400863,13.29413973,18,18,18,18,18,12,12,16.28571429
+425,Cleverfit Neu Isenburg,7,28535,Frankfurter Straße,175 - 181,63263,Neu Isenburg,Hessen,Germany,50.04852178,8.69513499,18,18,18,18,18,12,12,16.28571429
+426,Cleverfit Neukirchen Vluyn,5,18790,Pascalstraße,5,47506,Neukirchen-Vluyn,Nordrhein-Westfalen,Germany,51.43287605,6.54522152,16,16,16,16,16,12,12,14.85714286
+428,Cleverfit Neuruppin,3,32612,August-Bebel-Straße,47,16816,Neuruppin,Brandenburg,Germany,52.92539911,12.8036425,17,17,17,17,17,12,12,15.57142857
+430,Cleverfit Neu Wulmstorf,7,24459,Bahnhofstraße,33-37,21629,Neu Wulmstorf,Niedersachsen,Germany,53.4672263,9.792248027,17,17,17,17,17,14,14,16.14285714
+431,Cleverfit Nieder Olm,5,24459,Langgewann,5,55268,Nieder-Olm,Rheinland-Pfalz,Germany,49.91153793,8.18838438,16,16,16,16,16,11,11,14.57142857
+437,Cleverfit Oberhaching,4,16306,Raiffeisenallee,3,82041,Oberhaching,Bayern,Germany,48.03098601,11.58216392,18,18,18,18,18,13,13,16.57142857
+438,Cleverfit Oberursel,2,12229,Adenauerallee,21,61440,Oberursel,Hessen,Germany,50.20047405,8.583882923,16,16,16,16,16,10,10,14.28571429
+440,Cleverfit Olching,3,12229,Feursstarße,56,82140,Olching,Bayern,Germany,48.21598157,11.34722071,17,17,17,17,17,13,13,15.85714286
+441,Cleverfit Oranienburg,4,16306,Berliner Straße,57-59,16515,Oranienburg,Brandenburg,Germany,52.74686175,13.23688589,17,17,17,17,17,11,11,15.28571429
+443,Cleverfit Pforzheim,4,16306,Östliche Karl-Friedrich-Straße,69,75175,Pforzheim,Baden-Württemberg,Germany,48.89239242,8.709114604,18,18,18,18,18,12,12,16.28571429
+445,Cleverfit Plauen,5,32612,Trögerstraße,1,8527,Plauen,Sachsen,Germany,50.49191032,12.14246948,18,18,18,18,18,14,14,16.85714286
+447,Cleverfit Rastatt,5,20383,Bahnhofstraße,4-6,76437,Rastatt,Baden-Württemberg,Germany,48.85777469,8.207489643,18,18,18,18,18,13,13,16.57142857
+448,Cleverfit Rathenow,4,16306,Märkischer Platz,2,14712,Rathenow,Brandenburg,Germany,52.60630345,12.34107792,17,17,17,17,17,11,11,15.28571429
+449,Cleverfit Ravensburg,3,12229,Gebizostraße,6,88214,Ravensburg,Baden-Württemberg,Germany,47.76431217,9.604174742,18,18,18,18,18,12,12,16.28571429
+450,Cleverfit Regensdorf,5,8355,Adlikerstraße,295,8105,Regensdorf,,Switzerland,47.44450147,8.4648747,18,18,18,18,18,14,14,16.85714286
+451,Cleverfit Rendsburg,4,16306,Anton Schmid Strasse,6,24768,Rendsburg,Schleswig-Holstein,Germany,54.3204459,9.63377642,18,18,18,18,18,12,12,16.28571429
+454,Cleverfit Rostock Ost,3,40765,Albert-Schweitzer-Straße,48,18147,Rostock,Mecklenburg-Vorpommern,Germany,54.11630491,12.14946553,18,18,18,18,18,12,12,16.28571429
+455,Cleverfit Rostock Mitte,8,40765,Maßmannstraße,14,18057,Rostock,Mecklenburg-Vorpommern,Germany,54.09066026,12.10572238,18,18,18,18,18,12,12,16.28571429
+456,Cleverfit Rotenburg (Wümme),4,16306,Verdener Straße,75,27356,Rotenburg (Wümme),Niedersachsen,Germany,53.09818771,9.379793424,17,17,17,17,17,14,14,16.14285714
+457,Cleverfit Röthenbach / Pegnitz,3,16306,Rückersdorfer Straße,45 - 47,90552,Röthenbach a.d. Pegnitz,Bayern,Germany,49.48513707,11.24464977,16,16,16,16,16,12,12,14.85714286
+475,Cleverfit Schwenningen,3,15032,Roßbergstraße,2,78056,Villingen-Schwenningen,Baden-Württemberg,Germany,48.06241339,8.554779078,18,18,18,18,18,12,12,16.28571429
+459,Cleverfit Rottenburg,1,16306,Wilhelm-Maybach-Straße,21,72108,Rottenburg,Baden-Württemberg,Germany,48.47848881,8.954727982,18,18,18,18,18,12,12,16.28571429
+460,Cleverfit Rottweil,3,16306,Tuttlinger Straße,67,78628,Rottweil,Baden-Württemberg,Germany,48.1497119,8.641581212,18,18,18,18,18,12,12,16.28571429
+463,Cleverfit Salzhausen,2,8153,Kreuzweg,1c,21376,Salzhausen,Niedersachsen,Germany,53.2178033,10.1792188,15,15,15,15,15,11,11,13.85714286
+464,Cleverfit Salzkotten,4,20382,Geseker Straße,10-12,33154,Salzkotten,Nordrhein-Westfalen,Germany,51.67117877,8.599390106,18,18,18,18,18,12,12,16.28571429
+458,Cleverfit Rothenburg ob der Tauber,3,12229,Erlbacher Straße,80,91541,Rothenburg ob der Tauber,Bayern,Germany,49.3705906,10.19277846,17,17,17,17,17,12,12,15.57142857
+507,Cleverfit Villingen Schwenningen,3,12230,Klinikstraße,3,78052,Villingen-Schwenningen,Baden-Württemberg,Germany,48.06318644,8.500358608,18,18,18,18,18,12,12,16.28571429
+643,Cleverfit Basel,10,25065,Erlenstrasse,81,4058,Basel,,Switzerland,47.56985028,7.603459226,18,18,18,18,18,14,14,16.85714286
+647,Cleverfit Brüggen,4,7520,Borner Straße,74 - 78,41379,Brüggen,Nordrhein-Westfalen,Germany,51.24493594,6.194546517,17,17,17,17,17,12,12,15.57142857
+575,Cleverfit Heidelberg,3,9200,Im Breitspiel,8,69126,Heidelberg,Baden-Württemberg,Germany,49.36337921,8.686391177,18,18,18,18,18,12,12,16.28571429
+533,Cleverfit Wismar,4,12330,Turnerweg,4,23966,Wismar,Mecklenburg-Vorpommern,Germany,53.88910459,11.46817728,18,18,18,18,18,14,14,16.85714286
+561,Cleverfit Esslingen,3,20043,Rennstraße,28,73728,Esslingen,Baden-Württemberg,Germany,48.73103432,9.321692375,18,18,18,18,18,13,13,16.57142857
+654,Cleverfit Reutlingen The Gym,5,30065,Tübinger Straße,96,72762,Reutlingen,Baden-Württemberg,Germany,48.49470416,9.195761571,18,18,18,18,18,12,12,16.28571429
+489,Cleverfit Stralsund,5,20382,Gewerbestraße,6,18437,Stralsund,Mecklenburg-Vorpommern,Germany,54.31043577,13.04571726,18,18,18,18,18,12,12,16.28571429
+688,fit+ Aßling,1,1233,Kirchplatz,11,85617,Aßling,Bayern,Germany,47.99285399,12.00668051,17,17,17,17,17,17,17,17
+680,Mangfall Fitness Feldkirchen,3,6016,Ludwig-Erhard-Str,1,83620,Feldkirchen,Bayern,Germany,47.89593933,11.84073805,16,16,16,16,16,12,12,14.85714286
+641,Cleverfit Wolfratshausen,3,7516,Bürgermeister-Seidl-Straße,7,82515,Wolfratshausen,Bayern,Germany,47.90480943,11.42310028,17,17,17,17,17,12,12,15.57142857
+562,Cleverfit Fürstenfeldbruck,9,10022,Starenweg,3,82256,Fürstenfeldbruck,Bayern,Germany,48.1867663,11.24325221,17,17,17,17,17,13,13,15.85714286
+677,fit+ Bützow,1,1233,Industriestraße,2,18246,Bützow,Mecklenburg-Vorpommern,Germany,53.82635231,11.99304776,19,19,19,19,19,19,19,19
+558,Cleverfit Dingolfing,3,25054,Bräuhausgasse,29,84130,Dingolfing,Bayern,Germany,48.63251129,12.50305114,18,18,18,18,18,13,13,16.57142857
+682,Cleverfit Haltern am See,3,7516,Recklinghäuser Straße,169,45721,Haltern am See,Nordrhein-Westfalen,Germany,51.72620791,7.187265172,17,17,17,17,17,12,12,15.57142857
+499,Cleverfit Unterhaching,5,20382,Inselkammerstraße,12 - 14,82008,Unterhaching,Bayern,Germany,48.05513061,11.61033286,18,18,18,18,18,13,13,16.57142857
+502,Cleverfit Vaterstetten,4,16306,Rossinistraße,15 - 19,85598,Vaterstetten,Bayern,Germany,48.10522293,11.78760325,18,18,18,18,18,13,13,16.57142857
+570,Cleverfit Haiger,2,20043,Allendorfer Straße,10 - 12,35708,Haiger,Hessen,Germany,50.74382331,8.200589669,15,15,15,15,15,10,10,13.57142857
+446,Cleverfit Radevormwald,4,16306,Schlossmacherstraße,7,42477,Radevormwald,Nordrhein-Westfalen,Germany,51.20185852,7.36041357,16,16,16,16,16,12,12,14.85714286
+471,Cleverfit Schrobenhausen,2,20382,Rudolf-Diesel-Straße,3,86529,Schrobenhausen,Bayern,Germany,48.56659907,11.29074156,17,17,17,17,17,12,12,15.57142857
+472,Cleverfit Schwabmünchen,4,20382,Kaufbeurer Straße,54,86830,Schwabmünchen,Bayern,Germany,48.1705303,10.75586418,17,17,17,17,17,12,12,15.57142857
+633,Cleverfit Waldkraiburg,2,20043,Berlinerstr.,9,84478,Waldkraiburg,Bayern,Germany,48.2075231,12.40437776,17,17,17,17,17,13,13,15.85714286
+389,Cleverfit Lübbenau,3,20382,Otto-Grotewohl-Straße,4 A-E,3222,Lübbenau,Brandenburg,Germany,51.85988975,13.94220992,17,17,17,17,17,11,11,15.28571429
+684,Fitness World Schortens,2,3106,Im Gewerbegebiet,14,26419,Schortens,Niedersachsen,Germany,53.53783377,7.960457404,15,15,15,15,15,8,8,13
+686,Easyfitness Dormagen,2,9863,Hamburger-Str.,17a,41540,Dormagen,Nordrhein-Westfalen,Germany,51.09206801,6.809382577,16,16,16,16,16,9,9,14
+514,Cleverfit Wangen,3,16306,Franz-Walchner-Straße,6,88239,Wangen,Baden-Württemberg,Germany,47.69383375,9.823809834,18,18,18,18,18,12,12,16.28571429
+492,Cleverfit Stuttgart Zuffenhausen,3,12230,Stammheimerstr.,45,70435,Stuttgart-Zuffenhausen,Baden-Württemberg,Germany,48.83554734,9.163207812,18,18,18,18,17,12,12,16.14285714
+209,Cleverfit Schwäbisch Hall,2,15033,Robert-Bosch-Str.,3,74523,Schwäbisch Hall,Baden-Württemberg,Germany,49.10599276,9.707817451,18,18,18,18,18,12,12,16.28571429
+675,Cleverfit Deutschlandsberg,4,10022,Marktring,1,8523,Frauental an der Lassnitz,,Austria,46.83067117,15.24041209,16,16,16,16,16,10,7,13.85714286
+683,Cleverfit Voerde,3,7516,Poststraße,43,46562,Voerde,Nordrhein-Westfalen,Germany,51.62925619,6.646897993,16,16,16,16,16,12,12,14.85714286
+239,Cleverfit Bad Salzuflen,4,12229,Hoffmannstraße,15,32105,Bad Salzuflen,Nordrhein-Westfalen,Germany,52.07759401,8.752926424,17,17,17,17,17,12,12,15.57142857
+741,Cleverfit Lippstadt,3,7516,Erwitterstr.,93,59557,Lippstadt,Nordrhein-Westfalen,Germany,51.66075665,8.344337794,17,17,17,17,17,12,12,15.57142857
+672,fit+ Bühlertann,2,2466,Hauptstraße,8,74424,Bühlertann,Baden-Württemberg,Germany,49.04094845,9.909260001,17,17,17,17,17,17,17,17
+663,fit+ Westerburg,3,3699,Neustraße,24,56457,Westerburg,Rheinland-Pfalz,Germany,50.56386757,7.971119867,17,17,17,17,17,17,17,17
+668,up2date Wertheim,3,7397,Luisenstraße,2,97877,Wertheim,Baden-Württemberg,Germany,49.76130985,9.512318017,17,17,17,17,17,17,17,17
+90,Easyfitness Hameln,12,14794,Marienthaler Straße,2,31789,Hameln,Niedersachsen,Germany,52.10306097,9.389051387,15,15,15,15,15,8,8,13
+7,Cleverfit Chemnitz,5,12229,Blankenauerstr.,74,9113,Chemnitz,Sachsen,Germany,50.85747896,12.92988666,17,17,17,17,17,10,10,15
+235,Cleverfit Bad Neuenahr,7,15033,Heerstraße,109,53474,Bad Neuenahr,Rheinland-Pfalz,Germany,50.54863844,7.131273024,18,18,18,18,18,12,12,16.28571429
+516,Cleverfit Weißenburg,2,16306,Eichstätter Straße,29a,91781,Weißenburg,Bayern,Germany,49.02804796,10.98581918,18,18,18,18,18,12,12,16.28571429
+689,Cleverfit Traunreut,2,12230,Waginger Straße,5,83301,Traunreut,Bayern,Germany,47.96134154,12.61147284,18,18,18,18,18,12,12,16.28571429
+236,Cleverfit Bad Oldesloe,3,11274,Industriestraße,8a,23843,Bad Oldesloe,Schleswig-Holstein,Germany,53.80146684,10.38836027,17,17,17,17,17,14,14,16.14285714
+551,Cleverfit Bremen Vegesack,4,16306,Zum Alten Speicher,2,28759,Bremen Vegesack,Bremen,Germany,53.16656421,8.627563032,18,18,18,18,18,14,14,16.85714286
+590,Cleverfit Korbach,5,16386,Am Mühlgraben,2,34497,Korbach,Hessen,Germany,51.28097386,8.859057677,18,18,18,18,18,12,12,16.28571429
+66,Fitness und Gesundheitszentrum Ansbach,1,1233,Endresstr.,46,91522,Ansbach,Bayern,Germany,49.29911491,10.56825258,17,17,17,17,17,17,17,17
+500,Cleverfit Usingen,2,12229,Neuer Marktplatz,2,61250,Usingen,Hessen,Germany,50.33450639,8.533474923,16,16,16,16,16,10,10,14.28571429
+601,Cleverfit Mechernich,6,10022,Bruchgasse,21,53894,Mechernich,Nordrhein-Westfalen,Germany,50.58950207,6.663291751,16,16,16,16,16,8,8,13.71428571
+320,Cleverfit Friedberg,5,20382,Hanauer Str.,39,61169,Friedberg,Hessen,Germany,50.33302379,8.759482501,18,18,18,18,18,12,12,16.28571429
+584,Cleverfit Ismaning,3,16386,Oskar-Messter-Str.,25,85737,Ismaning,Bayern,Germany,48.23378819,11.67969906,17,17,17,17,17,12,12,15.57142857
+504,Cleverfit Velbert Mitte,3,12229,Blumenstraße,4,42551,Velbert,Nordrhein-Westfalen,Germany,51.33895072,7.046616144,17,17,17,17,17,12,12,15.57142857
+485,Cleverfit Stadtallendorf,5,20382,Niederkleiner Straße,7,35260,Stadtallendorf,Hessen,Germany,50.82365094,9.014862623,19,19,19,19,19,12,12,17
+521,Cleverfit Wetzlar,6,24459,Naunheimer Straße,38,35576,Wetzlar,Hessen,Germany,50.57565031,8.508760854,18,18,18,18,18,12,12,16.28571429
+538,Cleverfit Wülfrath,5,20382,Zur Loev,29,42489,Wülfrath,Nordrhein-Westfalen,Germany,51.28215765,7.034556621,16,16,16,16,16,12,12,14.85714286
+247,Cleverfit Bautzen,5,18791,Edisonstraße,17,2625,Bautzen,Sachsen,Germany,51.16414501,14.42568037,17,17,17,17,17,13,13,15.85714286
+468,Cleverfit Schleswig,6,16306,Berliner Straße,39,24837,Schleswig,Schleswig-Holstein,Germany,54.52412477,9.556669852,17,17,17,17,17,12,12,15.57142857
+539,Cleverfit Würselen,3,24459,Krefelder Straße,12-16,52146,Würselen,Nordrhein-Westfalen,Germany,50.82766217,6.129259808,18,18,18,18,18,12,12,16.28571429
+511,Cleverfit Völklingen,4,16306,Nordring,101,66333,Völklingen,Saarland,Germany,49.26382027,6.837324852,18,18,18,18,18,12,12,16.28571429
+636,Cleverfit Weinheim,3,20043,Quittenstraße,3,69469,Weinheim,Baden-Württemberg,Germany,49.52894132,8.657342938,17,17,17,17,17,12,12,15.57142857
+519,Cleverfit Wermelskirchen,4,20383,Eich,36,42929,Wermelskirchen,Nordrhein-Westfalen,Germany,51.13705082,7.210336149,16,16,16,16,16,12,12,14.85714286
+486,Cleverfit Steinfurt,3,8153,Goldstraße,13,48565,Steinfurt,Nordrhein-Westfalen,Germany,52.14922817,7.327583051,18,18,18,18,18,12,12,16.28571429
+535,Cleverfit Wittlich,5,16306,Schlossstraße,5,54516,Wittlich,Rheinland-Pfalz,Germany,49.98590066,6.891105858,17,17,17,17,17,12,12,15.57142857
+531,Cleverfit Wiesmoor,4,16306,Amaryllisweg,14,26639,Wiesmoor,Niedersachsen,Germany,53.42014887,7.734659684,17,17,17,17,17,12,12,15.57142857
+614,Cleverfit Nierstein,6,15033,Boschstraße,1,55283,Nierstein,Rheinland-Pfalz,Germany,49.86364678,8.331842988,16,16,16,16,16,12,12,14.85714286
+604,Cleverfit Minden,4,15033,Königstraße,172,32427,Minden,Nordrhein-Westfalen,Germany,52.29179139,8.883297654,17,17,17,17,17,11,11,15.28571429
+515,Cleverfit Weingarten,6,24459,Danzinger Straße,5,88250,Weingarten,Baden-Württemberg,Germany,47.81966911,9.64405274,18,18,18,18,18,12,12,16.28571429
+559,Cleverfit Eisenhüttenstadt,4,15033,Fährstraße,35,15890,Eisenhüttenstadt,Brandenburg,Germany,52.14376642,14.64906233,17,17,17,17,17,11,11,15.28571429
+490,Cleverfit Strausberg,5,20382,Spittelgasse,6,15344,Strausberg,Brandenburg,Germany,52.57762095,13.88252663,17,17,17,17,17,11,11,15.28571429
+518,Cleverfit Werder,5,20382,Adolf-Damaschke-Straße,60,14542,Werder / Havel,Brandenburg,Germany,52.39212791,12.92742555,17,17,17,17,17,11,11,15.28571429
+534,Cleverfit Wittenberge,5,15033,Lindenbergerstraße,12,19322,Wittenberge,Brandenburg,Germany,53.01698478,11.73623981,16,16,16,16,16,12,12,14.85714286
+484,Cleverfit Stade,8,80173,Hansestraße,30,21682,Stade,Niedersachsen,Germany,53.60861166,9.47586734,18,18,18,18,18,14,14,16.85714286
+669,Fitness 24 Kronach,3,14794,Im Ziegelwinkel,9,96317,Kronach,Bayern,Germany,50.24248831,11.33543097,24,24,24,24,24,24,24,24
+674,Fitness 24 Naila,3,14794,Walchstr.,15,95119,Naila,Bayern,Germany,50.33084253,11.70911926,24,24,24,24,24,24,24,24
+673,Fitness 24 Stockheim,2,2466,Bergwerksstraße,36,96342,Stockheim,Bayern,Germany,50.31183832,11.27766665,24,24,24,24,24,24,24,24
+435,Cleverfit Nürnberg Ost,1,12229,Regensburger Str.,336,90480,Nürnberg,Bayern,Germany,49.43252278,11.13017437,16,16,16,16,16,12,12,14.85714286
+554,Cleverfit Damme,4,16306,Südring,32,49401,Damme,Niedersachsen,Germany,52.51518642,8.18766623,17,17,17,17,17,12,12,15.57142857
+505,Cleverfit Viersen Süchteln,5,20382,Grefrather Straße,67,41749,Viersen,Nordrhein-Westfalen,Germany,51.29444671,6.363999861,17,17,17,17,17,12,12,15.57142857
+479,Cleverfit Siegen,5,12527,Freudenberger Straße,448,57072,Siegen,Nordrhein-Westfalen,Germany,50.88330897,7.967845515,18,18,18,18,18,12,12,16.28571429
+605,Cleverfit Mistelbach,4,15039,Museumgasse,2,2130,Mistelbach,,Austria,48.57059522,16.57150386,18,18,18,18,18,14,14,16.85714286
+522,Cleverfit Wien Brigittenau,6,60156,Dresdner Straße,107,1200,Wien,,Austria,48.23196982,16.38545116,18,18,18,18,18,14,14,16.85714286
+465,Triple F Sankt Augustin,5,20382,Gutenbergstraße,1-3,53757,Sankt Augustin,Nordrhein-Westfalen,Germany,50.78423628,7.161701515,18,18,18,18,18,12,12,16.28571429
+506,Cleverfit Villach,5,12229,Trattengasse,28,9500,Villach,,Austria,46.61076895,13.85392057,17,17,17,17,17,12,12,15.57142857
+526,Cleverfit Wien Landstraße,4,18545,Markhofgasse,15-17,1030,Wien,,Austria,48.19361376,16.40841304,18,18,18,18,18,14,14,16.85714286
+467,Cleverfit Schleiz,2,10022,Oschitzer Straße,31,7907,Schleiz,Thüringen,Germany,50.57429571,11.80145268,18,18,18,18,18,12,12,16.28571429
+619,wellyou Pinneberg 2,3,10022,Dingstätte,49,25421,Pinneberg,Schleswig-Holstein,Germany,53.66171085,9.793261356,17,17,17,17,17,15,15,16.42857143
+563,Cleverfit Gera,4,12527,Heinrichstraße,30,7545,Gera,Thüringen,Germany,50.87609032,12.07923078,17,17,17,17,17,11,11,15.28571429
+622,Cleverfit Regensburg,3,50109,Merianweg,4,93051,Regensburg,Bayern,Germany,49.0066132,12.06308583,18,18,18,18,18,18,18,18
+474,Cleverfit Schweinfurt,6,22548,Kornacherstraße,13,97421,Schweinfurt,Bayern,Germany,50.04282689,10.2184061,18,18,18,18,18,14,14,16.85714286
+483,Cleverfit Sonthofen,3,20382,Immenstädterstr.,13b,87527,Sonthofen,Bayern,Germany,47.5109211,10.27440904,17,17,17,17,17,12,12,15.57142857
+509,Cleverfit Vilshofen,5,20382,Kapuzinerstr.,11,94474,Vilshofen,Bayern,Germany,48.63486242,13.18390971,17,17,17,17,17,12,12,15.57142857
+540,Cleverfit Würzburg Heidingsfeld,5,16306,Winterhäuser Straße,75,97084,Würzburg,Bayern,Germany,49.75889034,9.969218381,17,17,17,17,17,12,12,15.57142857
+638,Cleverfit Wendelstein,3,10022,Querstraße,4,90530,Wendelstein,Bayern,Germany,49.35217824,11.14673342,16,16,16,16,16,13,13,15.14285714
+508,Cleverfit Vilsbiburg,2,20382,Ohmstraße,8,84137,Vilsbiburg,Bayern,Germany,48.45223876,12.33359661,17,17,17,17,17,12,12,15.57142857
+552,Cleverfit Bretten,2,20043,Diedelsheimer Höhe,2,75015,Bretten,Baden-Württemberg,Germany,49.03898015,8.687789567,18,18,18,18,18,12,12,16.28571429
+452,Cleverfit Reutlingen,4,12230,Heubergstraße,11,72766,Reutlingen,Baden-Württemberg,Germany,48.51374383,9.217733194,18,18,18,18,18,12,12,16.28571429
+480,Cleverfit Sigmaringen,6,24459,Friedrich-List-Straße,11,72488,Sigmaringen,Baden-Württemberg,Germany,48.08130849,9.238421158,17,17,17,17,17,12,12,15.57142857
+481,Cleverfit Singen,1,16306,Georg-Fischer-Straße,29,78224,Singen,Baden-Württemberg,Germany,47.75399776,8.850742539,18,18,18,18,18,12,12,16.28571429
+667,Wellyou Emden,1,2466,Zweiter-Polder-Weg,4,26723,Emden,Niedersachsen,Germany,53.36453686,7.18029295,17,17,17,17,17,15,15,16.42857143
+646,Cleverfit Bitterfeld,5,18791,Brehnaer Straße,34,6749,Bitterfeld-Wolfen,Sachsen-Anhalt,Germany,51.61239977,12.30614588,17,17,17,17,17,12,12,15.57142857
+556,Cleverfit Dillenburg,3,15033,Hirschwiese,7,35683,Dillenburg,Hessen,Germany,50.76696347,8.288586644,15,15,15,15,15,10,10,13.57142857
+512,Cleverfit Waiblingen,3,16306,Stuttgarter Straße,149,71332,Waiblingen,Baden-Württemberg,Germany,48.821053,9.294996191,18,18,18,18,18,12,12,16.28571429
+501,Cleverfit Stuttgart Vaihingen,7,75163,Handwerkstr,4,70565,Stuttgart-Vaihingen,Baden-Württemberg,Germany,48.72175714,9.129573684,18,18,18,18,18,13,13,16.57142857
+579,Cleverfit Höchberg,6,5011,Leibnizstraße,9a,97204,Höchberg,Bayern,Germany,49.76958154,9.865952921,17,17,17,17,17,12,12,15.57142857
+576,Cleverfit Heidenheim,2,15033,Steinheimer Straße,53,89518,Heidenheim,Baden-Württemberg,Germany,48.67957275,10.10953886,18,18,18,18,18,12,12,16.28571429
+469,Cleverfit Schongau,3,16306,Schwabsoienerstr.,3,86956,Schongau,Bayern,Germany,47.80800891,10.87887169,16,16,16,16,16,12,12,14.85714286
+261,Cleverfit Berlin Schmargendorf,6,20382,Berkaer Straße,41 - 42,14199,Berlin-Schmargendorf,Berlin,Germany,52.47646977,13.28885456,17,17,17,17,17,11,11,15.28571429
+564,Cleverfit Geretsried,3,20043,Jeschkenstraße,29,82538,Geretsried,Bayern,Germany,47.84956044,11.49550516,17,17,17,17,17,12,12,15.57142857
+721,wellyou Aurich,1,2466,Fischteichweg,15-19,26603,Aurich,Niedersachsen,Germany,53.46714181,7.481795574,17,17,17,17,17,15,15,16.42857143
+725,wellyou Lübeck,6,29588,Osterweide,2,23562,Lübeck,Schleswig-Holstein,Germany,53.84014205,10.70906265,17,17,17,17,17,15,15,16.42857143
+724,wellyou Stralsund,5,24657,Tribseer Damm,76,18437,Stralsund,Mecklenburg-Vorpommern,Germany,54.30897097,13.07915705,17,17,17,17,17,15,15,16.42857143
+732,wellyou Bremerhaven,3,14794,Heinrich-Kappelmann-Straße,2,27572,Bremerhaven,Bremen,Germany,53.50592698,8.596237145,17,17,17,17,17,15,15,16.42857143
+581,Cleverfit Ibbenbüren,3,20043,Gutenbergstr.,6,49479,Ibbenbüren,Nordrhein-Westfalen,Germany,52.25842162,7.716860873,18,18,18,18,18,12,12,16.28571429
+687,Cleverfit Lichtenfels,2,6013,Reuthstraße,39,96215,Lichtenfels,Bayern,Germany,50.13438618,11.05270909,17,17,17,17,17,14,14,16.14285714
+635,Cleverfit Weimar,3,15033,Rießner Straße,12,99423,Weimar,Thüringen,Germany,50.99385667,11.32522267,18,18,18,18,18,14,14,16.85714286
+690,fit+ Sögel,1,1233,Clemens-August-Straße.,31,49751,Sögel,Niedersachsen,Germany,52.84098581,7.522810326,17,17,17,17,17,17,17,17
+300,Cleverfit Dülmen,5,20382,Lohwall,7,48249,Dülmen,Nordrhein-Westfalen,Germany,51.83088751,7.275073993,16,16,16,16,16,11,11,14.57142857
+473,Cleverfit Schwandorf,5,28535,Regensburger Straße,47,92421,Schwandorf,Bayern,Germany,49.3174832,12.1041912,18,18,18,18,18,12,12,16.28571429
+691,Pro Fitness Discounter Bad Säckingen,5,9863,Am Buchrain,26,79713,Bad Säckingen,Baden-Württemberg,Germany,47.55393312,7.92923202,18,18,18,18,18,13,14,16.71428571
+692,Pro Fitness Discounter Donaueschingen,3,5918,Bregstraße,16,78183,Hüfingen,Baden-Württemberg,Germany,47.93310163,8.498080804,18,18,18,18,18,13,14,16.71428571
+693,Easyfitness Bielefeld,5,24656,Bahnhofstraße,23-25,33602,Bielefeld,Nordrhein-Westfalen,Germany,52.02514415,8.53126521,16,16,16,16,16,12,12,14.85714286
+694,Easyfitness Gnarrenburg,2,14794,Hindenburgstr.,78,27442,Gnarrenburg,Niedersachsen,Germany,53.38490797,9.001758796,16,16,16,16,16,16,16,16
+415,Cleverfit München Mitte,3,20382,Marsstraße,20,80335,München,Bayern,Germany,48.14348955,11.55799005,18,18,18,18,18,15,15,17.14285714
+264,Cleverfit Bernau,3,16306,Bahnhofspassage Bernau / Börnicker Chaussee,1 - 2,16321,Bernau,Brandenburg,Germany,52.67636502,13.59618491,17,17,17,17,17,12,12,15.57142857
+726,wellyou Greifswald,6,29588,Lomonossowallee,6,17491,Greifswald,Mecklenburg-Vorpommern,Germany,54.08222325,13.40659301,17,17,17,17,17,15,15,16.42857143
+617,Cleverfit Offenbach,4,30065,Sprendlinger Landstraße,180,63069,Offenbach,Hessen,Germany,50.08536861,8.74692706,15,15,15,15,15,11,11,13.85714286
+696,fit+ Daun,1,1233,Bahnhofstraße,8,54550,Daun,Rheinland-Pfalz,Germany,50.19514349,6.83374899,17,17,17,17,17,17,17,17
+491,Cleverfit Stuttgart Ost,4,24459,Talstraße,106,70188,Stuttgart,Baden-Württemberg,Germany,48.78704855,9.218907426,18,18,18,18,18,13,13,16.57142857
+245,Cleverfit Bamberg,6,45097,Emil-Kemmler-Str.,13,96103,Bamberg,Bayern,Germany,49.91677582,10.86941968,18,18,18,18,18,14,14,16.85714286
+698,Pro Fitness Discounter Waldshut,4,7890,Carl-Duisberg-Str.,5,79761,Waldshut-Tiengen,Baden-Württemberg,Germany,47.61404666,8.236387429,18,18,18,18,18,15,14,17
+699,You Neuruppin,1,2466,Junckerstrasse,10A,16816,Neuruppin,Brandenburg,Germany,52.91933029,12.79638146,13,13,13,13,13,6,6,11
+697,Pro Fitness Discounter Waldshut Women,2,3452,Carl-Duisbergstr.,9,79761,Waldshut-Tiengen,Baden-Württemberg,Germany,47.61523926,8.237800348,14,14,14,14,14,6,6,11.71428571
+566,Cleverfit Göppingen,3,20043,Stuttgarter Str.,2,73033,Göppingen,Baden-Württemberg,Germany,48.70408838,9.646696221,18,18,18,18,18,12,12,16.28571429
+228,Cleverfit Backnang,3,24459,Stuttgarter Straße,135,71522,Backnang,Baden-Württemberg,Germany,48.93773301,9.438069075,18,18,18,18,18,13,13,16.57142857
+658,Cleverfit Zossen,5,10022,Bahnhofstraße,15-16,15806,Zossen,Brandenburg,Germany,52.21793723,13.44098769,17,17,17,17,17,11,11,15.28571429
+702,Cleverfit Bingen,3,7520,Koblenzerstraße,42-44,55411,Bingen am Rhein,Rheinland-Pfalz,Germany,49.96658228,7.886990082,17,17,17,17,17,12,12,15.57142857
+168,fit+ Kahl am Main,1,1233,Zur Sandmühle,2,63796,Kahl am Main,Bayern,Germany,50.07793734,9.015370096,19,19,19,19,19,19,19,19
+704,Easyfitness Marburg,3,11095,Krummbogen,14,35039,Marburg,Hessen,Germany,50.81603678,8.776438815,15,15,15,15,15,12,12,14.14285714
+173,Fitness Treff Street Gym Beckum,3,14974,Am Lippbach,1a,59269,Beckum,Nordrhein-Westfalen,Germany,51.75005655,8.054705896,12,9,12,9,12,4,4,8.857142857
+421,Cleverfit Nastätten,4,20382,Industriestraße,4,56355,Nastätten,Rheinland-Pfalz,Germany,50.19791362,7.849940998,18,18,18,18,18,12,12,16.28571429
+745,Cleverfit Steinhausen,8,10026,Industriestrasse,51,6312,Steinhausen,,Switzerland,47.19125474,8.483421127,18,18,18,18,18,14,14,16.85714286
+717,S&B Sportclub Burgdorf,3,3699,Ostlandring,25,31303,Burgdorf,Niedersachsen,Germany,52.44294743,10.02661098,14,14,14,14,14,8,8,12.28571429
+557,Cleverfit Dillingen,3,15033,Johannes-Scheifele-Str.,13,89407,Dillingen,Bayern,Germany,48.57805946,10.47449008,17,17,17,17,17,12,12,15.57142857
+237,Cleverfit Bad Rappenau,2,12229,Raiffeisenstraße,22,74906,Bad Rappenau,Baden-Württemberg,Germany,49.23567315,9.08988787,18,18,18,18,18,12,12,16.28571429
+714,Easyfitness Schwerte,4,14794,Am Markt,11,58239,Schwerte,Nordrhein-Westfalen,Germany,51.44015126,7.569415655,15,15,15,15,15,9,9,13.28571429
+713,Cleverfit Wittmund,6,15033,Auricher Str.,12,26409,Wittmund,Niedersachsen,Germany,53.57531296,7.777416124,17,17,17,17,17,12,12,15.57142857
+712,Cleverfit Schneverdingen,5,12527,Harburgerstr.,52,29640,Schneverdingen,Niedersachsen,Germany,53.12350508,9.803362457,17,17,17,17,17,14,14,16.14285714
+761,Cleverfit Emmenbrücke,9,11279,Seetalplatz,1,6020,Emmenbrücke,,Switzerland,47.06921025,8.280890696,18,18,18,18,18,14,14,16.85714286
+665,Cleverfit Kreuzlingen,8,20052,Bleichestraße,15,8280,Kreuzlingen,,Switzerland,47.64222571,9.195813182,18,18,18,18,18,14,14,16.85714286
+730,wellyou Schwerin,4,19725,Wismarsche Str.,327,19055,Schwerin,Mecklenburg-Vorpommern,Germany,53.64840427,11.40727185,17,17,17,17,17,15,15,16.42857143
+723,wellyou Heide,6,14794,Meldorfer Str.,58,25746,Heide,Schleswig-Holstein,Germany,54.18890227,9.089317717,17,17,17,17,17,15,15,16.42857143
+728,wellyou Schleswig,9,22191,Königstr.,13,24837,Schleswig,Schleswig-Holstein,Germany,54.51476078,9.565726157,17,17,17,17,17,15,15,16.42857143
+752,wellyou Husum,5,19725,Adolf-Brütt-Straße,62,25813,Husum,Schleswig-Holstein,Germany,54.48537652,9.045270886,17,17,17,17,17,15,15,16.42857143
+748,wellyou Rendsburg,6,22191,Denkerstraße,14-22,24768,Rendsburg,Schleswig-Holstein,Germany,54.30750781,9.661948487,17,17,17,17,17,15,15,16.42857143
+729,wellyou Mettenhof,5,24657,Stockholmstr.,6,24109,Kiel,Schleswig-Holstein,Germany,54.32702284,10.0577851,17,17,17,17,17,15,15,16.42857143
+735,fit+ Marienheide,1,1233,Zum Marktplatz,5,51709,Marienheide,Nordrhein-Westfalen,Germany,51.08357498,7.530008406,17,17,17,17,17,17,17,17
+734,Tayoma Fitness Satow,1,1233,Alte Gärtnerei,1,18239,Satow,Mecklenburg-Vorpommern,Germany,53.98820851,11.89058997,19,19,19,19,19,19,19,19
+733,mikro eins Fitness Auenstein,3,3699,Hauptstr.,47,74360,Auenstein,Baden-Württemberg,Germany,49.05920557,9.276015451,19,19,19,19,19,19,19,19
+523,Cleverfit Wien Döbling,9,83466,Franz-Klein-Gasse,5,1190,Wien,,Austria,48.23420669,16.34911675,18,18,18,18,18,14,14,16.85714286
+853,Cleverfit Wien Keplerplatz,2,5013,Favoritenstr.,92,1100,Wien,--,Austria,48.18102111,16.37529322,18,18,18,18,18,18,18,18
+792,Cleverfit Leoben,7,20383,Kärntnerstr.,315/319,8700,Leoben,,Austria,47.37244597,15.08886332,16,16,16,16,16,13,13,15.14285714
+810,Cleverfit Bruck an der Mur,3,3760,Roseggerstraße,16,8600,Bruck an der Mur,,Austria,47.41005748,15.27143642,18,18,18,18,18,14,14,16.85714286
+720,Mein Club Viersen,4,9863,Viersener Straße,99a,41751,Viersen,Nordrhein-Westfalen,Germany,51.25481965,6.344052507,15,15,15,15,15,7,9,13
+719,Easyfitness Bassum (Verden),1,9863,Brunnenweg,1,27283,Verdeb,Niedersachsen,Germany,52.92473604,9.236866755,18,18,18,18,18,18,18,18
+108,Cleverfit Neuburg,3,15033,Längenmühlweg,28,86633,Neuburg,Bayern,Germany,48.72588332,11.19339199,18,18,18,18,18,12,12,16.28571429
+747,Easyfitness Göttingen,4,19725,Groner Straße,29/31,37073,Göttingen,Niedersachsen,Germany,51.5318223,9.934781899,15,15,15,15,15,10,10,13.57142857
+649,Cleverfit Ehingen,5,12532,Biberacher Straße,67,89584,Ehingen,Baden-Württemberg,Germany,48.2724425,9.725949782,12,12,12,12,12,12,12,12
+746,Cleverfit Friesoythe,3,12527,Am alten Hafen,24,26169,Friesoythe,Niedersachsen,Germany,53.02034954,7.852894873,17,17,17,17,17,14,14,16.14285714
+743,fit+ Zaberfeld,1,1233,Michelbacherstr.,2,74374,Zaberfeld,Baden-Württemberg,Germany,49.05850908,8.927061221,16,16,16,16,16,16,16,16
+808,Cleverfit Dessau Rosslau,4,5013,Kurt-Weill-Str.,38-41,6844,Dessau-Roßlau,Sachsen-Anhalt,Germany,51.84158828,12.24545324,17,17,17,17,17,12,12,15.57142857
+756,Cleverfit Frankenberg,5,18791,Ruhrstraße,4,35066,Frankenberg,Hessen,Germany,51.05995823,8.781851883,18,18,18,18,18,12,12,16.28571429
+738,easyfit Parsberg,2,4931,Singerstraße,16,92331,Parsberg,Bayern,Germany,49.16377998,11.72266373,19,19,19,19,19,19,19,19
+612,Cleverfit Neutraubling,3,20043,Pommernstr.,2,93073,Neutraubling,Bayern,Germany,48.98245339,12.1937131,18,18,18,18,18,12,12,16.28571429
+755,hellofit Memmingen,1,2466,Fraunhofer Str.,7,87700,Memmingen,Bayern,Germany,48.00274464,10.1684589,17,17,17,17,17,13,13,15.85714286
+623,Cleverfit Regenstauf,3,15033,Regensburger Straße,31,93128,Regenstauf,Bayern,Germany,49.11790791,12.12679165,17,17,17,17,17,12,12,15.57142857
+731,wellyou Kiel,9,54245,Feldstraße,7A,24105,Kiel,Schleswig-Holstein,Germany,54.32985245,10.13886345,17,17,17,17,17,15,15,16.42857143
+753,wellyou Itzehoe,6,22191,Jahnstraße,2,25524,Itzehoe,Schleswig-Holstein,Germany,53.92244961,9.529563904,17,17,17,17,17,15,15,16.42857143
+754,wellyou Pinneberg,5,24657,Friedrich-Ebert-Straße,2,25421,Pinneberg,Schleswig-Holstein,Germany,53.66161424,9.801580886,17,17,17,17,17,15,15,16.42857143
+872,fit+ Delitzsch,1,1253,Sachsenstraße,8-12,4509,Delitzsch,Sachsen,Germany,51.53634252,12.32024878,17,17,17,17,17,17,17,17
+603,Cleverfit Mering,3,20043,Wallbergstr.,10 - 12,86415,Mering,Bayern,Germany,48.25644938,10.98597179,17,17,17,17,17,12,12,15.57142857
+749,Ladies Get Fit Altenstadt,1,1233,Raiffeisenstr.,9,86972,Altenstadt,Bayern,Germany,47.82228714,10.87714192,16,16,16,16,16,9,9,14
+380,Cleverfit Langweid,2,16306,Parkstraße,33,86462,Langweid,Bayern,Germany,48.46990447,10.85585301,17,17,17,17,17,12,12,15.57142857
+750,fit+ Zwiefalten,1,1233,Hauptstr.,17,88529,Zwiefalten,Baden-Württemberg,Germany,48.23090524,9.463173976,17,17,17,17,17,17,17,17
+416,Cleverfit München Nord,3,20382,Schwarzhauptstraße,10,80939,München,Bayern,Germany,48.19185225,11.59064835,18,18,18,18,18,13,13,16.57142857
+757,fit+ Schönau,2,1233,Oberfeldstr.,1-5,79677,Schönau,Baden-Württemberg,Germany,47.7878305,7.898132419,17,17,17,17,17,17,17,17
+759,Cleverfit Eggenfelden,5,12527,Sudetenstr.,2,84307,Eggenfelden,Bayern,Germany,48.4005316,12.75520478,17,17,17,17,17,14,14,16.14285714
+429,Cleverfit Neustadt an der Donau,7,7516,Gewerbepark,17b,93333,Neustadt an der Donau,Bayern,Germany,48.79288227,11.76399256,16,16,16,16,16,13,13,15.14285714
+352,Cleverfit Höchstadt an der Aisch,5,32612,Kieferndorfer Weg,58b,91315,Höchstadt,Bayern,Germany,49.70605541,10.82812869,17,17,17,17,17,13,13,15.85714286
+762,Cleverfit Neufahrn,4,15033,Zeppelinstr.,2,85375,Neufahrn,Bayern,Germany,48.31404699,11.6505509,17,17,17,17,17,12,12,15.57142857
+766,wellyou Hamburg,10,49314,Kieler Straße,99,22769,Hamburg,Hamburg,Germany,53.57073968,9.943173936,17,17,17,17,17,15,15,16.42857143
+763,Turnhalle Vital Dortmund,2,2466,Breisenbachstraße,80,44357,Dortmund,Nordrhein-Westfalen,Germany,51.5605337,7.369708497,13,14,13,14,13,7,6,11.42857143
+764,Physio und Sports Centrum Weikersheim,2,2466,Uferweg,14,97990,Weikersheim,Baden-Württemberg,Germany,49.47948276,9.898329211,13,12,14,12,13,4,0,9.714285714
+586,Cleverfit Jena,2,10022,Leutragraben,2 - 4,7743,Jena,Thüringen,Germany,50.92889285,11.58346257,17,17,17,17,17,11,11,15.28571429
+461,Cleverfit Rümlang,7,75195,Oberglatterstraße,35,8153,Rümlang,,Switzerland,47.46324836,8.525550356,18,18,18,18,18,14,14,16.85714286
+578,Cleverfit Herne,5,10022,Roonstrasse,23,44629,Herne,Nordrhein-Westfalen,Germany,51.55031292,7.221658245,18,18,18,18,18,12,12,16.28571429
+767,Cleverfit Kornwestheim,4,15033,Ohiostraße,1,70806,Kornwestheim,Baden-Württemberg,Germany,48.86640121,9.222446494,18,18,18,18,18,12,12,16.28571429
+770,Easyfitness (SmartGym) Georgensgmünd,3,5178,Breite Str.,19,91166,Georgensgmünd,Bayern,Germany,49.19583273,11.01945279,18,18,18,18,18,18,18,18
+771,Phönix Fitness Herdecke,4,14794,Mühlenstr.,15,58313,Herdecke,Nordrhein-Westfalen,Germany,51.39847042,7.426890168,13,13,13,13,13,8,7,11.42857143
+772,fit+ Bad Schönborn,1,1233,Fontanestr.,6,76669,Bad Schönborn,Baden-Württemberg,Germany,49.22530143,8.653223804,17,17,17,17,17,17,17,17
+797,Cleverfit Halberstadt,5,12533,Rudolf-Diesel-Str.,14,38820,Halberstadt,Sachsen-Anhalt,Germany,51.88209821,11.05867023,16,16,16,16,16,12,12,14.85714286
+774,Formline Fitness Driedorf,3,9863,Wilhelmstr.,11,35759,Driedorf,Hessen,Germany,50.63413308,8.186301054,13,10,13,10,13,4,4,9.571428571
+775,fit+ Emmelshausen,1,1233,Rhein-Mosel-Strasse,26,56281,Emmelshausen,Rheinland-Pfalz,Germany,50.15608968,7.559487056,17,17,17,17,17,17,17,17
+393,Cleverfit Ludwigsburg,4,16306,Marstallstraße,1,71634,Ludwigsburg,Baden-Württemberg,Germany,48.89935784,9.18904513,18,18,18,18,18,12,12,16.28571429
+777,Vita Fitness Premium Club Nürnberg,1,1233,Vordere Cramergasse,11,90478,Nürnberg,Bayern,Germany,49.44757975,11.10147628,14,12,12,12,13,6,6,10.71428571
+779,Activ Sports Leipzig,2,2466,Waldbaurstr.,4-6,4347,Leipzig,Sachsen,Germany,51.35084497,12.40955751,15,15,15,15,15,8,8,13
+644,Cleverfit Berlin Buch,4,5013,Walter-Friedrich-Straße,1,13125,Berlin,Berlin,Germany,52.63428878,13.49647993,17,17,17,17,17,11,11,15.28571429
+782,Cleverfit Bremen Burglesum,4,7520,Stader Landstr.,41-43,28719,Bremen Burglesum,Bremen,Germany,53.16809028,8.710044576,18,18,18,18,18,14,14,16.85714286
+780,Remote Fitness Club Heilbronn,4,4932,Charlottenstraße,192,74074,Heilbronn,Baden-Württemberg,Germany,49.11979092,9.215946849,24,24,24,24,24,24,24,24
+781,Easyfitness Bornheim,4,14794,Königstraße,25,53332,Bornheim,Nordrhein-Westfalen,Germany,50.76090467,6.995447626,18,18,18,18,18,18,18,18
+790,Easyfitness Die Fabrik Bremen,3,19725,Hermann-Ritter-Straße,110,28197,Bremen,Bremen,Germany,53.07762111,8.772434897,18,18,18,18,18,18,18,18
+813,Cleverfit Achim,3,7519,Fritz-Lieken-Eck,2,28832,Achim,Niedersachsen,Germany,53.01463742,9.034191324,17,17,17,17,17,11,11,15.28571429
+789,Easyfitness Vahr,3,11096,Berliner Freiheit,9A,28327,Bremen,Bremen,Germany,53.08130699,8.893636904,18,18,18,18,18,18,18,18
+784,fit + Lorch,2,2466,Gmünder Str.,2,73547,Lorch,Baden-Württemberg,Germany,48.79747714,9.693400889,17,17,17,17,17,17,17,17
+783,Aktivita Rain am Lech,4,14794,Ostendstraße,3,86641,Rain am Lech,Bayern,Germany,48.69182462,10.93747093,18,18,18,18,18,18,18,18
+787,VitalCenter Speichersdorf,2,2466,Kemnather Str.,5,95469,Speichersdorf,Bayern,Germany,49.87616395,11.78012844,14,14,14,8,14,11,0,10.71428571
+788,VitalCenter Neuhaus,2,2466,Gerberstr.,12,83727,Neuhaus,Bayern,Germany,49.80422568,12.17950196,14,14,14,14,14,11,0,11.57142857
+852,Cleverfit Leipzig Mitte,4,15039,Kohlgartenstr.,11,4315,Leipzig,Sachsen,Germany,51.34415051,12.39472273,18,18,18,18,18,12,12,16.28571429
+786,fit + Möser,1,1233,Krokusweg,13,39291,Möser,Sachsen-Anhalt,Germany,52.21270391,11.79231638,17,17,17,17,17,17,17,17
+791,Top Ten Fitness Augsburg,3,7397,Hegelstr.,32,86167,Augsburg,Bayern,Germany,48.38623755,10.91446665,15,13,14,13,14,7,10,12.28571429
+793,fit + Hausham,1,1233,Industriestraße,1c,83734,Hausham,Bayern,Germany,47.74840389,11.84244378,17,17,17,17,17,17,17,17
+794,Injoy Siegen,3,7397,Hauptmarkt,1,57076,Siegen,Nordrhein-Westfalen,Germany,50.89560359,8.026450885,15,13,15,13,15,11,11,13.28571429
+372,Cleverfit Krumbach,3,16306,Erwin-Bosch-Ring,24a,86381,Krumbach,Bayern,Germany,48.23658918,10.37629888,16,16,16,16,16,12,12,14.85714286
+294,Cleverfit Donaueschingen,3,20043,Hagelrainstraße,6,78166,Donaueschingen,Baden-Württemberg,Germany,47.95752086,8.489062383,18,18,18,18,18,12,12,16.28571429
+795,fit+ Waghäusel,1,1233,Bruchsaler Straße,18,68753,Waghäusel,Baden-Württemberg,Germany,49.24209821,8.538859417,17,17,17,17,17,17,17,17
+796,Fit IN Blaibach,2,4932,Pechlergasse,15,93476,Blaibach,Bayern,Germany,49.16626334,12.80585047,12,12,12,12,12,6,7,10.42857143
+175,Easyfitness Sachsenheim,3,9863,Lammstr.,2,74343,Sachsenheim,Baden-Württemberg,Germany,48.95999273,9.063400284,14,14,14,14,14,8,8,12.28571429
+798,Cleverfit Wiesbaden Nordenstadt,3,5640,Ostring,17,65205,Wiesbaden,Hessen,Germany,50.06171629,8.348796203,18,18,18,18,18,12,12,16.28571429
+799,fit+ Lady Esslingen,1,1233,Schorndorferstraße,55,73730,Esslingen,Baden-Württemberg,Germany,48.73401665,9.336075445,17,17,17,17,17,17,17,17
+259,Cleverfit Berlin Pankow,5,20382,Rosenthaler Weg,24 b,13127,Berlin-Pankow,Berlin,Germany,52.60595082,13.41997496,16,16,16,16,16,11,11,14.57142857
+801,Easyfitness Magdeburg,4,14794,Kantstr.,3,39104,Magdeburg,Sachsen-Anhalt,Germany,52.13070829,11.63003656,10,10,10,10,10,6,6,8.857142857
+803,bene Vital Herzogenaurach,4,9863,Schützengraben,20,91074,Herzogenaurach,Bayern,Germany,49.56855522,10.89669635,12,13,12,12,12,6,5,10.28571429
+807,BM Sports Arnstorf,5,9863,Unteres Schloss,3,94424,Arnstorf,Bayern,Germany,48.56194589,12.8180549,17,17,17,17,17,17,17,17
+809,Feminin Fitness Herne,2,4932,Bochumerstr.,79,44623,Herne,Nordrhein-Westfalen,Germany,51.53138009,7.222812185,14,12,14,12,14,6,6,11.14285714
+811,Cleverfit Wilhelmshaven,2,3509,Güterstr.,49-51,26389,Wilhelmshaven,Niedersachsen,Germany,53.52249821,8.073415794,17,17,17,17,17,12,12,15.57142857
+815,Movin - Tanz + Fitness Crailsheim,3,6004,Wilhelmstraße,21/1,74564,Crailsheim,Baden-Württemberg,Germany,49.13867576,10.06991407,12,9,12,9,8,6,4,8.571428571
+850,Sportscheune Löhlbach,3,3760,Nordstr.,46,35114,Löhlbach,Hessen,Germany,51.066205,8.973836256,14,14,14,14,14,10,7,12.42857143
+816,Be Fit by aziz Horst,3,7520,Schulstr.,1D,25358,Horst,Schleswig-Holstein,Germany,53.81194867,9.616110372,14,14,14,14,14,6,6,11.71428571
+60,SportStudio im Seesengrund Ober Ramstadt,1,1233,Im Seesengrund,17,64372,Ober-Ramstadt,Hessen,Germany,49.84012354,8.744751373,7,7,7,7,7,3,3,5.857142857
+851,Vitalis Neukirchen,3,7520,Birkenallee,9,34626,Neukirchen,Hessen,Germany,50.8662088,9.342634692,18,18,18,18,18,18,18,18
+854,fit+ Mainhardt,2,2000,Weinsbergerstr.,31,74535,Mainhardt,Baden-Württemberg,Germany,49.07820376,9.53282767,17,17,17,17,17,17,17,17
+536,Cleverfit Wolfsberg,5,16306,Hermann-Fischer-Straße,1,9400,Wolfsberg,,Austria,46.84152413,14.84070247,18,18,18,18,18,16,14,17.14285714
+50,Easyfitness Kaiserslautern,2,14794,Augusta Str.,75-77,67655,Kaiserslautern,Rheinland-Pfalz,Germany,49.44065267,7.780892232,16,16,16,16,16,12,12,14.85714286
+881,fit+ Hamm,1,1253,Lindenallee,5,57577,Hamm / Sieg,Rheinland-Pfalz,Germany,50.76591889,7.673394974,16,16,16,16,16,16,16,16
+871,Easyfitness Bad Salzuflen,4,11029,Schloßstraße,69,32108,Bad Salzuflen,Nordrhein-Westfalen,Germany,52.07601749,8.756213212,16,16,16,16,16,12,12,14.85714286
+340,Cleverfit Hanau,4,16306,Adalbert-Eisenhuth-Straße,9,63457,Hanau,Hessen,Germany,50.09460677,8.955878245,17,17,17,17,17,12,12,15.57142857
+127,mikro eins Neckarsulm,3,3699,Heidelberger Str.,16,74172,Neckarsulm,Baden-Württemberg,Germany,49.20267714,9.242834881,16,16,16,16,16,16,16,16
+715,Cleverfit Pfäffikon,9,22558,Summelenweg,93,8808,Pfäffikon,,Switzerland,47.19552278,8.762500021,18,18,18,18,18,14,14,16.85714286
+61,Sport aktiv Baltmannsweiler,1,7397,Eichendorffstraße,4,73666,Baltmannsweiler,Baden-Württemberg,Germany,48.7451443,9.4423594,11,11,11,11,11,5,6,9.428571429
+478,Cleverfit Senden,2,16306,Industriestraße,1a,48308,Senden,Nordrhein-Westfalen,Germany,51.84669265,7.487790704,17,17,17,17,17,12,12,15.57142857
+890,Easyfitness Salzgitter Lebenstedt,4,12466,Leibnizstraße,5,38228,Salzgitter,Niedersachsen,Germany,52.14413632,10.31516694,15,15,15,15,15,10,10,13.57142857
+893,Easyfitness Maisach,4,11028,Bahnhofstraße,23,82216,Maisach,Bayern,Germany,48.21454673,11.25802087,18,18,18,18,18,18,18,18
+28,fit+ Brackenheim,1,1233,Marktstr.,25,74336,Brackenheim,Baden-Württemberg,Germany,49.07975233,9.064469538,17,17,17,17,17,17,17,17
+198,fit+ Winterbach,2,1233,Ostlandstraße,2 - 6,73650,Winterbach,Baden-Württemberg,Germany,48.80589513,9.479448883,17,17,17,17,17,17,17,17

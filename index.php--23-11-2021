@@ -159,7 +159,7 @@ class customizedLiveMessages{
 
     ## Add Iframe type
     add_filter( 'gform_pre_render_'.$this->sourceForm['id'], array( $this, 'prepopulate_static_logo' ), 10, 2 );
-    
+
   }
 
   ## Import CSV file
@@ -390,7 +390,7 @@ class customizedLiveMessages{
                   </tr>";
 
     if( $showCOmpleteBoard === true ){
-        $output .="<tr class='tage' title='". $this->get_description_by_class('duration')  ."'>
+        $output .="<tr title='". $this->get_description_by_class('duration')  ."'>
                     <td><span class='duration-preview'>-</span></td>
                       <td>". $this->get_title_by_class('duration')  ."</td>
                     </tr>
@@ -403,7 +403,7 @@ class customizedLiveMessages{
                     <td>". $this->get_title_by_class('overlays')  ."</td>
                   </tr>";
     }else{
-      $output .="<tr class='tage' title='". $this->get_description_by_class('duration')  ."'>
+      $output .="<tr title='". $this->get_description_by_class('duration')  ."'>
                   <td><span class='duration-previe-r'>-</span></td>
                   <td>". $this->get_title_by_class('duration')  ."</td>
                 </tr>";
@@ -416,7 +416,7 @@ class customizedLiveMessages{
     if( $args['field'] != '64' &&  $args['field'] != '152' ){
       $output .='<span class="ids-faq monitre">
         <span class="gfield single-column-form">
-          <label class="gfield_label">'.$this->get_title_by_class('hidden-frequency-field').'</label>
+          <label class="gfield_label">Auswahl der Frequenz pro Monitor</label>
           <div class="ginput_container ginput_container_radio frequency-radios" id="test-'.$args['field'].'">
             <ul class="gfield_radio" id="input_2_165">
               <li class="choice_input_radio_0">
@@ -551,17 +551,15 @@ class customizedLiveMessages{
       }
       return '<a style="text-transform:initial" class="login-button">Angemeldet als '.$username.'</a>';
     }
-      $output = '<a class="login-button">Login</a>
-                  <div class="custom-popup">
-                  <div class="ol"></div>
-                  <a class="custom-close">×</a>
-                    [gravityform id="16" title="true" description="false" ajax="true"]
-                  </div>';
-      return $output;
-
-    
+    $output = '<a class="login-button">Login</a>
+                <div class="custom-popup">
+                <div class="ol"></div>
+                <a class="custom-close">×</a>
+                  [gravityform id="16" title="true" description="false" ajax="true"]
+                </div>';
+    return $output;
   }
-  
+
   ## Get domain
   public function getDomain(){
     if( !isset($_SERVER['HTTP_REFERER']) ){
@@ -945,7 +943,7 @@ class customizedLiveMessages{
     $fieldID = 156;
     $email = $_POST['input_'.$fieldID];
     $form = $validation_result['form'];
-    
+ 
     //supposing we don't want input 1 to be a value of 86
     if( !filter_var($email, FILTER_VALIDATE_EMAIL) ) {
  
@@ -1004,7 +1002,7 @@ class customizedLiveMessages{
   public function customDateValidation( $validationResult ){
     $form = $validationResult['form'];
     foreach( $form['fields'] as &$field ) {
-      if ($field->id == $this->sourceForm['fields']['date'] && !empty($_POST[ 'input_'.$this->sourceForm['fields']['date'] ]) ) {
+      if ( $field->id == $this->sourceForm['fields']['date'] && !empty($_POST[ 'input_'.$this->sourceForm['fields']['date'] ]) ) {
           $selectedDate = strtotime( $_POST[ 'input_'.$this->sourceForm['fields']['date'] ] );
           $addThreeDays = strtotime( Date('d-m-Y', strtotime('+3 days')) );
           if( $selectedDate < $addThreeDays ){
@@ -1283,7 +1281,7 @@ class customizedLiveMessages{
         $string[] = $textLine2;
     }
 
-    $text = implode("\n ", $string );
+    $text = implode("\n", $string );
 
     if( $size == 'small' ){
       $areaWidth = 850;
@@ -1521,7 +1519,7 @@ class customizedLiveMessages{
   ## Get post custom fields
   public function getCustomPost( $posttitle ){
 
-    if( !isset($_SERVER['HTTP_REFERER']) ){
+    if( $_SERVER['HTTP_SEC_FETCH_DEST'] != "iframe" ){
       return;
     }
 
@@ -1649,10 +1647,9 @@ class customizedLiveMessages{
       }
       .ids-form.theme-color,
       body .elementor-27 .elementor-element.elementor-element-300dd28c > .elementor-background-overlay,
-      body #custom-login .custom-popup ,
+      body #custom-login .custom-popup,
       body .custom-popup-inner,
-      body,
-      .custom-error-popup a.custom-close{
+      body{
         background: <?php echo $formBackground; ?> !important;
       }
       .elementor-27 .elementor-element.elementor-element-25ea33c5:not(.elementor-motion-effects-element-type-background) > .elementor-widget-wrap, .elementor-27 .elementor-element.elementor-element-25ea33c5 > .elementor-widget-wrap > .elementor-motion-effects-container > .elementor-motion-effects-layer{
@@ -1986,10 +1983,7 @@ class customizedLiveMessages{
       border-color: <?php echo $errorMessageColor; ?> !important;
     }
 
-    .gform_wrapper .ids-form .validation_message,
-    .custom-error-popup #order-details-preview,
-    tr.tage.error td,
-    tr.tage.error .duration-preview {
+    .gform_wrapper .ids-form .validation_message {
       color: <?php echo $errorMessageColor; ?> !important;
     }
 
@@ -2207,10 +2201,6 @@ class customizedLiveMessages{
   ## Adding iframe settings
   public function addCustomDesign(){
     $parentURL = parse_url($_SERVER['HTTP_REFERER']);
-    // if( $parentURL['host'] == "livemessages.1a-lokal-marketing.de" ){
-    if( $parentURL['host'] == "livemessages.1a-lokal-marketing.de" && !isset( $_GET['parent'] ) ){
-      return;
-    }
     if( !empty($_SERVER['QUERY_STRING']) ){
       parse_str( $_SERVER['QUERY_STRING'], $QS);
       if( !empty($QS['parent']) ){
